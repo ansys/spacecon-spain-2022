@@ -11,9 +11,13 @@ PyMAPDL applied to Aerospace students and advocates.
 Content
 =======
 
+# To be added
+
+* (Very) short introduction to Python
+* (Very) short introduction to PyAnsys and PyMAPDL
+* (Veeery) Short example on PyMAPDL.
 
 """
-# sphinx_gallery_thumbnail_number = 3
 
 ################################
 #
@@ -38,12 +42,13 @@ Content
 
 ################################
 # What is python?
+# ~~~~~~~~~~~~~~~
 #
-# Python is
+# Python is #TODO: TO FILL
 
 #################################
-# Common operations in python
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Introduction to Python
+# ~~~~~~~~~~~~~~~~~~~~~~
 #
 # Storing variables.
 #
@@ -56,11 +61,12 @@ mybool = (
     True  # True and False are reserved keywords. As well as for, in, as and some more.
 )
 
+#####################################
 # There are functions such as ``print`` or ``help`` which can be called as:
 
 print("Hello Madrid!")  # You can call functions using parenthesis
 
-print(help(mystring))
+help(print)
 
 #####################################
 # There are other more complex structures such as list, tuples, dicts, etc
@@ -71,20 +77,22 @@ print(mylist[0])  # Python is zero based indexing!
 mytuple = (1, 2.5, "qwer")
 print(mytuple[2])  # Indexing in python is done using square brackets `[]`
 
+#########################################
 # This is a dict which does a mapping between its
 # keys and values.
 mydict = {"a": 1, "b": 2, "c": 3}
 # keys are the leters, but it could be anything
 # values are the numbers, but it could be anything!
 
-print(mydict["a"])
+print(mydict["c"])
 
 
 #####################################
 # Control flow in Python
 # ~~~~~~~~~~~~~~~~~~~~~~
 #
-# You can do conditionals (if) as the following:
+# You can do conditionals (``if``) as the following:
+my_int = 2
 
 if myint > 5:
     print("My int is bigger than 5!")
@@ -94,7 +102,7 @@ else:
     print("Any other case")
 
 if mybool:
-    print("Because mybool is True, I'm showing you this.")
+    print("Because 'mybool' is True, I'm showing you this.")
 
 if mystring == myotherstring:  # "text" == 'text'
     print("Although we used different quotes, they are the same!")
@@ -108,14 +116,31 @@ if mystring == myotherstring:  # "text" == 'text'
 for i in [1, 2, 3]:
     print(i)
 
+#######################################################
+# or
 for i in range(0, 5):
     print(i)
 
+########################################################
+# there is also 'while' loops
 i = 0
 while i < 5:
     print(i)
-    i += 1  # Convenient way to express: i = i + 1
+    i = i + 1
 
+#######################################################
+# You can "break" loops using the keyword ``break``
+
+i = 0
+j = 0
+while i < 10:
+    print(i, j)
+    i += 1  # Convenient way to express: i = i + 1
+    j += 2
+
+    if j > 5:  # early exit
+        print("Exiting early!")
+        break
 
 ###################################
 # Importing other libraries
@@ -128,11 +153,13 @@ import os  # for Operative system operations related
 
 print(os.name)  # OS name: nt or linux
 
+#######################################
 # You can also import modules/functions from libraries
 from os.path import exists
 
 exists("myfile.txt")  # Check if file 'myfile.txt' exists or not. Should show False
 
+###########################################
 # You can import a library giving it another name
 import math as mm  # Built in math library
 
@@ -156,24 +183,15 @@ print(my_array * 2)  # element wise operations
 
 print(my_array.T)  # Transpose
 
+# It doesn't need to be a vector
 my_matrix = np.array([[1, 3, 4], [4, 5, 6]])  # You store arrays of any shape
 
-# You can index using square brackets:
+#########################################
+# You can index elements using square brackets:
 my_matrix[0, 0]  # 1
 my_matrix[1, 1]  # 5
 my_matrix[0, :]  # [1, 3, 4]
 my_matrix[:, 0]  # [1, 4]
-
-
-my_rand_array = np.random.randint(
-    0, 10, (2, 3)
-)  # random integers between 0 and 10, with shape (2,3)
-
-print(my_rand_array)
-print(my_rand_array.shape)
-
-my_matrix.reshape((1, -1))  # and reshape them as you wish.
-# Negative means to accommodate this number to fit the other dimension (1). So it will be (1, 6)
 
 ###################################################################
 # for plotting you can use matplotlib
@@ -194,14 +212,14 @@ plt.legend()
 plt.show()
 
 #################################################################
-# *"Those looks rather simple plots...."*
-#
-# Ok, let me show you:
 #
 
 ##################################################################
 # Plotting a NACA airfoil
 # ~~~~~~~~~~~~~~~~~~~~~~~
+# *"Those plots looks rather simple plots...."*
+#
+# Ok, let me show you:
 #
 # Reference: https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-digit_NACA_airfoil
 #
@@ -256,30 +274,34 @@ for item in naca4(x, m, p, t, c):
 
 plt.plot(x, camber_line(x, m, p, c), "r")
 plt.axis("equal")
-plt.xlim((-0.05, 1.05))
+_ = plt.xlim((-0.05, 1.05))  # Store dummy values as '_'.
+
 
 # From: https://stackoverflow.com/questions/31815041/plotting-a-naca-4-series-airfoil
 
-# Cool uh?
+#####################################################
+# **Cool stuff uh?**
 
 #####################################################
 # Brief Python classes concept
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-# What is a class?
+# **What is a class?**
+#
 # A class is an object in a programming language which
 # .... #TODO: TO BE FILLED.
 #
-
+#
 # In Python everything is objects, and hence they have some methods.
 # For example strings have:
 mystring.startswith("t")  # True
 mystring.split("e")  # Break the string in a list ["T", "xt"]
 
-
+######################################################
 # You can list the methods of an object using ``dir``:
-print(dir(mystring))
+print(dir(mystring))  # yes, '__add__' is a string method!
 
+###################################################
 # You can create your own class and inheritate from them.
 #
 # PyMAPDL provides you a class which gives you access to all MAPDL
@@ -293,5 +315,5 @@ print(dir(mystring))
 # using Python programming language.
 #
 # Today we will focus on PyMAPDL with is the Python library
-# which exposes MAPDL (Ansys Structural solvers)
+# which exposes MAPDL (Ansys Structural)
 #
