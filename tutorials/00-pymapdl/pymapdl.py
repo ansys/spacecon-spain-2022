@@ -197,8 +197,16 @@ plt.show()
 # *"Those looks rather simple plots...."*
 #
 # Ok, let me show you:
+#
 
-# https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-digit_NACA_airfoil
+##################################################################
+# Plotting a NACA airfoil
+# ~~~~~~~~~~~~~~~~~~~~~~~
+#
+# Reference: https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-digit_NACA_airfoil
+#
+
+# First let define some helper functions.
 def camber_line(x, m, p, c):
     return np.where(
         (x >= 0) & (x <= (c * p)),
@@ -235,6 +243,7 @@ def naca4(x, m, p, t, c=1):
     )
 
 
+# NACA Parameters
 # naca2412
 m = 0.02
 p = 0.4
