@@ -1,0 +1,1075 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>PyMAPDL Tutorial &#8212; PyMAPDL Tutorials</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/thebelab-helper.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="A full PyMAPDL example" href="02-example.html" />
+    <link rel="prev" title="Short Python Tutorial" href="00-python.html" />
+<link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+
+
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  SpaceCon 2022 PyAnsys Tutorials
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pymapdl" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyMAPDL Tutorials</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">SpaceCon 2022 PyAnsys Tutorials</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">PyMAPDL Tutorial</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00-python.html">
+   Short Python Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   PyMAPDL Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-example.html">
+   A full PyMAPDL example
+  </a>
+ </li>
+</ul>
+
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-ansys-pyansys">
+   Python + Ansys = PyAnsys
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pymapdl">
+   PyMAPDL
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launching-pymapdl">
+     Launching PyMAPDL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geometry">
+     Geometry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#material-definition">
+     Material definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#element-definition">
+     Element definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meshing">
+     Meshing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boundary-conditions">
+     Boundary conditions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-setup">
+     Analysis setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-processing">
+     Post-Processing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#closing-session">
+     Closing session
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorials-01-pymapdl-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<section class="sphx-glr-example-title" id="pymapdl-tutorial">
+<span id="ref-pymapdl-tutorial"></span><span id="sphx-glr-tutorials-01-pymapdl-py"></span><h1>PyMAPDL Tutorial<a class="headerlink" href="#pymapdl-tutorial" title="Permalink to this heading">#</a></h1>
+<p>In this tutorial, we will introduce some of the capabilities of
+PyMAPDL applied to Aerospace students and advocates.</p>
+<section id="python-ansys-pyansys">
+<h2>Python + Ansys = PyAnsys<a class="headerlink" href="#python-ansys-pyansys" title="Permalink to this heading">#</a></h2>
+<p>Pyansys is Ansys effort on making their products accessible
+using Python programming language.</p>
+<p>Today we will focus on PyMAPDL with is the Python library
+which exposes MAPDL (Ansys Structural)</p>
+</section>
+<section id="pymapdl">
+<h2>PyMAPDL<a class="headerlink" href="#pymapdl" title="Permalink to this heading">#</a></h2>
+<p>MAPDL provides many tools and features which would require
+A LOT of time to explain, so let’s have a quick overview</p>
+<section id="launching-pymapdl">
+<h3>Launching PyMAPDL<a class="headerlink" href="#launching-pymapdl" title="Permalink to this heading">#</a></h3>
+<p>But first, let’s launch PyMAPDL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.mapdl.core</span> <span class="kn">import</span> <span class="n">launch_mapdl</span>
+
+<span class="n">mapdl</span> <span class="o">=</span> <span class="n">launch_mapdl</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mapdl</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Product:             Ansys Mechanical Enterprise
+MAPDL Version:       22.2
+ansys.mapdl Version: 0.63.2
+</pre></div>
+</div>
+</section>
+<section id="geometry">
+<h3>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading">#</a></h3>
+<p>PyMAPDL support points (keypoints), lines, areas, and volumes
+for geometry definition.</p>
+<p>You can plot an area using keypoints:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>  <span class="c1"># entering in preprocessor for geometry generation</span>
+
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k1</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k2</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">a0</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">a</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k1</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k2</span></a><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">aplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_bounds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_001.png" srcset="../_images/sphx_glr_01-pymapdl_001.png" alt="01 pymapdl" class = "sphx-glr-single-img"/><p>Create a simple cube volume.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>  <span class="c1"># let&#39;s clear first.</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">prep7</span><span class="p">()</span>  <span class="c1"># entering in preprocessor</span>
+
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># defining a keypoint at (0,0,0) location</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k1</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># defining a keypoint at (1,0,0) location</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k2</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># etc</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k3</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k4</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k5</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k6</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k7</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># defining volume according the kps</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v0</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">v</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k1</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k2</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k3</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k4</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k5</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k6</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k7</span></a><span class="p">)</span>
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vplot</span><span class="p">(</span><span class="n">show_lines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_002.png" srcset="../_images/sphx_glr_01-pymapdl_002.png" alt="01 pymapdl" class = "sphx-glr-single-img"/></section>
+<section id="material-definition">
+<h3>Material definition<a class="headerlink" href="#material-definition" title="Permalink to this heading">#</a></h3>
+<p>You can define materials using the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a material (nominal steel in SI)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;EX&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">210e9</span><span class="p">)</span>  <span class="c1"># Elastic moduli in Pa (kg/(m*s**2))</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;DENS&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7800</span><span class="p">)</span>  <span class="c1"># Density in kg/m3</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">(</span><span class="s2">&quot;NUXY&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># Poisson&#39;s Ratio</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>MATERIAL          1     NUXY =  0.3000000
+</pre></div>
+</div>
+<p>At any point you can use help to get information about each
+function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">mp</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method mp in module ansys.mapdl.core._commands.preproc.materials:
+
+mp(lab=&#39;&#39;, mat=&#39;&#39;, c0=&#39;&#39;, c1=&#39;&#39;, c2=&#39;&#39;, c3=&#39;&#39;, c4=&#39;&#39;, **kwargs) method of ansys.mapdl.core.mapdl_grpc.MapdlGrpc instance
+    APDL Command: MP
+
+    Defines a linear material property as a constant or a function of
+    temperature.
+
+    Parameters
+    ----------
+    lab
+        Valid material property label.  Applicable labels are listed under
+        &quot;Material Properties&quot; in the input table for each element type in
+        the Element Reference.  See Linear Material Properties in the
+        Material Reference for more complete property label definitions:
+
+        ALPD
+            Mass matrix multiplier for damping.
+
+        ALPX
+            Secant coefficients of thermal expansion (also ``ALPY``, ``ALPZ``).
+
+        BETD
+            Stiffness matrix multiplier for damping.
+
+            .. note:: If used in an explicit dynamic analysis, the value corresponds to the percentage of damping in the high
+               frequency domain. For example, 0.1 roughly corresponds to 10% damping in the high frequency domain.
+
+        BETX
+            Coefficient of diffusion expansion (also ``BETY``, ``BETZ``)
+
+        BVIS
+            Bulk viscosity
+
+        C
+            Specific heat
+
+        CREF
+            Reference concentration (may not be temperature dependent)
+
+        CSAT
+            Saturated concentration
+
+        CTEX
+            Instantaneous coefficients of thermal expansion (also ``CTEY``, ``CTEZ``)
+
+        CVH
+            Heat coefficient at constant volume per unit of mass
+
+        DENS
+            Mass density.
+
+        DMPR
+            Constant structural damping coefficient in full harmonic analysis or damping ratio in mode-superposition
+            analysis.
+
+        DXX
+            Diffusivity coefficients (also ``DYY``, ``DZZ``)
+
+        EMIS
+            Emissivity.
+
+        ENTH
+            Enthalpy.
+
+        EX
+            Elastic moduli (also ``EY``, ``EZ``)
+
+        GXY
+            Shear moduli (also ``GYZ``, ``GXZ``)
+
+        HF
+            Convection or film coefficient
+
+        KXX
+            Thermal conductivities (also ``KYY``, ``KZZ``)
+
+        LSST
+            Electric loss tangent
+
+        LSSM
+            Magnetic loss tangent
+
+        MGXX
+            Magnetic coercive forces (also ``MGYY``, ``MGZZ``)
+
+        MURX
+            Magnetic relative permeabilities (also ``MURY``, ``MURZ``)
+
+        MU
+            Coefficient of friction
+
+        NUXY
+            Minor Poisson&#39;s ratios (also ``NUYZ``, ``NUXZ``) (``NUXY`` = νyx, as described in Stress-Strain Relationships in the
+            Mechanical APDL Theory Reference)
+
+        PERX
+            Electric relative permittivities (also ``PERY``, ``PERZ``)
+
+            .. note::  If you enter permittivity values less than 1 for ``SOLID5``, ``PLANE13``, or ``SOLID98``, the program interprets
+               the values as absolute permittivity. Values input for ``PLANE223``, ``SOLID226``, or ``SOLID227`` are always interpreted as
+               relative permittivity.
+
+        PRXY
+            Major Poisson&#39;s ratios (also ``PRYZ``, ``PRXZ``) (``PRXY`` = νxy, as described in Stress-
+            Strain Relationships in the Mechanical APDL Theory
+            Reference)
+
+        QRATE
+            Heat generation rate for thermal mass element MASS71. Fraction of plastic work
+            converted to heat (Taylor-Quinney coefficient) for coupled-
+            field elements ``PLANE223``, ``SOLID226``, and ``SOLID227``.
+
+        REFT
+            Reference temperature.  Must be defined as a constant; ``C1`` through ``C4`` are
+            ignored.
+
+        RH
+            Hall Coefficient.
+
+        RSVX
+            Electrical resistivities (also ``RSVY``, ``RSVZ``).
+
+        SBKX
+            Seebeck coefficients (also ``SBKY``, ``SBKZ``).
+
+        SONC
+            Sonic velocity.
+
+        THSX
+            Thermal strain (also ``THSY``, ``THSZ``).
+
+        VISC
+            Viscosity.
+
+    mat
+        Material reference number to be associated with the elements
+        (defaults to the current MAT setting [MAT]).
+
+    c0
+        Material property value, or if a property-versus-temperature
+        polynomial is being defined, the constant term in the polynomial.
+        ``C0`` can also be a table name (``%tabname%``); if ``C0`` is a table name, ``C1``
+        through ``C4`` are ignored.
+
+    c1, c2, c3, c4
+        Coefficients of the linear, quadratic, cubic, and quartic terms,
+        respectively, in the property-versus-temperature polynomial.  Leave
+        blank (or set to zero) for a constant material property.
+
+    Notes
+    -----
+    MP defines a linear material property as a constant or in terms of a
+    fourth order polynomial as a function of temperature. (See the TB
+    command for nonlinear material property input.) Linear material
+    properties typically require a single substep for solution, whereas
+    nonlinear material properties require multiple substeps;  see Linear
+    Material Properties in the Material Reference for details.
+
+    If the constants ``C1`` - ``C4`` are input, the polynomial
+
+    .. math::
+
+       Property = C_0 + C_1(T) + C_2(T)^2 + C_3(T)^3 + C_4(T)^4
+
+    is evaluated at discrete temperature points with linear interpolation
+    between points (that is, a piecewise linear representation) and a
+    constant-valued extrapolation beyond the extreme points. First-order
+    properties use two discrete points (±9999°).
+    The :meth:`MPTEMP &lt;ansys.mapdl.core.Mapdl.mptemp&gt;` or
+    :meth:`MPTGEN &lt;ansys.mapdl.core.Mapdl.mptgen&gt;`
+    commands must be used for second and higher order properties to define
+    appropriate temperature steps. To ensure that the number of
+    temperatures defined via the :meth:`MPTEMP &lt;ansys.mapdl.core.Mapdl.mptemp&gt;`
+    and :meth:`MPTGEN &lt;ansys.mapdl.core.Mapdl.mptgen&gt;` commands is minimally
+    sufficient for a reasonable representation of the curve, ANSYS
+    generates an error message if the number is less than ``N``, and a warning
+    message if the number is less than ``2N``. The value ``N`` represents the
+    highest coefficient used; for example, if ``C3`` is nonzero and ``C4`` is zero,
+    a cubic curve is being used which is defined using 4 coefficients so
+    that ``N`` = 4.
+</pre></div>
+</div>
+<p>Or you can check the online help at
+<a class="reference external" href="https://mapdl.docs.pyansys.com/mapdl_commands/prep7/_autosummary/ansys.mapdl.core.Mapdl.mp.html?highlight=mp#ansys.mapdl.core.Mapdl.mp">mapdl.docs.pyansys.com</a></p>
+</section>
+<section id="element-definition">
+<h3>Element definition<a class="headerlink" href="#element-definition" title="Permalink to this heading">#</a></h3>
+<p>Since MAPDL is a finite element solver,
+the FE element needs to be defined.
+Ansys has an <em>Element Guide</em> which contain all the necessary
+information</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;SOLID186&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+<p>SOLID186 is a 3D hexahedron element, suitable for
+any structural 3D analysis.</p>
+<p>There are also <code class="docutils literal notranslate"><span class="pre">KEYOPTS</span></code> which allow us to
+configure the elements.
+Also there is the constant sets <code class="docutils literal notranslate"><span class="pre">R</span></code> which helps
+us to set the analysis and element configurations.</p>
+</section>
+<section id="meshing">
+<h3>Meshing<a class="headerlink" href="#meshing" title="Permalink to this heading">#</a></h3>
+<p>Meshing is quite easy, once the element and material
+are defined.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">esize</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Element size</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vmesh</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">v0</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>GENERATE NODES AND ELEMENTS
+       IN VOLUMES       1  TO      1  IN STEPS OF      1
+
+ NUMBER OF VOLUMES MESHED   =         1
+ MAXIMUM NODE NUMBER        =      4961
+ MAXIMUM ELEMENT NUMBER     =      1000
+</pre></div>
+</div>
+<p>Let’s see the result</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">eplot</span><span class="p">()</span>  <span class="c1"># plot elements</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_003.png" srcset="../_images/sphx_glr_01-pymapdl_003.png" alt="01 pymapdl" class = "sphx-glr-single-img"/></section>
+<section id="boundary-conditions">
+<h3>Boundary conditions<a class="headerlink" href="#boundary-conditions" title="Permalink to this heading">#</a></h3>
+<p>There are many boundary conditions options, and most of
+them are applied using <code class="docutils literal notranslate"><span class="pre">mapdl.d</span></code> (for displacement)
+or <code class="docutils literal notranslate"><span class="pre">mapdl.f</span></code> (for force).</p>
+<p>Let’s setup this example to represent a compression test.
+For that purpose, we need to fix the box bottom surface to have zero
+displacement.</p>
+<p>But first, we need to select the corresponding nodes using
+the <code class="docutils literal notranslate"><span class="pre">mapdl.nsel</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method nsel in module ansys.mapdl.core._commands.database.selecting:
+
+nsel(type_=&#39;&#39;, item=&#39;&#39;, comp=&#39;&#39;, vmin=&#39;&#39;, vmax=&#39;&#39;, vinc=&#39;&#39;, kabs=&#39;&#39;, **kwargs) method of ansys.mapdl.core.mapdl_grpc.MapdlGrpc instance
+    Selects a subset of nodes.
+
+    APDL Command: NSEL
+
+    Parameters
+    ----------
+    type\_
+        Label identifying the type of select:
+
+        S - Select a new set (default).
+
+        R - Reselect a set from the current set.
+
+        A - Additionally select a set and extend the current set.
+
+        U - Unselect a set from the current set.
+
+        ALL - Restore the full set.
+
+        NONE - Unselect the full set.
+
+        INVE - Invert the current set (selected becomes unselected and vice versa).
+
+        STAT - Display the current select status.
+
+
+    The following fields are used only with Type = S, R, A, or U:
+
+    Item
+        Label identifying data. Valid item labels are shown in the table below. Some items also require a
+        component label. If Item = PICK (or simply &quot;P&quot;), graphical picking is enabled and all remaining
+        command fields are ignored (valid only in the GUI). Defaults to NODE.
+
+    Comp
+        Component of the item (if required). Valid component labels are shown in the table below.
+
+    VMIN
+        Minimum value of item range. Ranges are node numbers, set numbers, coordinate values, load
+        values, or result values as appropriate for the item. A component name (as specified on the CM (p. 338)
+        command) may also be substituted for VMIN (VMAX and VINC are ignored).
+
+    VMAX
+        Maximum value of item range. VMAX defaults to VMIN for input values. For result values, VMAX
+        defaults to infinity if VMIN is positive, or to zero if VMIN is negative.
+
+    VINC
+        Value increment within range. Used only with integer ranges (such as for node and set numbers).
+        Defaults to 1. VINC cannot be negative.
+
+    KABS
+        Absolute value key:
+
+        - `kabs = 0` - Check sign of value during selection.
+        - `kabs = 1` - Use absolute value during selection (sign ignored)
+
+    Notes
+    -----
+    Selects a subset of nodes.  For example, to select a new set of nodes
+    based on node numbers 1 through 7, do
+
+    &gt;&gt;&gt; mapdl.nsel(&#39;S&#39;,&#39;NODE&#39;,&#39;&#39;,1,7)
+
+    The subset is used when the `&#39;ALL&#39;` label is entered (or implied)
+    on other commands, such as
+
+    &gt;&gt;&gt; mapdl.nlist(&#39;ALL&#39;)
+
+    Only data identified by node number are selected.  Data
+    are flagged as selected and unselected; no data are actually deleted
+    from the database.
+
+    When selecting nodes by results, the full graphics value is used,
+    regardless of whether PowerGraphics is on.
+
+    Solution result data consists of two types, 1) nodal degree of freedom
+    --results initially calculated at the nodes (such as displacement,
+    temperature, pressure, etc.), and 2) element--results initially
+    calculated elsewhere (such as at an element integration point or
+    thickness location) and then recalculated at the nodes (such as
+    stresses, strains, etc.).  Various element results also depend upon the
+    recalculation method and the selected results location [AVPRIN, RSYS,
+    FORCE, LAYER and SHELL].
+
+    You must have all the nodes (corner and midside nodes) on the external
+    face of the element selected to use Item = EXT.
+
+    This command is valid in any processor.
+
+    For Selects based on non-integer numbers (coordinates, results, etc.),
+    items that are within the range VMIN-Toler and VMAX+Toler are selected.
+    The default tolerance Toler is based on the relative values of VMIN and
+    VMAX as follows:
+
+    If VMIN = VMAX, Toler = 0.005 x VMIN.
+
+    If VMIN = VMAX = 0.0, Toler = 1.0E-6.
+
+     If VMAX ≠ VMIN, Toler = 1.0E-8 x (VMAX-VMIN).
+
+    Use the SELTOL command to override this default and specify Toler
+    explicitly.
+
+    Table: 208:: : NSEL - Valid Item and Component Labels
+
+    Table: 209:: : NSEL - Valid Item and Component Labels for Nodal DOF
+    Result Values
+
+    Examples
+    --------
+    Select nodes at `x == 0`, Of these, reselect nodes between ``1 &lt; Y
+    &lt; 10``, then finally unselect nodes between ``5 &lt; Y &lt; 6``.
+
+    &gt;&gt;&gt; mapdl.nsel(&#39;S&#39;, &#39;LOC&#39;, &#39;X&#39;, 0)
+    &gt;&gt;&gt; mapdl.nsel(&#39;R&#39;, &#39;LOC&#39;, &#39;Y&#39;, 1, 10)
+    &gt;&gt;&gt; mapdl.nsel(&#39;U&#39;, &#39;LOC&#39;, &#39;Y&#39;, 5, 6)
+
+    For other coordinate systems activate the coord system first.
+    First, change to cylindrical coordinate system, select nodes at
+    ``radius == 5``.  Reselect nodes from 0 to 90 degrees.
+
+    &gt;&gt;&gt; mapdl.csys(1)
+    &gt;&gt;&gt; mapdl.nsel(&#39;S&#39;, &#39;LOC&#39;, &#39;X&#39;, 5)
+    &gt;&gt;&gt; mapdl.nsel(&#39;R&#39;, &#39;LOC&#39;, &#39;Y&#39;, 0, 90)
+
+    Note that the labels X, Y, and Z are always used, regardless of which
+    coordinate system is activated. They take on different meanings in
+    different systems Additionally, angles are always in degrees and
+    NOT radians.
+
+    Select elements assigned to material property 2
+
+    &gt;&gt;&gt; mapdl.esel(&#39;S&#39;, &#39;MAT&#39;, &#39;&#39;, 2)
+
+    Select the nodes these elements use
+
+    &gt;&gt;&gt; mapdl.nsle()
+
+    Reselect nodes on the element external surfaces
+
+    &gt;&gt;&gt; mapdl.nsel(&#39;R&#39;, &#39;EXT&#39;)
+
+    Change to cylindrical coordinates
+
+    &gt;&gt;&gt; mapdl.csys(1)
+
+    Reselect nodes with radius=5
+
+    &gt;&gt;&gt; mapdl.nsel(&#39;R&#39;, &#39;LOC&#39;, &#39;X&#39;, 5)
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">()</span>  <span class="c1"># check the selection</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_004.png" srcset="../_images/sphx_glr_01-pymapdl_004.png" alt="01 pymapdl" class = "sphx-glr-single-img"/><p>Applying to all selected nodes, displacement in Z direction equals to zero.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s check the result</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">plot_bc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_005.png" srcset="../_images/sphx_glr_01-pymapdl_005.png" alt="01 pymapdl" class = "sphx-glr-single-img"/><p>Let’s apply the rest of the boundary conditions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s fix the box edge XZ to not move except along Y.</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># &quot;r&quot; is to reselect the nodes, from the previous &quot;S&quot; selection</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UX&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># we will do the same with the line YZ, but not move along X direction.</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UY&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UY   FOR SELECTED NODES            1 TO        4961 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000
+</pre></div>
+</div>
+<p>Finally let’s fix one node in the directions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># this code is redundant, because the nodal displacements do not overwrite each other</span>
+<span class="c1"># if they are not in the same direction.</span>
+<span class="c1"># This node was included in the previous lines selections, hence its</span>
+<span class="c1"># boundary conditions are already defined.</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO        4961 BY           1
+ REAL=  0.00000000       IMAG=  0.00000000
+ ADDITIONAL DOFS=  UY    UZ
+</pre></div>
+</div>
+<p>Let’s check the final result</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nplot</span><span class="p">(</span><span class="n">plot_bc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_006.png" srcset="../_images/sphx_glr_01-pymapdl_006.png" alt="01 pymapdl" class = "sphx-glr-single-img"/><p>Now let’s apply a displacement at the box top at each node.
+We could apply a force instead if we wish.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="c1"># mapdl.f(&quot;all&quot;, &quot;FZ&quot;, 1E9)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;UZ&quot;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UZ   FOR SELECTED NODES            1 TO        4961 BY           1
+ REAL= 1.000000000E-02   IMAG=  0.00000000
+</pre></div>
+</div>
+</section>
+<section id="analysis-setup">
+<h3>Analysis setup<a class="headerlink" href="#analysis-setup" title="Permalink to this heading">#</a></h3>
+<p>Let’s do a simple static analysis</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">slashsolu</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">allsel</span><span class="p">()</span>  <span class="c1"># making sure all nodes and elements are selected.</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">antype</span><span class="p">(</span><span class="s2">&quot;STATIC&quot;</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  MAPDL SOLVE    COMMAND  *****
+
+ *** NOTE ***                            CP =       1.780   TIME= 14:44:54
+ There is no title defined for this analysis.
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED.
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
+ Ansys Mechanical Enterprise
+ 00000000  VERSION=LINUX x64     14:44:54  SEP 26, 2022 CP=      1.813
+
+
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
+
+ *** NOTE ***                            CP =       1.820   TIME= 14:44:54
+ Present time 0 is less than or equal to the previous time.  Time will
+ default to 1.
+
+ *** NOTE ***                            CP =       1.827   TIME= 14:44:54
+ The conditions for direct assembly have been met.  No .emat or .erot
+ files will be produced.
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                  FOR THE LAST SUBSTEP
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         7800.0        0.0000        0.0000     |     0.0000        3900.0       -3900.0
+         0.0000        7800.0        0.0000     |    -3900.0        0.0000        3900.0
+         0.0000        0.0000        7800.0     |     3900.0       -3900.0        0.0000
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |     5200.0       -1950.0       -1950.0
+                                                |    -1950.0        5200.0       -1950.0
+                                                |    -1950.0       -1950.0        5200.0
+
+   TOTAL MASS =  7800.0
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=   0.50000       0.50000       0.50000
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+         1300.0      -0.41069E-11  -0.16058E-11
+       -0.41069E-11    1300.0      -0.72902E-11
+       -0.16058E-11  -0.72902E-11    1300.0
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   7800.00
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.914529915E+10 at element 247.
+ Minimum = 1.914529915E+10 at element 556.
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1000  SOLID186      0.412   0.000412
+ Time at end of element matrix formulation CP = 2.22175312.
+
+ SPARSE MATRIX DIRECT SOLVER.
+  Number of equations =       14159,    Maximum wavefront =    225
+  Memory allocated for solver              =   113.349 MB
+  Memory required for in-core solution     =   108.776 MB
+  Memory required for out-of-core solution =    44.000 MB
+
+ *** NOTE ***                            CP =       2.614   TIME= 14:44:55
+ The Sparse Matrix Solver is currently running in the in-core memory
+ mode.  This memory mode uses the most amount of memory in order to
+ avoid using the hard drive as much as possible, which most often
+ results in the fastest solution time.  This mode is recommended if
+ enough physical memory is present to accommodate all of the solver
+ data.
+ Sparse solver maximum pivot= 7.658119658E+10 at node 4420 UY.
+ Sparse solver minimum pivot= 4.423964031E+09 at node 672 UZ.
+ Sparse solver minimum pivot in absolute value= 4.423964031E+09 at node
+ 672 UZ.
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1000  SOLID186      0.301   0.000301
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1000  SOLID186      0.074   0.000074
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** MAPDL BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+       10.250 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        1.750 MB WRITTEN ON RESULTS FILE: file.rst
+</pre></div>
+</div>
+</section>
+<section id="post-processing">
+<h3>Post-Processing<a class="headerlink" href="#post-processing" title="Permalink to this heading">#</a></h3>
+<p>Let’s what we got. Let’s see the displacements:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.     ,  0.     ,  0.     ],
+       [-0.003  ,  0.     ,  0.     ],
+       [-0.00015,  0.     ,  0.     ],
+       ...,
+       [-0.00285, -0.0027 ,  0.007  ],
+       [-0.00285, -0.0027 ,  0.008  ],
+       [-0.00285, -0.0027 ,  0.009  ]])
+</pre></div>
+</div>
+<p>Let’s plot them</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s2">&quot;Z&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_01-pymapdl_007.png" srcset="../_images/sphx_glr_01-pymapdl_007.png" alt="01 pymapdl" class = "sphx-glr-single-img"/><p>We can store the displacements as an array and
+use them for our calculations. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nodal_disp</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum displacement is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nodal_disp</span></a><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum displacement is 0.010
+</pre></div>
+</div>
+<p>Oh! By the way, you can format strings as this way, they are very powerful.
+This type of string is called f-string. The 0.3f after the colon (:) is the format for the number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First column is X displacement</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum X displacement is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nodal_disp</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The average Z displacement is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nodal_disp</span></a><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum X displacement is 0.000
+The average Z displacement is 0.005
+</pre></div>
+</div>
+</section>
+<section id="closing-session">
+<h3>Closing session<a class="headerlink" href="#closing-session" title="Permalink to this heading">#</a></h3>
+<p>This is all for today. We hope you enjoyed this talk, as much as we enjoyed preparing it!</p>
+<p>Closing PyMAPDL session</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.500 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-01-pymapdl-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/57c7d7311e4b5aa46a9cb8eb67aa0b36/01-pymapdl.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-pymapdl.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/af766d88a82c093341dba4d437cedbf5/01-pymapdl.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">01-pymapdl.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
