@@ -147,3 +147,8 @@ jobs:
           mkdir logs-build-docs
           echo "::group:: Display files structure" && ls -R && echo "::endgroup::"
           ls -R > ./logs-build-docs/files_structure.txt
+
+      - name: Display MAPDL Logs
+        if: always()
+        run: cat log.txt
+
