@@ -39,7 +39,7 @@ warnings.filterwarnings(
 
 # -- Project information -----------------------------------------------------
 
-project = "ansys.mapdl.core.tutorials"
+project = f"ansy.mapdl.core.tutorials"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS Inc."
 
@@ -168,7 +168,7 @@ sphinx_gallery_conf = {
     # directory where function granular galleries are stored
     "backreferences_dir": None,
     # Modules for which function level galleries are created.  In
-    "doc_module": "ansys-mapdl-core-tutorials",
+    "doc_module": project,
     "image_scrapers": ("pyvista", "matplotlib"),
     "ignore_pattern": "flycheck*",
     "thumbnail_size": (350, 350),
@@ -204,7 +204,7 @@ latex_documents = [
     (
         master_doc,
         f"pymapdl-Documentation-{__version__}.tex",
-        "ansys.mapdl.core Documentation",
+        f"{project} Documentation",
         author,
         "manual",
     ),
@@ -215,9 +215,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, "ansys.mapdl.core", "ansys.mapdl.core Documentation", [author], 1)
-]
+man_pages = [(master_doc, project, f"{project} Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -228,11 +226,11 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "ansys.mapdl.core",
-        "ansys.mapdl.core Documentation",
+        f"{project}",
+        f"{project} Documentation",
         author,
-        "ansys.mapdl.core",
-        "Pythonic interface to MAPDL using gRPC",
+        f"{project}",
+        "PyMAPDL tutorials",
         "Engineering Software",
     ),
 ]
