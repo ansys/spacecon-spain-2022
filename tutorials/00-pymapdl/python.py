@@ -80,7 +80,7 @@ print(mydict["c"])
 
 #####################################
 # Control flow in Python
-# ----------------------
+# ~~~~~~~~~~~~~~~~~~~~~~
 #
 # You can do conditionals (``if``) as the following:
 my_int = 2
@@ -100,7 +100,7 @@ if mystring == myotherstring:  # "text" == 'text'
 
 #####################################################
 # Loops in python
-# ---------------
+# ~~~~~~~~~~~~~~~
 #
 # Loops in Python can be done as:
 #
@@ -135,7 +135,7 @@ while i < 10:
 
 ###################################
 # Importing other libraries
-# -------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 # You can also import other libraries that expand Python functionalities by
 # providing more data structures, functions and/or classes.
@@ -158,7 +158,7 @@ print(mm.sqrt(2))
 
 ####################################################
 # Numpy and Matplotlib
-# --------------------
+# ~~~~~~~~~~~~~~~~~~~~
 #
 # Some of the most used Python libraries are: Numpy and Matplotlib.
 # The first one is for numerical calculations and the second is
@@ -207,7 +207,7 @@ plt.show()
 
 ##################################################################
 # Plotting a NACA airfoil
-# -----------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~
 # *"Those plots looks rather simple plots...."*
 #
 # Ok, let me show you:
@@ -275,7 +275,7 @@ _ = plt.xlim((-0.05, 1.05))  # Store dummy values as '_'.
 
 #####################################################
 # Brief Python classes concept
-# ----------------------------
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 # **What is a class?**
 #
