@@ -1,5 +1,5 @@
 """
-.. _ref_pymapdl_tutorial
+.. _ref_python_tutorial
 
 =====================
 Short Python Tutorial

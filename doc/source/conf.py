@@ -6,7 +6,7 @@ import warnings
 from ansys_sphinx_theme import pyansys_logo_black
 import numpy as np
 import pyvista
-from sphinx_gallery.sorting import FileNameSortKey
+from sphinx_gallery.sorting import ExplicitOrder, FileNameSortKey
 
 from ansys.mapdl import core as pymapdl
 from ansys.mapdl.core import __version__
@@ -156,6 +156,9 @@ sphinx_gallery_conf = {
     "pypandoc": True,
     # path to your examples scripts
     "examples_dirs": ["../../tutorials/"],
+    "subsection_order": ExplicitOrder(
+        ["../tutorials/python", "../tutorials/pymapdl", "../tutorials/example"]
+    ),
     # path where to save gallery generated examples
     "gallery_dirs": ["tutorials"],
     # Patter to search for example files
