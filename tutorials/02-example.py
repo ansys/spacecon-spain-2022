@@ -1,5 +1,5 @@
 """
-.. _ref_example
+.. _ref_example:
 
 ======================
 A full PyMAPDL example

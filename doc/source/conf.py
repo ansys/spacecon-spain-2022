@@ -6,7 +6,7 @@ import warnings
 from ansys_sphinx_theme import pyansys_logo_black
 import numpy as np
 import pyvista
-from sphinx_gallery.sorting import ExplicitOrder, FileNameSortKey
+from sphinx_gallery.sorting import FileNameSortKey
 
 from ansys.mapdl import core as pymapdl
 from ansys.mapdl.core import __version__
@@ -156,9 +156,6 @@ sphinx_gallery_conf = {
     "pypandoc": True,
     # path to your examples scripts
     "examples_dirs": ["../../tutorials/"],
-    "subsection_order": ExplicitOrder(
-        ["../tutorials/python", "../tutorials/pymapdl", "../tutorials/example"]
-    ),
     # path where to save gallery generated examples
     "gallery_dirs": ["tutorials"],
     # Patter to search for example files
@@ -167,6 +164,7 @@ sphinx_gallery_conf = {
     "download_all_examples": False,
     # Sort gallery example by file name instead of number of lines (default)
     "within_subsection_order": FileNameSortKey,
+    # "within_subsection_order": FileNameSortKey,
     # directory where function granular galleries are stored
     "backreferences_dir": None,
     # Modules for which function level galleries are created.  In

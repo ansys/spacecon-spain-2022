@@ -1,9 +1,10 @@
 """
-.. _ref_python_tutorial
+.. _ref_python_tutorial:
 
 =====================
 Short Python Tutorial
 =====================
+
 
 In this tutorial, we will introduce very briefly what is Python
 and how to use it.

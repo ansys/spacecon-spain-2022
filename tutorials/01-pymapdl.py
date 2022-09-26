@@ -1,21 +1,13 @@
 """
-.. _ref_pymapdl_tutorial
+.. _ref_pymapdl_tutorial:
 
 ================
 PyMAPDL Tutorial
 ================
 
+
 In this tutorial, we will introduce some of the capabilities of
 PyMAPDL applied to Aerospace students and advocates.
-
-Content
-=======
-
-# To be added
-
-* (Very) short introduction to Python
-* (Very) short introduction to PyAnsys and PyMAPDL
-* (Veeery) Short example on PyMAPDL.
 
 """
 
