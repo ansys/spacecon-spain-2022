@@ -249,11 +249,10 @@ import requests
 
 latitude, longitude = (40.447488, -3.691763)
 
-output = r""
 base_url = r"https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX,T2M_MIN&community=RE&longitude={longitude}&latitude={latitude}&start=20200101&end=20210305&format=JSON"
-
-
-api_request_url = base_url.format(longitude=longitude, latitude=latitude)
+api_request_url = base_url.format(
+    longitude=longitude, latitude=latitude
+)  # Another way to format f-strings!
 
 response = requests.get(url=api_request_url, verify=True, timeout=30.00)
 
