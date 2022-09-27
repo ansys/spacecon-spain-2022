@@ -109,7 +109,7 @@ numpydoc_validation_exclude = {  # set of regex
 html_favicon = "favicon.png"
 
 # static path
-html_static_path = ["_static", "_assets"]
+html_static_path = ["_static"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
