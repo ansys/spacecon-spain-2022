@@ -38,12 +38,12 @@ goto end
 
 :clean-all
 rmdir /s /q %BUILDDIR% > /NUL 2>&1 
-rmdir /s /q source\examples\gallery_examples > /NUL 2>&1 
+rmdir /s /q source\tutorials\ > /NUL 2>&1 
 for /d /r %SOURCEDIR% %%d in (_autosummary) do @if exist "%%d" rmdir /s /q "%%d"
 goto end
 
 :clean-examples
-rmdir /s /q source\examples\gallery_examples > /NUL 2>&1
+rmdir /s /q source\tutorials\ > /NUL 2>&1
 goto end
 
 :help
