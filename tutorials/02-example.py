@@ -439,6 +439,7 @@ time = mapdl.post_processing.time_values
 
 plt.plot(time, node_uy)
 plt.title("Displacement across time at the tip")
+plt.show()
 
 ################################################################################
 
