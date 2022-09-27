@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**04:00.344** total execution time for **tutorials** files:
+**03:56.715** total execution time for **tutorials** files:
 
 +-------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_02-example.py` (``02-example.py``) | 03:55.509 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_02-example.py` (``02-example.py``) | 03:51.284 | 0.0 MB |
 +-------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_01-pymapdl.py` (``01-pymapdl.py``) | 00:04.572 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_01-pymapdl.py` (``01-pymapdl.py``) | 00:05.142 | 0.0 MB |
 +-------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorials_00-python.py` (``00-python.py``)   | 00:00.263 | 0.0 MB |
+| :ref:`sphx_glr_tutorials_00-python.py` (``00-python.py``)   | 00:00.288 | 0.0 MB |
 +-------------------------------------------------------------+-----------+--------+
