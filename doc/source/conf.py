@@ -39,7 +39,7 @@ warnings.filterwarnings(
 
 # -- Project information -----------------------------------------------------
 
-project = f"ansy.mapdl.core.tutorials"
+project = f"ansys.mapdl.core.tutorials"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS Inc."
 
