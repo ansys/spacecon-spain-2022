@@ -303,15 +303,15 @@ to download the full example code</p>
 PyMAPDL applied to Aerospace students and advocates.</p>
 <section id="python-ansys-pyansys">
 <h2>Python + Ansys = PyAnsys<a class="headerlink" href="#python-ansys-pyansys" title="Permalink to this heading">#</a></h2>
-<p>Pyansys is Ansys effort on making their products accessible
+<p>PyAnsys is Ansys effort on making their products accessible
 using Python programming language.</p>
 <p>Today we will focus on PyMAPDL with is the Python library
-which exposes MAPDL (Ansys Structural)</p>
+which exposes MAPDL (Ansys Structural).</p>
 </section>
 <section id="pymapdl">
 <h2>PyMAPDL<a class="headerlink" href="#pymapdl" title="Permalink to this heading">#</a></h2>
 <p>MAPDL provides many tools and features which would require
-A LOT of time to explain, so let’s have a quick overview</p>
+A LOT of time to explain, so let’s have a quick overview.</p>
 <section id="launching-pymapdl">
 <h3>Launching PyMAPDL<a class="headerlink" href="#launching-pymapdl" title="Permalink to this heading">#</a></h3>
 <p>But first, let’s launch PyMAPDL.</p>
@@ -567,8 +567,7 @@ mp(lab=&#39;&#39;, mat=&#39;&#39;, c0=&#39;&#39;, c1=&#39;&#39;, c2=&#39;&#39;, 
 </section>
 <section id="element-definition">
 <h3>Element definition<a class="headerlink" href="#element-definition" title="Permalink to this heading">#</a></h3>
-<p>Since MAPDL is a finite element solver,
-the FE element needs to be defined.
+<p>Since MAPDL is a finite element solver, the type of element needs to be defined.
 Ansys has an <em>Element Guide</em> which contain all the necessary
 information</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">et</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;SOLID186&quot;</span><span class="p">)</span>
@@ -851,7 +850,7 @@ We could apply a force instead if we wish.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  MAPDL SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =       1.917   TIME= 05:32:46
+ *** NOTE ***                            CP =       1.841   TIME= 10:35:35
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -863,7 +862,7 @@ We could apply a force instead if we wish.</p>
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
  Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     05:32:46  SEP 27, 2022 CP=      1.933
+ 00000000  VERSION=LINUX x64     10:35:35  SEP 27, 2022 CP=      1.862
 
 
 
@@ -876,11 +875,11 @@ We could apply a force instead if we wish.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =       1.939   TIME= 05:32:46
+ *** NOTE ***                            CP =       1.868   TIME= 10:35:35
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =       1.944   TIME= 05:32:46
+ *** NOTE ***                            CP =       1.875   TIME= 10:35:35
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -918,8 +917,8 @@ We could apply a force instead if we wish.</p>
    CENTER OF MASS (X,Y,Z)=   0.50000       0.50000       0.50000
 
    TOTAL INERTIA ABOUT CENTER OF MASS
-         1300.0      -0.41069E-11  -0.16058E-11
-       -0.41069E-11    1300.0      -0.72902E-11
+         1300.0      -0.36740E-11  -0.16058E-11
+       -0.36740E-11    1300.0      -0.72902E-11
        -0.16058E-11  -0.72902E-11    1300.0
      The inertia principal axes coincide with the global Cartesian axes
 
@@ -936,8 +935,8 @@ We could apply a force instead if we wish.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.440   0.000440
- Time at end of element matrix formulation CP = 2.29460812.
+        1      1000  SOLID186      0.553   0.000553
+ Time at end of element matrix formulation CP = 2.30964184.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =       14159,    Maximum wavefront =    225
@@ -945,7 +944,7 @@ We could apply a force instead if we wish.</p>
   Memory required for in-core solution     =   108.776 MB
   Memory required for out-of-core solution =    44.000 MB
 
- *** NOTE ***                            CP =       2.655   TIME= 05:32:47
+ *** NOTE ***                            CP =       2.740   TIME= 10:35:35
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -960,12 +959,12 @@ We could apply a force instead if we wish.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.339   0.000339
+        1      1000  SOLID186      0.360   0.000360
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.079   0.000079
+        1      1000  SOLID186      0.083   0.000083
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -1006,7 +1005,7 @@ use them for our calculations. For example:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum displacement is 0.010
 </pre></div>
 </div>
-<p>Oh! By the way, you can format strings as this way, they are very powerful.
+<p>Oh! By the way, you can format strings in this way, they are very powerful.
 This type of string is called f-string. The 0.3f after the colon (:) is the format for the number.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First column is X displacement</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum X displacement is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nodal_disp</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1026,7 +1025,7 @@ The average Z displacement is 0.005
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.320 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.259 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-01-pymapdl-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/57c7d7311e4b5aa46a9cb8eb67aa0b36/01-pymapdl.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-pymapdl.py</span></code></a></p>
