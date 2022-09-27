@@ -36,7 +36,7 @@ and how to use it.
 # What is Python?
 # ~~~~~~~~~~~~~~~
 #
-# Python is a high-level programming language widely used and general-purpose. 
+# Python is a high-level programming language widely used and general-purpose.
 # Python improves code readability compared to other languages and it is very suitable for people starting to code.
 # Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
 # garbage-collected (memory is managed automatically when a variable is no longer used).
@@ -52,9 +52,7 @@ mystring = "text"
 myotherstring = "text"
 myfloat = 2.2
 myint = 2
-mybool = (
-    True  # ``True`` and ``False`` are reserved keywords. As well as ``for``, ``in``, ``as`` and some more.
-)
+mybool = True  # ``True`` and ``False`` are reserved keywords. As well as ``for``, ``in``, ``as`` and some more.
 
 #####################################
 # There are functions such as ``print`` or ``help`` which can be called as:

@@ -54,7 +54,7 @@ using Python programming language.
 What is Python?
 ~~~~~~~~~~~~~~~
 
-Python is a high-level programming language widely used and general-purpose. 
+Python is a high-level programming language widely used and general-purpose.
 Python improves code readability compared to other languages and it is very suitable for people starting to code.
 Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
 garbage-collected (memory is managed automatically when a variable is no longer used).
@@ -67,7 +67,7 @@ Introduction to Python
 Storing variables.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-59
+.. GENERATED FROM PYTHON SOURCE LINES 50-57
 
 .. code-block:: default
 
@@ -76,9 +76,7 @@ Storing variables.
     myotherstring = "text"
     myfloat = 2.2
     myint = 2
-    mybool = (
-        True  # ``True`` and ``False`` are reserved keywords. As well as ``for``, ``in``, ``as`` and some more.
-    )
+    mybool = True  # ``True`` and ``False`` are reserved keywords. As well as ``for``, ``in``, ``as`` and some more.
 
 
 
@@ -87,11 +85,11 @@ Storing variables.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 There are functions such as ``print`` or ``help`` which can be called as:
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-66
+.. GENERATED FROM PYTHON SOURCE LINES 59-64
 
 .. code-block:: default
 
@@ -125,11 +123,11 @@ There are functions such as ``print`` or ``help`` which can be called as:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-68
+.. GENERATED FROM PYTHON SOURCE LINES 65-66
 
 There are other more complex structures such as list, tuples, dicts, etc
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-75
+.. GENERATED FROM PYTHON SOURCE LINES 66-73
 
 .. code-block:: default
 
@@ -154,12 +152,12 @@ There are other more complex structures such as list, tuples, dicts, etc
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-78
+.. GENERATED FROM PYTHON SOURCE LINES 74-76
 
 This is a dict which does a mapping between its
 keys and values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-85
+.. GENERATED FROM PYTHON SOURCE LINES 76-83
 
 .. code-block:: default
 
@@ -183,14 +181,14 @@ keys and values.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-90
+.. GENERATED FROM PYTHON SOURCE LINES 84-88
 
 Control flow in Python
 ~~~~~~~~~~~~~~~~~~~~~~
 
 You can do conditionals (``if``) as the following:
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-105
+.. GENERATED FROM PYTHON SOURCE LINES 88-103
 
 .. code-block:: default
 
@@ -224,7 +222,7 @@ You can do conditionals (``if``) as the following:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-111
+.. GENERATED FROM PYTHON SOURCE LINES 104-109
 
 Loops in python
 ~~~~~~~~~~~~~~~
@@ -232,7 +230,7 @@ Loops in python
 Loops in Python can be done as:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-114
+.. GENERATED FROM PYTHON SOURCE LINES 109-112
 
 .. code-block:: default
 
@@ -254,11 +252,11 @@ Loops in Python can be done as:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-116
+.. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 or
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-119
+.. GENERATED FROM PYTHON SOURCE LINES 114-117
 
 .. code-block:: default
 
@@ -282,11 +280,11 @@ or
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-121
+.. GENERATED FROM PYTHON SOURCE LINES 118-119
 
 there is also 'while' loops
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-126
+.. GENERATED FROM PYTHON SOURCE LINES 119-124
 
 .. code-block:: default
 
@@ -312,11 +310,11 @@ there is also 'while' loops
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-128
+.. GENERATED FROM PYTHON SOURCE LINES 125-126
 
 You can "break" loops using the keyword ``break``
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-140
+.. GENERATED FROM PYTHON SOURCE LINES 126-138
 
 .. code-block:: default
 
@@ -348,7 +346,7 @@ You can "break" loops using the keyword ``break``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-146
+.. GENERATED FROM PYTHON SOURCE LINES 139-144
 
 Importing other libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -356,7 +354,7 @@ Importing other libraries
 You can also import other libraries that expand Python functionalities by
 providing more data structures, functions and/or classes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-151
+.. GENERATED FROM PYTHON SOURCE LINES 144-149
 
 .. code-block:: default
 
@@ -378,11 +376,11 @@ providing more data structures, functions and/or classes.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-153
+.. GENERATED FROM PYTHON SOURCE LINES 150-151
 
 You can also import modules/functions from libraries
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-157
+.. GENERATED FROM PYTHON SOURCE LINES 151-155
 
 .. code-block:: default
 
@@ -403,11 +401,11 @@ You can also import modules/functions from libraries
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-159
+.. GENERATED FROM PYTHON SOURCE LINES 156-157
 
 You can import a library giving it another name
 
-.. GENERATED FROM PYTHON SOURCE LINES 159-163
+.. GENERATED FROM PYTHON SOURCE LINES 157-161
 
 .. code-block:: default
 
@@ -428,7 +426,7 @@ You can import a library giving it another name
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-170
+.. GENERATED FROM PYTHON SOURCE LINES 162-168
 
 Numpy and Matplotlib
 ~~~~~~~~~~~~~~~~~~~~
@@ -437,7 +435,7 @@ Some of the most used Python libraries are: Numpy and Matplotlib.
 The first one is for numerical calculations and the second is
 for plotting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-184
+.. GENERATED FROM PYTHON SOURCE LINES 168-182
 
 .. code-block:: default
 
@@ -469,11 +467,11 @@ for plotting.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-186
+.. GENERATED FROM PYTHON SOURCE LINES 183-184
 
 You can index elements using square brackets:
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-191
+.. GENERATED FROM PYTHON SOURCE LINES 184-189
 
 .. code-block:: default
 
@@ -495,11 +493,11 @@ You can index elements using square brackets:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-193
+.. GENERATED FROM PYTHON SOURCE LINES 190-191
 
 For plotting you can use matplotlib
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-200
+.. GENERATED FROM PYTHON SOURCE LINES 191-198
 
 .. code-block:: default
 
@@ -522,12 +520,12 @@ For plotting you can use matplotlib
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 201-203
+.. GENERATED FROM PYTHON SOURCE LINES 199-201
 
 You can do multiple lines at once.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-209
+.. GENERATED FROM PYTHON SOURCE LINES 201-207
 
 .. code-block:: default
 
@@ -549,7 +547,7 @@ You can do multiple lines at once.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-221
+.. GENERATED FROM PYTHON SOURCE LINES 211-219
 
 Plotting a NACA airfoil
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -560,7 +558,7 @@ Ok, let me show you:
 Reference: https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-digit_NACA_airfoil
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-277
+.. GENERATED FROM PYTHON SOURCE LINES 219-275
 
 .. code-block:: default
 
@@ -632,11 +630,11 @@ Reference: https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 278-279
+.. GENERATED FROM PYTHON SOURCE LINES 276-277
 
 **Cool stuff uh?**
 
-.. GENERATED FROM PYTHON SOURCE LINES 281-292
+.. GENERATED FROM PYTHON SOURCE LINES 279-290
 
 Brief Python classes concept
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -650,7 +648,7 @@ A class is an object in a programming language which
 In Python everything you declare is considered an object, and hence they have some methods.
 For example strings have:
 
-.. GENERATED FROM PYTHON SOURCE LINES 292-295
+.. GENERATED FROM PYTHON SOURCE LINES 290-293
 
 .. code-block:: default
 
@@ -670,11 +668,11 @@ For example strings have:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 296-297
+.. GENERATED FROM PYTHON SOURCE LINES 294-295
 
 You can list the methods of an object using ``dir``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 297-299
+.. GENERATED FROM PYTHON SOURCE LINES 295-297
 
 .. code-block:: default
 
@@ -693,7 +691,7 @@ You can list the methods of an object using ``dir``:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 300-304
+.. GENERATED FROM PYTHON SOURCE LINES 298-302
 
 You can create your own class and inherit from it.
 
@@ -703,7 +701,7 @@ commands and more.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.446 seconds)
+   **Total running time of the script:** ( 0 minutes  0.328 seconds)
 
 
 .. _sphx_glr_download_tutorials_00-python.py:
