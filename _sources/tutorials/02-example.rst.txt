@@ -26,7 +26,49 @@ A full PyMAPDL example
 
 Let's see a full PyMAPDL example!
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-13
+We will reuse some of the code we used to plot the section of a NACA airfoil.
+With this section we will create a simple and straight wing where we will apply
+some constrains and loads.
+
+The idea is you can have an idea on how to use PyMAPDL together with other
+Python libraries for your own purposes (TFG? TFM? PhD?)
+
+.. GENERATED FROM PYTHON SOURCE LINES 20-24
+
+Setting up the environment
+==========================
+First, let's do some imports
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 24-30
+
+.. code-block:: default
+
+
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    from ansys.mapdl.core import launch_mapdl
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
+
+and let's launch PyMAPDL.
+
+.. GENERATED FROM PYTHON SOURCE LINES 32-36
+
+.. code-block:: default
+
+
+    mapdl = launch_mapdl()
+    mapdl.prep7()
+
 
 
 
@@ -35,24 +77,1276 @@ Let's see a full PyMAPDL example!
 
  .. code-block:: none
 
-    Under construction!
+
+    *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
+     Ansys Mechanical Enterprise                       
+     00000000  VERSION=LINUX x64     14:47:06  SEP 27, 2022 CP=      3.195
+
+                                                                               
 
 
 
+              ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
 
 
 
-|
+.. GENERATED FROM PYTHON SOURCE LINES 37-45
+
+Geometry definition
+===================
+
+In the previous part of the talk we showed how to use some
+Python functions to plot a NACA airfoil.
+Here we will reuse those functions to generate the same
+section inside PyMAPDL.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 45-87
 
 .. code-block:: default
 
 
-    print("Under construction!")
+    # Helper functions
+    def camber_line(x, m, p, c):
+        return np.where(
+            (x >= 0) & (x <= (c * p)),
+            m * (x / np.power(p, 2)) * (2.0 * p - (x / c)),
+            m * ((c - x) / np.power(1 - p, 2)) * (1.0 + (x / c) - 2.0 * p),
+        )
+
+
+    def dyc_over_dx(x, m, p, c):
+        return np.where(
+            (x >= 0) & (x <= (c * p)),
+            ((2.0 * m) / np.power(p, 2)) * (p - x / c),
+            ((2.0 * m) / np.power(1 - p, 2)) * (p - x / c),
+        )
+
+
+    def thickness(x, t, c):
+        term1 = 0.2969 * (np.sqrt(x / c))
+        term2 = -0.1260 * (x / c)
+        term3 = -0.3516 * np.power(x / c, 2)
+        term4 = 0.2843 * np.power(x / c, 3)
+        term5 = -0.1015 * np.power(x / c, 4)
+        return 5 * t * c * (term1 + term2 + term3 + term4 + term5)
+
+
+    def naca4(x, m, p, t, c=1):
+        dyc_dx = dyc_over_dx(x, m, p, c)
+        th = np.arctan(dyc_dx)
+        yt = thickness(x, t, c)
+        yc = camber_line(x, m, p, c)
+
+        # We are tuning a bit the output of this function to facilitate later processing.
+        x = x - yt * np.sin(th)
+        x = np.concatenate((x, x + yt * np.sin(th)), axis=0)
+
+        y = yc + yt * np.cos(th)
+        y = np.concatenate((y, yc - yt * np.cos(th)), axis=0)
+        return x, y
+
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 88-90
+
+NACA Parameters for naca2412
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 90-95
+
+.. code-block:: default
+
+    m = 0.02
+    p = 0.4
+    t = 0.12
+    c = 1.0
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 96-98
+
+Generating NACA points for the section.
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 98-103
+
+.. code-block:: default
+
+    npoints = 50  # Increase this number to increase smoothness.
+    x_ = np.linspace(0, 1, npoints)
+    x, y = naca4(x_, m, p, t, c)
+
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 104-107
+
+Generating keypoints
+--------------------
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 107-113
+
+.. code-block:: default
+
+    mapdl.clear()
+    mapdl.prep7()
+
+    for each_x, each_y in zip(x, y):
+        mapdl.k("", each_x, each_y)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-116
+
+Checking results
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
+
+.. code-block:: default
+
+
+    mapdl.kplot()
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_001.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 120-124
+
+Generate lines from the points
+------------------------------
+Because of the helper functions give us two points per x-coordenate,
+we need to join those points in two times:
+
+.. GENERATED FROM PYTHON SOURCE LINES 124-135
+
+.. code-block:: default
+
+
+    half = len(mapdl.geometry.knum) // 2
+
+    # Upper half points
+    for kp in mapdl.geometry.knum[: half - 1]:
+        mapdl.l(kp, kp + 1)
+
+    # Lower half points
+    for kp in mapdl.geometry.knum[half + 1 : -1]:
+        mapdl.l(kp, kp + 1)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 136-137
+
+Closing the section
+
+.. GENERATED FROM PYTHON SOURCE LINES 137-142
+
+.. code-block:: default
+
+    mapdl.l(1, half + 2)
+    mapdl.l(half, mapdl.geometry.knum[-1])
+
+    mapdl.nummrg("kp", 0.1)  # Remove duplicate keypoints if any
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.10000    
+
+     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     Keypoints 1 and 2 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 3.146864964E-02) exceeds the           
+      tolerance ( 3.146864964E-07).                                          
+
+     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     Keypoints 1 and 3 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 5.248710857E-02) exceeds the           
+      tolerance ( 2.241384605E-07).                                          
+
+     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     Keypoints 1 and 4 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 7.289725402E-02) exceeds the           
+      tolerance ( 2.155698642E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 1 and 5 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 9.313507449E-02) exceeds the           
+      tolerance ( 2.121503862E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 1 and 6 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.113308848) exceeds the               
+      tolerance ( 2.103681832E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 7 and 56 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.100044417) exceeds the               
+      tolerance ( 2.05256279E-07).                                           
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 7 and 57 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.100249936) exceeds the               
+      tolerance ( 2.046989231E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 7 and 58 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.104096554) exceeds the               
+      tolerance ( 2.043941462E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 7 and 59 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.111282145) exceeds the               
+      tolerance ( 2.042261826E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 7 and 60 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 0.12126607) exceeds the                
+      tolerance ( 2.041371226E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 8 and 9 cannot be merged because:                             
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 2.081774221E-02) exceeds the           
+      tolerance ( 2.081774221E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 8 and 10 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 4.160104697E-02) exceeds the           
+      tolerance ( 2.078632553E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 8 and 11 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 6.235743644E-02) exceeds the           
+      tolerance ( 2.076424706E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 8 and 12 cannot be merged because:                            
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 8.309221978E-02) exceeds the           
+      tolerance ( 2.074861222E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 61 and 62 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 2.040819495E-02) exceeds the           
+      tolerance ( 2.040858385E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 61 and 63 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 4.081643722E-02) exceeds the           
+      tolerance ( 2.040996261E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 61 and 64 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 6.122558417E-02) exceeds the           
+      tolerance ( 2.041185603E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 61 and 65 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 8.16361381E-02) exceeds the            
+      tolerance ( 2.041394947E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 13 and 14 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 2.072979806E-02) exceeds the           
+      tolerance ( 2.072979806E-07).                                          
+
+     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     Keypoints 13 and 15 cannot be merged because:                           
+      (1) One or both of them belong to lines.                               
+      (2) The distance between them ( 4.145299864E-02) exceeds the           
+      tolerance ( 2.072447958E-07).                                          
+
+     ************************************************************************
+     The number of ERROR and WARNING messages exceeds 20.                    
+     Additional messages suppressed.  See ( /file.err ) for suppressed       
+     messages.                                                               
+     ************************************************************************
+     KEYPOINT      1 USED FOR KEYPOINT(S)      51
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 143-144
+
+Let's check the results
+
+.. GENERATED FROM PYTHON SOURCE LINES 144-146
+
+.. code-block:: default
+
+    mapdl.lplot()
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_002.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 147-151
+
+Create section area
+-------------------
+Let's create an area from those lines:
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 151-154
+
+.. code-block:: default
+
+    mapdl.lsel("all")
+    mapdl.al("all")
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    1
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 155-160
+
+Create volume from extruding the area
+-------------------------------------
+
+We are going to use the command ``mapdl.vdrag`` to create a volume by dragging
+an area along a line.
+
+.. GENERATED FROM PYTHON SOURCE LINES 160-162
+
+.. code-block:: default
+
+    help(mapdl.vdrag)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    Help on method vdrag in module ansys.mapdl.core._commands.preproc.volumes:
+
+    vdrag(na1='', na2='', na3='', na4='', na5='', na6='', nlp1='', nlp2='', nlp3='', nlp4='', nlp5='', nlp6='', **kwargs) -> str method of ansys.mapdl.core.mapdl_grpc.MapdlGrpc instance
+        Generate volumes by dragging an area pattern along a path.
+    
+        APDL Command: VDRAG
+    
+        Parameters
+        ----------
+        na1, na2, na3, . . . , na6
+            List of areas in the pattern to be dragged (6 maximum if
+            using keyboard entry).  If NA1 = ALL, all selected areas
+            will be swept along the path.  A component name may also
+            be substituted for NA1.
+    
+        nlp1, nlp2, nlp3, . . . , nlp6
+            List of lines defining the path along which the pattern is
+            to be dragged (6 maximum if using keyboard entry).  Must
+            be a continuous set of lines.  To be continuous, adjacent
+            lines must share the connecting keypoint (the end keypoint
+            of one line must also be first keypoint of the next line).
+    
+        Returns
+        -------
+        str
+            MAPDL command output.
+    
+        Notes
+        -----
+        Generates volumes (and their corresponding keypoints, lines,
+        and areas) by sweeping a given area pattern along a
+        characteristic drag path.  If the drag path consists of
+        multiple lines, the drag direction is determined by the
+        sequence in which the path lines are input (NLP1, NLP2, etc.).
+        If the drag path is a single line (NLP1), the drag direction
+        is from the keypoint on the drag line that is closest to the
+        first keypoint of the given area pattern to the other end of
+        the drag line.
+    
+        The magnitude of the vector between the keypoints of the given
+        pattern and the first path keypoint remains constant for all
+        generated keypoint patterns and the path keypoints.  The
+        direction of the vector relative to the path slope also
+        remains constant so that patterns may be swept around curves.
+        Lines are generated with the same shapes as the given pattern
+        and the path lines.
+    
+        Keypoint, line, area, and volume numbers are automatically
+        assigned (beginning with the lowest available values
+        [NUMSTR]).  Adjacent lines use a common keypoint, adjacent
+        areas use a common line, and adjacent volumes use a common
+        area.  For best results, the entities to be dragged should be
+        orthogonal to the start of the drag path.  Drag operations
+        that produce an error message may create some of the desired
+        entities prior to terminating.
+    
+        If element attributes have been associated with the input area
+        via the AATT command, the opposite area generated by the VDRAG
+        operation will also have those attributes (i.e., the element
+        attributes from the input area are copied to the opposite
+        area).  Note that only the area opposite the input area will
+        have the same attributes as the input area; the areas adjacent
+        to the input area will not.
+    
+        If the input areas are meshed or belong to a meshed volume,
+        the area(s) can be extruded to a 3-D mesh.  Note that the NDIV
+        argument of the ESIZE command should be set before extruding
+        the meshed areas.  Alternatively, mesh divisions can be
+        specified directly on the drag line(s) (LESIZE).  See the
+        Modeling and Meshing Guide for more information.
+    
+        You can use the VDRAG command to generate 3-D interface
+        element meshes for elements INTER194 and INTER195. When
+        generating interface element meshes using VDRAG, you must
+        specify the line divisions to generate one interface element
+        directly on the drag line using the LESIZE command.  The
+        source area to be extruded becomes the bottom surface of the
+        interface element. Interface elements must be extruded in what
+        will become the element's local x direction, that is, bottom
+        to top.
+    
+        Examples
+        --------
+        Create a square with a hole in it and drag it along an arc.
+    
+        >>> anum0 = mapdl.blc4(0, 0, 1, 1)
+        >>> anum1 = mapdl.blc4(0.25, 0.25, 0.5, 0.5)
+        >>> aout = mapdl.asba(anum0, anum1)
+        >>> k0 = mapdl.k("", 0, 0, 0)
+        >>> k1 = mapdl.k("", 1, 0, 1)
+        >>> k2 = mapdl.k("", 1, 0, 0)
+        >>> l0 = mapdl.larc(k0, k1, k2, 2)
+        >>> output = mapdl.vdrag(aout, nlp1=l0)
+        >>> print(output)
+        DRAG AREAS
+          3,
+        ALONG LINES
+          9
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 163-164
+
+First, let's define the lince we are going to use to drag the area along.
+
+.. GENERATED FROM PYTHON SOURCE LINES 164-171
+
+.. code-block:: default
+
+    lenght_wing = 4  # [m] MAPDL is unit agnostic.
+
+    k0 = mapdl.k("", 0, 0, 0)
+    kz = mapdl.k("", 0, 0, lenght_wing)
+
+    ldrag = mapdl.l(k0, kz)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 172-173
+
+Create the volume
+
+.. GENERATED FROM PYTHON SOURCE LINES 173-175
+
+.. code-block:: default
+
+    vol0 = mapdl.vdrag("all", nlp1=ldrag)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 176-177
+
+Let's check the results
+
+.. GENERATED FROM PYTHON SOURCE LINES 177-180
+
+.. code-block:: default
+
+    mapdl.vplot()
+
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_003.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 181-189
+
+Finite element definition
+=========================
+
+As you all know, finite element approaches split the domains into "finite elements"
+where you solve your equations in their quadrature points.
+Therefore, we need to define how that domain split is going to be perform, aka
+"choosing element type".
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 189-193
+
+.. code-block:: default
+
+
+    # Defining element type
+    mapdl.et(1, "SOLID187")
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    1
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 194-196
+
+Here we could also define other element options using the ``mapdl.keyopt``
+command.
+
+.. GENERATED FROM PYTHON SOURCE LINES 199-206
+
+Material definition
+===================
+
+Let's define the material our wing is made off. We are going to choose steel
+in its simplest configuration (elastic linear material). But you could define
+other parameters (plasticity, fatige, viscoelasticity, etc).
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 206-212
+
+.. code-block:: default
+
+
+    # Define a material (nominal steel in SI)
+    mapdl.mp("EX", 1, 210e9)  # Elastic moduli in Pa (kg/(m*s**2))
+    mapdl.mp("DENS", 1, 7800)  # Density in kg/m3
+    mapdl.mp("NUXY", 1, 0.3)  # Poisson's Ratio
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    MATERIAL          1     NUXY =  0.3000000
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 213-217
+
+Mesh Generation
+===============
+
+Let's finally split the domain:
+
+.. GENERATED FROM PYTHON SOURCE LINES 217-222
+
+.. code-block:: default
+
+    maximum_element_size = 1 / 20
+    mapdl.esize(maximum_element_size)
+
+    mapdl.vmesh("all")  # Mesh
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES  
+
+     NUMBER OF VOLUMES MESHED   =         1
+     MAXIMUM NODE NUMBER        =     87489
+     MAXIMUM ELEMENT NUMBER     =     52941
+
+     ------------------------------------------------------------------------------
+                <<<<<<          SHAPE TESTING SUMMARY           >>>>>>
+                <<<<<<       FOR NEW OR MODIFIED ELEMENTS       >>>>>>
+     ------------------------------------------------------------------------------
+                        --------------------------------------
+                        |  Element count     52941 SOLID187  |
+                        --------------------------------------
+
+      Test                Number tested  Warning count  Error count    Warn+Err %
+      ----                -------------  -------------  -----------    ----------
+      Aspect Ratio              52941            297             0         0.56 %
+      Maximum Angle             52941            116             0         0.22 %
+      Jacobian Ratio            52941              0             0         0.00 %
+
+      Any                       52941            349             0         0.66 %
+     ------------------------------------------------------------------------------
+
+     *** WARNING ***                         CP =       9.688   TIME= 14:47:15
+     Shape testing revealed that 349 of the 52941 new or modified elements   
+     violate shape warning limits.  To review test results, please see the   
+     output file or issue the CHECK command.
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 223-224
+
+Let's check the results:
+
+.. GENERATED FROM PYTHON SOURCE LINES 224-227
+
+.. code-block:: default
+
+    mapdl.eplot()
+
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_004.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_004.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 228-232
+
+Boundary Conditions Definition
+==============================
+
+Let's fix the nodes at the origin to not move.
+
+.. GENERATED FROM PYTHON SOURCE LINES 232-236
+
+.. code-block:: default
+
+
+    mapdl.nsel("s", "loc", "z", 0)
+    mapdl.d("all", "all", 0)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
+     REAL=  0.00000000       IMAG=  0.00000000    
+     ADDITIONAL DOFS=  UY    UZ
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 237-247
+
+Wind Excitation
+---------------
+
+Let's apply a wind excitation.
+
+However, we don't really know what wind apply, so let's pull some online data first.
+Use
+
+From: https://power.larc.nasa.gov/data-access-viewer/
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 247-269
+
+.. code-block:: default
+
+
+    import json
+
+    import pandas as pd
+    import requests
+
+    latitude, longitude = (40.447488, -3.691763)
+    parameters = ["T2M_MAX", "T2M_MIN"]
+
+    base_url = r"https://power.larc.nasa.gov/api/temporal/daily/point?parameters={parameters}&community=RE&longitude={longitude}&latitude={latitude}&start=20200101&end=20210305&format=JSON"
+    api_request_url = base_url.format(
+        longitude=longitude, latitude=latitude, parameters=",".join(parameters)
+    )  # Another way to format f-strings!
+
+    response = requests.get(url=api_request_url, verify=True, timeout=30.00)
+
+    content = json.loads(response.content.decode("utf-8"))
+    df = pd.DataFrame(content["properties"]["parameter"])
+
+    df = df.set_index(
+        pd.to_datetime(df.index, format="%Y%m%d")
+    )  # Formatting dataframe index as date.
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 270-271
+
+Let's see the data
+
+.. GENERATED FROM PYTHON SOURCE LINES 271-273
+
+.. code-block:: default
+
+    df.head()
+
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>T2M_MAX</th>
+          <th>T2M_MIN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>2020-01-01</th>
+          <td>11.52</td>
+          <td>0.32</td>
+        </tr>
+        <tr>
+          <th>2020-01-02</th>
+          <td>10.33</td>
+          <td>0.50</td>
+        </tr>
+        <tr>
+          <th>2020-01-03</th>
+          <td>8.28</td>
+          <td>0.21</td>
+        </tr>
+        <tr>
+          <th>2020-01-04</th>
+          <td>10.68</td>
+          <td>0.44</td>
+        </tr>
+        <tr>
+          <th>2020-01-05</th>
+          <td>11.88</td>
+          <td>-1.61</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 274-275
+
+and describe it...
+
+.. GENERATED FROM PYTHON SOURCE LINES 275-277
+
+.. code-block:: default
+
+    df.describe()
+
+
+
+
+
+
+.. raw:: html
+
+    <div class="output_subarea output_html rendered_html output_result">
+    <div>
+    <style scoped>
+        .dataframe tbody tr th:only-of-type {
+            vertical-align: middle;
+        }
+
+        .dataframe tbody tr th {
+            vertical-align: top;
+        }
+
+        .dataframe thead th {
+            text-align: right;
+        }
+    </style>
+    <table border="1" class="dataframe">
+      <thead>
+        <tr style="text-align: right;">
+          <th></th>
+          <th>T2M_MAX</th>
+          <th>T2M_MIN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>count</th>
+          <td>430.000000</td>
+          <td>430.000000</td>
+        </tr>
+        <tr>
+          <th>mean</th>
+          <td>18.896744</td>
+          <td>7.028326</td>
+        </tr>
+        <tr>
+          <th>std</th>
+          <td>9.354319</td>
+          <td>6.669664</td>
+        </tr>
+        <tr>
+          <th>min</th>
+          <td>-0.430000</td>
+          <td>-12.030000</td>
+        </tr>
+        <tr>
+          <th>25%</th>
+          <td>11.947500</td>
+          <td>2.302500</td>
+        </tr>
+        <tr>
+          <th>50%</th>
+          <td>16.345000</td>
+          <td>5.880000</td>
+        </tr>
+        <tr>
+          <th>75%</th>
+          <td>25.737500</td>
+          <td>11.770000</td>
+        </tr>
+        <tr>
+          <th>max</th>
+          <td>39.390000</td>
+          <td>22.990000</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 278-279
+
+Let's plot it...
+
+.. GENERATED FROM PYTHON SOURCE LINES 279-306
+
+.. code-block:: default
+
+    df.plot(title="Wind speed per day")
+
+    Total_time_sample = 60  # [s]
+    Amplitude = [10]  # 30, 80, 200]
+    frequencies = [10, 16, 27, 34]
+    phase = np.random.random(size=len(frequencies)) * 2 * np.pi
+
+
+    def wind_speed(t):
+        # https://www.jstage.jst.go.jp/article/jsmeb/47/2/47_2_378/_pdf
+        sum_ = 0
+        for each_amp, each_w, each_phase in zip(Amplitude, frequencies, phase):
+            sum_ = sum_ + np.sqrt((2 * each_amp) / Total_time_sample) * np.cos(
+                each_w * t + each_phase
+            )
+        return sum_
+
+
+    t = np.arange(0, 60, 0.1)
+
+    plt.plot(t, wind_speed(t))
+    plt.show()
+
+    mapdl.nsel("s", "loc", "z", 4)
+    mapdl.d("all", "ux", 0.01)
+
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_005.png
+   :alt: Wind speed per day
+   :srcset: /tutorials/images/sphx_glr_02-example_005.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
+     REAL= 1.000000000E-02   IMAG=  0.00000000
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 307-309
+
+Model solution
+==============
+
+.. GENERATED FROM PYTHON SOURCE LINES 309-316
+
+.. code-block:: default
+
+
+    mapdl.slashsolu()
+    mapdl.allsel()  # making sure all nodes and elements are selected.
+    mapdl.antype("STATIC")
+    output = mapdl.solve()
+    print(output)
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    *****  MAPDL SOLVE    COMMAND  *****
+
+     *** NOTE ***                            CP =      10.549   TIME= 14:47:18
+     There is no title defined for this analysis.                            
+
+     *** WARNING ***                         CP =      10.673   TIME= 14:47:18
+     Previous testing revealed that 349 of the 52941 selected elements       
+     violate shape warning limits.  To review warning messages, please see   
+     the output or error file, or issue the CHECK command.                   
+
+     *** NOTE ***                            CP =      10.673   TIME= 14:47:18
+     The model data was checked and warning messages were found.             
+      Please review output or errors file ( /file.err ) for these warning    
+     messages.                                                               
+
+     *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                    ---GIVE SUGGESTIONS ONLY---
+
+     ELEMENT TYPE         1 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
+     HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE.
+
+
+
+     *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
+     Ansys Mechanical Enterprise                       
+     00000000  VERSION=LINUX x64     14:47:18  SEP 27, 2022 CP=     10.696
+
+                                                                               
+
+
+
+                           S O L U T I O N   O P T I O N S
+
+       PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+       DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+       ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+       GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+     *** NOTE ***                            CP =      10.762   TIME= 14:47:18
+     Present time 0 is less than or equal to the previous time.  Time will   
+     default to 1.                                                           
+
+     *** NOTE ***                            CP =      10.763   TIME= 14:47:18
+     The conditions for direct assembly have been met.  No .emat or .erot    
+     files will be produced.                                                 
+
+                          L O A D   S T E P   O P T I O N S
+
+       LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+       TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+       NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+       STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+       PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+       DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+                                                      FOR THE LAST SUBSTEP
+
+
+     SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+
+
+                             ***********  PRECISE MASS SUMMARY  ***********
+
+       TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+                   Translational mass               |   Coupled translational/rotational mass
+             2563.9        0.0000        0.0000     |     0.0000        5127.7       -39.887    
+             0.0000        2563.9        0.0000     |    -5127.7        0.0000        1079.5    
+             0.0000        0.0000        2563.9     |     39.887       -1079.5        0.0000    
+         ------------------------------------------ | ------------------------------------------
+                                                    |         Rotational mass (inertia)
+                                                    |     13677.       -17.014       -2159.0    
+                                                    |    -17.014        14270.       -79.774    
+                                                    |    -2159.0       -79.774        598.57    
+
+       TOTAL MASS =  2563.9    
+         The mass principal axes coincide with the global Cartesian axes
+
+       CENTER OF MASS (X,Y,Z)=   0.42105       0.15557E-01    2.0000    
+
+       TOTAL INERTIA ABOUT CENTER OF MASS
+             3420.7      -0.21945       0.12432E-10
+           -0.21945        3559.7       0.75421E-12
+            0.12432E-10   0.75421E-12    143.42    
+         The inertia principal axes coincide with the global Cartesian axes
+
+
+      *** MASS SUMMARY BY ELEMENT TYPE ***
+
+      TYPE      MASS
+         1   2563.86    
+
+     Range of element maximum matrix coefficients in global coordinates
+     Maximum = 8.031780944E+10 at element 35281.                             
+     Minimum = 1.625616571E+09 at element 29909.                             
+
+       *** ELEMENT MATRIX FORMULATION TIMES
+         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+            1     52941  SOLID187      6.417   0.000121
+     Time at end of element matrix formulation CP = 15.1354027.              
+
+     SPARSE MATRIX DIRECT SOLVER.
+      Number of equations =      257727,    Maximum wavefront =    252
+
+     *** NOTE ***                            CP =      18.093   TIME= 14:47:24
+     The initial memory allocation (-m) has been exceeded.                   
+      Supplemental memory allocations are being used.                        
+      Memory allocated for solver              =  1573.899 MB
+      Memory required for in-core solution     =  1507.390 MB
+      Memory required for out-of-core solution =   427.344 MB
+
+     *** NOTE ***                            CP =      18.093   TIME= 14:47:24
+     The Sparse Matrix Solver is currently running in the in-core memory     
+     mode.  This memory mode uses the most amount of memory in order to      
+     avoid using the hard drive as much as possible, which most often        
+     results in the fastest solution time.  This mode is recommended if      
+     enough physical memory is present to accommodate all of the solver      
+     data.                                                                   
+     Sparse solver maximum pivot= 1.229541413E+11 at node 16621 UY.          
+     Sparse solver minimum pivot= 6388116.47 at node 40650 UY.               
+     Sparse solver minimum pivot in absolute value= 6388116.47 at node 40650 
+     UY.                                                                     
+
+       *** ELEMENT RESULT CALCULATION TIMES
+         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+            1     52941  SOLID187      7.006   0.000132
+
+       *** NODAL LOAD CALCULATION TIMES
+         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+            1     52941  SOLID187      2.253   0.000043
+     *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+     *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+     *** MAPDL BINARY FILE STATISTICS
+      BUFFER SIZE USED= 16384
+          129.625 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+           41.750 MB WRITTEN ON RESULTS FILE: file.rst
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 317-321
+
+Post-processing
+===============
+
+Let's see what we got. Let's print the displacements:
+
+.. GENERATED FROM PYTHON SOURCE LINES 321-323
+
+.. code-block:: default
+
+    mapdl.post_processing.nodal_displacement("all")
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+
+    array([[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
+           [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
+           [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
+           ...,
+           [ 9.67456831e-03, -9.08711022e-04, -1.56431904e-03],
+           [ 2.57723832e-04, -6.31377622e-06, -4.24160934e-04],
+           [ 5.58219299e-03, -5.00726091e-04, -1.77010093e-03]])
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 324-326
+
+and let's plot them
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 326-328
+
+.. code-block:: default
+
+    mapdl.post_processing.plot_nodal_displacement("x")
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_006.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_006.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 332-337
+
+Closing session
+===============
+
+Thank you all for your time and attention!
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 337-338
+
+.. code-block:: default
+
+    mapdl.exit()
+
+
+
+
+
+
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.001 seconds)
+   **Total running time of the script:** ( 0 minutes  26.044 seconds)
 
 
 .. _sphx_glr_download_tutorials_02-example.py:

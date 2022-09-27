@@ -872,7 +872,7 @@ Let's do a simple static analysis
 
     *****  MAPDL SOLVE    COMMAND  *****
 
-     *** NOTE ***                            CP =       1.386   TIME= 14:19:30
+     *** NOTE ***                            CP =       1.338   TIME= 14:47:01
      There is no title defined for this analysis.                            
 
      *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -884,7 +884,7 @@ Let's do a simple static analysis
 
      *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
      Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     14:19:30  SEP 27, 2022 CP=      1.404
+     00000000  VERSION=LINUX x64     14:47:01  SEP 27, 2022 CP=      1.351
 
                                                                                
 
@@ -897,11 +897,11 @@ Let's do a simple static analysis
        ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
        GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
-     *** NOTE ***                            CP =       1.410   TIME= 14:19:30
+     *** NOTE ***                            CP =       1.356   TIME= 14:47:01
      Present time 0 is less than or equal to the previous time.  Time will   
      default to 1.                                                           
 
-     *** NOTE ***                            CP =       1.416   TIME= 14:19:30
+     *** NOTE ***                            CP =       1.360   TIME= 14:47:01
      The conditions for direct assembly have been met.  No .emat or .erot    
      files will be produced.                                                 
 
@@ -957,8 +957,8 @@ Let's do a simple static analysis
        *** ELEMENT MATRIX FORMULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.478   0.000478
-     Time at end of element matrix formulation CP = 1.7746768.               
+            1      1000  SOLID186      0.269   0.000269
+     Time at end of element matrix formulation CP = 1.60681188.              
 
      SPARSE MATRIX DIRECT SOLVER.
       Number of equations =       14159,    Maximum wavefront =    225
@@ -966,7 +966,7 @@ Let's do a simple static analysis
       Memory required for in-core solution     =   108.776 MB
       Memory required for out-of-core solution =    44.000 MB
 
-     *** NOTE ***                            CP =       2.109   TIME= 14:19:31
+     *** NOTE ***                            CP =       1.948   TIME= 14:47:02
      The Sparse Matrix Solver is currently running in the in-core memory     
      mode.  This memory mode uses the most amount of memory in order to      
      avoid using the hard drive as much as possible, which most often        
@@ -981,12 +981,12 @@ Let's do a simple static analysis
        *** ELEMENT RESULT CALCULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.382   0.000382
+            1      1000  SOLID186      0.216   0.000216
 
        *** NODAL LOAD CALCULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.098   0.000098
+            1      1000  SOLID186      0.047   0.000047
      *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
      *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -1133,7 +1133,7 @@ Closing PyMAPDL session
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.557 seconds)
+   **Total running time of the script:** ( 0 minutes  5.419 seconds)
 
 
 .. _sphx_glr_download_tutorials_01-pymapdl.py:
