@@ -161,7 +161,7 @@ help(mapdl.vdrag)
 
 #################################################################################
 # First, let's define the lince we are going to use to drag the area along.
-lenght_wing = 4  # [m] MAPDL is unit agnostic.
+lenght_wing = 1.5  # [m] MAPDL is unit agnostic.
 
 k0 = mapdl.k("", 0, 0, 0)
 kz = mapdl.k("", 0, 0, lenght_wing)
@@ -237,10 +237,21 @@ mapdl.d("all", "all", 0)
 # Wind Excitation
 # ---------------
 #
-# Let's apply a wind excitation.
+# Let's apply a excitation to our wing. However, we don't really know what win
+# speed to apply, so let's pull some online data first.
 #
-# However, we don't really know what wind apply, so let's pull some online data first.
-# Use
+# We are going to retrieve some data from NASA regarding the wind speed at
+# Ansys Madrid office in Paseo de la castellana.
+#
+# .. figure:: ../images/office1.jpg
+#     :width: 600px
+#     :align: center
+#     :alt: Madrid office
+#     :figclass: align-center
+#
+#     Paseo de la castella Ansys office (Madrid). Yes, we love coffee.
+#
+#
 #
 # From: https://power.larc.nasa.gov/data-access-viewer/
 #
@@ -263,9 +274,11 @@ response = requests.get(url=api_request_url, verify=True, timeout=30.00)
 content = json.loads(response.content.decode("utf-8"))
 df = pd.DataFrame(content["properties"]["parameter"])
 
+df.columns = ["MAX", "MIN"]  # renaming columns
 df = df.set_index(
     pd.to_datetime(df.index, format="%Y%m%d")
 )  # Formatting dataframe index as date.
+
 #######################################################
 # Let's see the data
 df.head()
@@ -273,35 +286,78 @@ df.head()
 ######################################################
 # and describe it...
 df.describe()
+######################################################
+# We see there are negative wind speed, probably because of the direction,
+# since we are not interested in direction, only magnitude,
+# let's use the absolute value then.
+#
+df = df.abs()
 
 ######################################################
 # Let's plot it...
-df.plot(title="Wind speed per day")
+_ = df.plot(title="Wind speed per day")
 
-Total_time_sample = 60  # [s]
-Amplitude = [10]  # 30, 80, 200]
-frequencies = [10, 16, 27, 34]
+########################################################
+# As we can see, the most frequent maximum speeds are:
+_ = df["MAX"].hist(bins=20)
+
+########################################################
+# As we can see, we could stablish there are two main peaks,
+# one at 15 m/s and another at 33 m/s.
+#
+# Let's generate some random wind signal with those speeds.
+# We are going to do a superposition of harmonics:
+#
+
+amplitude = [15, 33]
+frequencies = (
+    np.array([10, 16]) * 2 * np.pi
+)  # Typical wind frequencies range between 2 and 20 Hz
 phase = np.random.random(size=len(frequencies)) * 2 * np.pi
 
 
 def wind_speed(t):
-    # https://www.jstage.jst.go.jp/article/jsmeb/47/2/47_2_378/_pdf
     sum_ = 0
-    for each_amp, each_w, each_phase in zip(Amplitude, frequencies, phase):
-        sum_ = sum_ + np.sqrt((2 * each_amp) / Total_time_sample) * np.cos(
-            each_w * t + each_phase
-        )
+    for each_amp, each_w, each_phase in zip(amplitude, frequencies, phase):
+        sum_ = sum_ + each_amp * np.cos(each_w * t + each_phase)
     return sum_
 
 
-t = np.arange(0, 60, 0.1)
+t = np.arange(0, 1, 0.01)
 
 plt.plot(t, wind_speed(t))
 plt.show()
 
-mapdl.nsel("s", "loc", "z", 4)
-mapdl.d("all", "ux", 0.01)
 
+#############################################################
+# To apply these velocities, we are going instead to convert it to acceleration
+# using the following equation:
+#
+# .. math::
+#
+#    a = \omega * v
+#
+# where:
+# * ``a`` is acceleration
+# * ``w`` is frequency
+# * ``v`` is velocity
+
+
+def acceleration(t):
+    sum_ = 0
+    for each_amp, each_w, each_phase in zip(amplitude, frequencies, phase):
+        sum_ = sum_ + each_amp * each_w * np.cos(each_w * t + each_phase)
+    return sum_
+
+
+plt.plot(t, acceleration(t))
+plt.show()
+
+################################################################################
+# Now let's use that in our analysis
+# We are going to apply a global acceleration using ``mapdl.acce``.
+
+help(mapdl.acel)
 
 #################################################################################
 # Model solution
@@ -309,24 +365,84 @@ mapdl.d("all", "ux", 0.01)
 
 mapdl.slashsolu()
 mapdl.allsel()  # making sure all nodes and elements are selected.
-mapdl.antype("STATIC")
-output = mapdl.solve()
-print(output)
+mapdl.antype("TRANS")
+mapdl.nsubst(carry="ON")
+
+accelerations = acceleration(t)
+
+for each_time, each_acceleration in zip(t[1:], accelerations):
+    mapdl.time(each_time)
+    mapdl.acel(acel_y=each_acceleration)
+    mapdl.solve()
+
 
 #################################################################################
 # Post-processing
 # ===============
 #
-# Let's see what we got. Let's print the displacements:
+# Let's see what we got. Let's print the displacements for the step one.
+mapdl.post1()
+mapdl.set(1, 1)
 mapdl.post_processing.nodal_displacement("all")
 
 ######################################################
 # and let's plot them
 #
-mapdl.post_processing.plot_nodal_displacement("x")
+mapdl.post_processing.plot_nodal_displacement("y")
+
+################################################################################
+# We can follow this approach to get the results at each step
+#
+# For example let's get the maximum principal stresses and where it happens:
+
+i = 0
+max_stress_per_step = []
+elem_max_stress_per_step = []
+
+for step in mapdl.post_processing.time_values:
+    i += 1
+    mapdl.set(i)
+    stresses = mapdl.post_processing.element_stress("1")  # First principal stresses
+    max_stress_per_step.append(stresses.max())
+    elem_max_stress_per_step.append(stresses.argmax())
+
+max_stress_per_step = np.array(max_stress_per_step)
+elem_max_stress_per_step = np.array(elem_max_stress_per_step)
+elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
+
+print(f"The maximum principal stress is {max_stress_per_step.max():0.2f} Pascals.")
+print(f"The maximum principal stress happens at the element {elem_}.")
+
 
 #################################################################################
+# Post-processing time dependent results
+# --------------------------------------
+# Let's now check the displacement across time for a node in the tip
 #
+# We can get the nodes max and min coordenates as:
+mapdl.post26()
+
+nod_max = mapdl.mesh.nodes.max(axis=0)
+nod_min = mapdl.mesh.nodes.min(axis=0)
+
+coord_node = (nod_max[0] + nod_min[0]) / 2, (nod_max[1] + nod_min[1]) / 2, nod_max[2]
+
+node = mapdl.queries.node(*coord_node)
+
+################################################################################
+# Getting the displacement at the tip
+
+item = "U"
+comp = "Y"
+node_uy = mapdl.get_nsol(node, item, comp)
+time = mapdl.post_processing.time_values
+
+plt.plot(time, node_uy)
+plt.title("Displacement across time at the tip")
+plt.show()
+
+################################################################################
+
 
 #################################################################################
 # Closing session

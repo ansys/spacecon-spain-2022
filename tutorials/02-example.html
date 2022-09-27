@@ -51,6 +51,7 @@
     <script src="../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -283,6 +284,13 @@
   <a class="reference internal nav-link" href="#post-processing">
    Post-processing
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#post-processing-time-dependent-results">
+     Post-processing time dependent results
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#closing-session">
@@ -337,7 +345,7 @@ Python libraries for your own purposes (TFG? TFM? PhD?)</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
  Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     14:47:06  SEP 27, 2022 CP=      3.195
+ 00000000  VERSION=LINUX x64     18:09:42  SEP 27, 2022 CP=      3.277
 
 
 
@@ -445,121 +453,121 @@ we need to join those points in two times:</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.10000
 
- *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 1 and 2 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 3.146864964E-02) exceeds the
   tolerance ( 3.146864964E-07).
 
- *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 1 and 3 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 5.248710857E-02) exceeds the
   tolerance ( 2.241384605E-07).
 
- *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 1 and 4 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 7.289725402E-02) exceeds the
   tolerance ( 2.155698642E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 1 and 5 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 9.313507449E-02) exceeds the
   tolerance ( 2.121503862E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 1 and 6 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.113308848) exceeds the
   tolerance ( 2.103681832E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 7 and 56 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.100044417) exceeds the
   tolerance ( 2.05256279E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 7 and 57 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.100249936) exceeds the
   tolerance ( 2.046989231E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 7 and 58 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.104096554) exceeds the
   tolerance ( 2.043941462E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 7 and 59 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.111282145) exceeds the
   tolerance ( 2.042261826E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 7 and 60 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 0.12126607) exceeds the
   tolerance ( 2.041371226E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 8 and 9 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.081774221E-02) exceeds the
   tolerance ( 2.081774221E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 8 and 10 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.160104697E-02) exceeds the
   tolerance ( 2.078632553E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 8 and 11 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 6.235743644E-02) exceeds the
   tolerance ( 2.076424706E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 8 and 12 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 8.309221978E-02) exceeds the
   tolerance ( 2.074861222E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.451   TIME= 18:09:42
  Keypoints 61 and 62 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.040819495E-02) exceeds the
   tolerance ( 2.040858385E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.452   TIME= 18:09:42
  Keypoints 61 and 63 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.081643722E-02) exceeds the
   tolerance ( 2.040996261E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.452   TIME= 18:09:42
  Keypoints 61 and 64 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 6.122558417E-02) exceeds the
   tolerance ( 2.041185603E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.452   TIME= 18:09:42
  Keypoints 61 and 65 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 8.16361381E-02) exceeds the
   tolerance ( 2.041394947E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.452   TIME= 18:09:42
  Keypoints 13 and 14 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.072979806E-02) exceeds the
   tolerance ( 2.072979806E-07).
 
- *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+ *** WARNING ***                         CP =       3.452   TIME= 18:09:42
  Keypoints 13 and 15 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.145299864E-02) exceeds the
@@ -697,10 +705,10 @@ vdrag(na1=&#39;&#39;, na2=&#39;&#39;, na3=&#39;&#39;, na4=&#39;&#39;, na5=&#39;&
 </pre></div>
 </div>
 <p>First, let’s define the lince we are going to use to drag the area along.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lenght_wing</span></a> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># [m] MAPDL is unit agnostic.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lenght_wing</span></a> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1"># [m] MAPDL is unit agnostic.</span>
 
 <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">kz</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lenght_wing</span></a><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">kz</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">k</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">lenght_wing</span></a><span class="p">)</span>
 
 <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ldrag</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">k0</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">kz</span></a><span class="p">)</span>
 </pre></div>
@@ -758,28 +766,28 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES
 
  NUMBER OF VOLUMES MESHED   =         1
- MAXIMUM NODE NUMBER        =     87489
- MAXIMUM ELEMENT NUMBER     =     52941
+ MAXIMUM NODE NUMBER        =     36559
+ MAXIMUM ELEMENT NUMBER     =     22034
 
  ------------------------------------------------------------------------------
             &lt;&lt;&lt;&lt;&lt;&lt;          SHAPE TESTING SUMMARY           &gt;&gt;&gt;&gt;&gt;&gt;
             &lt;&lt;&lt;&lt;&lt;&lt;       FOR NEW OR MODIFIED ELEMENTS       &gt;&gt;&gt;&gt;&gt;&gt;
  ------------------------------------------------------------------------------
                     --------------------------------------
-                    |  Element count     52941 SOLID187  |
+                    |  Element count     22034 SOLID187  |
                     --------------------------------------
 
   Test                Number tested  Warning count  Error count    Warn+Err %
   ----                -------------  -------------  -----------    ----------
-  Aspect Ratio              52941            297             0         0.56 %
-  Maximum Angle             52941            116             0         0.22 %
-  Jacobian Ratio            52941              0             0         0.00 %
+  Aspect Ratio              22034            101             0         0.46 %
+  Maximum Angle             22034             91             0         0.41 %
+  Jacobian Ratio            22034              0             0         0.00 %
 
-  Any                       52941            349             0         0.66 %
+  Any                       22034            144             0         0.65 %
  ------------------------------------------------------------------------------
 
- *** WARNING ***                         CP =       9.688   TIME= 14:47:15
- Shape testing revealed that 349 of the 52941 new or modified elements
+ *** WARNING ***                         CP =       5.796   TIME= 18:09:46
+ Shape testing revealed that 144 of the 22034 new or modified elements
  violate shape warning limits.  To review test results, please see the
  output file or issue the CHECK command.
 </pre></div>
@@ -796,16 +804,23 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       36559 BY           1
  REAL=  0.00000000       IMAG=  0.00000000
  ADDITIONAL DOFS=  UY    UZ
 </pre></div>
 </div>
 <section id="wind-excitation">
 <h3>Wind Excitation<a class="headerlink" href="#wind-excitation" title="Permalink to this heading">#</a></h3>
-<p>Let’s apply a wind excitation.</p>
-<p>However, we don’t really know what wind apply, so let’s pull some online data first.
-Use</p>
+<p>Let’s apply a excitation to our wing. However, we don’t really know what win
+speed to apply, so let’s pull some online data first.</p>
+<p>We are going to retrieve some data from NASA regarding the wind speed at
+Ansys Madrid office in Paseo de la castellana.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/office1.jpg"><img alt="Madrid office" src="../_images/office1.jpg" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text">Paseo de la castella Ansys office (Madrid). Yes, we love coffee.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>From: <a class="reference external" href="https://power.larc.nasa.gov/data-access-viewer/">https://power.larc.nasa.gov/data-access-viewer/</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
@@ -825,6 +840,7 @@ Use</p>
 <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">content</span></a> <span class="o">=</span> <a href="https://docs.python.org/dev/library/json.html#json.loads" title="json.loads" class="sphx-glr-backref-module-json sphx-glr-backref-type-py-function"><span class="n">json</span><span class="o">.</span><span class="n">loads</span></a><span class="p">(</span><span class="n">response</span><span class="o">.</span><a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">content</span></a><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">content</span></a><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;parameter&quot;</span><span class="p">])</span>
 
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Index.html#pandas.Index" title="pandas.core.indexes.base.Index" class="sphx-glr-backref-module-pandas-core-indexes-base sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span><span class="o">.</span><span class="n">columns</span></a> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MAX&quot;</span><span class="p">,</span> <span class="s2">&quot;MIN&quot;</span><span class="p">]</span>  <span class="c1"># renaming columns</span>
 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.set_index.html#pandas.DataFrame.set_index" title="pandas.DataFrame.set_index" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-method"><span class="n">df</span><span class="o">.</span><span class="n">set_index</span></a><span class="p">(</span>
     <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime" title="pandas.to_datetime" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span></a><span class="p">(</span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DatetimeIndex.html#pandas.DatetimeIndex" title="pandas.core.indexes.datetimes.DatetimeIndex" class="sphx-glr-backref-module-pandas-core-indexes-datetimes sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span><span class="o">.</span><span class="n">index</span></a><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="p">)</span>  <span class="c1"># Formatting dataframe index as date.</span>
@@ -853,8 +869,8 @@ Use</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>T2M_MAX</th>
-      <th>T2M_MIN</th>
+      <th>MAX</th>
+      <th>MIN</th>
     </tr>
   </thead>
   <tbody>
@@ -911,8 +927,8 @@ Use</p>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>T2M_MAX</th>
-      <th>T2M_MIN</th>
+      <th>MAX</th>
+      <th>MIN</th>
     </tr>
   </thead>
   <tbody>
@@ -961,36 +977,131 @@ Use</p>
 </div>
 </div>
 <br />
-<br /><p>Let’s plot it…</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed per day&quot;</span><span class="p">)</span>
-
-<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Total_time_sample</span></a> <span class="o">=</span> <span class="mi">60</span>  <span class="c1"># [s]</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Amplitude</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># 30, 80, 200]</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
-<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">phase</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">pi</span></a>
+<br /><p>We see there are negative wind speed, probably because of the direction,
+since we are not interested in direction, only magnitude,
+let’s use the absolute value then.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.abs.html#pandas.DataFrame.abs" title="pandas.DataFrame.abs" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-method"><span class="n">df</span><span class="o">.</span><span class="n">abs</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p>Let’s plot it…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed per day&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_02-example_005.png" srcset="../_images/sphx_glr_02-example_005.png" alt="Wind speed per day" class = "sphx-glr-single-img"/><p>As we can see, the most frequent maximum speeds are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.core.frame.DataFrame" class="sphx-glr-backref-module-pandas-core-frame sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">df</span></a><span class="p">[</span><span class="s2">&quot;MAX&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_02-example_006.png" srcset="../_images/sphx_glr_02-example_006.png" alt="02 example" class = "sphx-glr-single-img"/><p>As we can see, we could stablish there are two main peaks,
+one at 15 m/s and another at 33 m/s.</p>
+<p>Let’s generate some random wind signal with those speeds.
+We are going to do a superposition of harmonics:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">amplitude</span></a> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">33</span><span class="p">]</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a> <span class="o">=</span> <span class="p">(</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">pi</span></a>
+<span class="p">)</span>  <span class="c1"># Typical wind frequencies range between 2 and 20 Hz</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">phase</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">))</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">pi</span></a>
 
 
 <span class="k">def</span> <span class="nf">wind_speed</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">):</span>
-    <span class="c1"># https://www.jstage.jst.go.jp/article/jsmeb/47/2/47_2_378/_pdf</span>
     <span class="n">sum_</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">each_amp</span><span class="p">,</span> <span class="n">each_w</span><span class="p">,</span> <span class="n">each_phase</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Amplitude</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">phase</span></a><span class="p">):</span>
-        <span class="n">sum_</span> <span class="o">=</span> <span class="n">sum_</span> <span class="o">+</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span></a><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">each_amp</span><span class="p">)</span> <span class="o">/</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Total_time_sample</span></a><span class="p">)</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">cos</span></a><span class="p">(</span>
-            <span class="n">each_w</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">+</span> <span class="n">each_phase</span>
-        <span class="p">)</span>
+    <span class="k">for</span> <span class="n">each_amp</span><span class="p">,</span> <span class="n">each_w</span><span class="p">,</span> <span class="n">each_phase</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">amplitude</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">phase</span></a><span class="p">):</span>
+        <span class="n">sum_</span> <span class="o">=</span> <span class="n">sum_</span> <span class="o">+</span> <span class="n">each_amp</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">cos</span></a><span class="p">(</span><span class="n">each_w</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">+</span> <span class="n">each_phase</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sum_</span>
 
 
-<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">,</span> <span class="n">wind_speed</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">))</span>
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
-
-<span class="n">mapdl</span><span class="o">.</span><span class="n">nsel</span><span class="p">(</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;ux&quot;</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_02-example_005.png" srcset="../_images/sphx_glr_02-example_005.png" alt="Wind speed per day" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
- REAL= 1.000000000E-02   IMAG=  0.00000000
+<img src="../_images/sphx_glr_02-example_007.png" srcset="../_images/sphx_glr_02-example_007.png" alt="02 example" class = "sphx-glr-single-img"/><p>To apply these velocities, we are going instead to convert it to acceleration
+using the following equation:</p>
+<div class="math notranslate nohighlight">
+\[a = \omega * v\]</div>
+<p>where:
+* <code class="docutils literal notranslate"><span class="pre">a</span></code> is acceleration
+* <code class="docutils literal notranslate"><span class="pre">w</span></code> is frequency
+* <code class="docutils literal notranslate"><span class="pre">v</span></code> is velocity</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">acceleration</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">):</span>
+    <span class="n">sum_</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">each_amp</span><span class="p">,</span> <span class="n">each_w</span><span class="p">,</span> <span class="n">each_phase</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">amplitude</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">frequencies</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">phase</span></a><span class="p">):</span>
+        <span class="n">sum_</span> <span class="o">=</span> <span class="n">sum_</span> <span class="o">+</span> <span class="n">each_amp</span> <span class="o">*</span> <span class="n">each_w</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">cos</span></a><span class="p">(</span><span class="n">each_w</span> <span class="o">*</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a> <span class="o">+</span> <span class="n">each_phase</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sum_</span>
+
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">,</span> <span class="n">acceleration</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">))</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_02-example_008.png" srcset="../_images/sphx_glr_02-example_008.png" alt="02 example" class = "sphx-glr-single-img"/><p>Now let’s use that in our analysis
+We are going to apply a global acceleration using <code class="docutils literal notranslate"><span class="pre">mapdl.acce</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">mapdl</span><span class="o">.</span><span class="n">acel</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method acel in module ansys.mapdl.core._commands.solution.inertia:
+
+acel(acel_x=&#39;&#39;, acel_y=&#39;&#39;, acel_z=&#39;&#39;, **kwargs) method of ansys.mapdl.core.mapdl_grpc.MapdlGrpc instance
+    Specifies the linear acceleration of the global Cartesian reference
+
+    APDL Command: ACEL
+    frame for the analysis.
+
+    Parameters
+    ----------
+    acel_x, acel_y, acel_z
+        Linear acceleration of the reference frame along global Cartesian
+        X, Y, and Z axes, respectively.
+
+    Notes
+    -----
+    In the absence of any other loads or supports, the acceleration of the
+    structure in each of the global Cartesian (X, Y, and Z) axes would be
+    equal in magnitude but opposite in sign to that applied in the ACEL
+    command. Thus, to simulate gravity (by using inertial effects),
+    accelerate the reference frame with an ACEL command in the direction
+    opposite to gravity.
+
+    You can define the acceleration for the following analyses types:
+
+    Static (ANTYPE,STATIC)
+
+    Harmonic (ANTYPE,HARMIC), full or mode-superposition method
+
+    Transient (ANTYPE,TRANS)
+
+    Substructure (ANTYPE,SUBSTR).
+
+    For all transient dynamic (ANTYPE,TRANS) analyses, accelerations are
+    combined with the element mass matrices to form a body force load
+    vector term. The element mass matrix may be formed from a mass input
+    constant or from a nonzero density (DENS) property, depending upon the
+    element type.
+
+    For analysis type ANTYPE,HARMIC, the acceleration is assumed to be the
+    real component with a zero imaginary component.
+
+    Units of acceleration and mass must be consistent to give a product of
+    force units.
+
+    The ACEL command supports tabular boundary conditions (%TABNAME_X%,
+    %TABNAME_Y%, and %TABNAME_Z%) for ACEL_X, ACEL_Y, and ACEL_Z input
+    values (``*DIM``) as a function of both time and frequency for full
+    transient and harmonic analyses.
+
+    Related commands for rotational effects are CMACEL, CGLOC, CGOMGA,
+    DCGOMG, DOMEGA, OMEGA, CMOMEGA, and CMDOMEGA.
+
+    See Analysis Tools in the Mechanical APDL Theory Reference for more
+    information.
+
+    This command is also valid in /PREP7.
+
+    Examples
+    --------
+    Set global y-acceleration to 9.81
+
+    &gt;&gt;&gt; mapdl.acel(acel_y=9.81)
 </pre></div>
 </div>
 </section>
@@ -999,181 +1110,98 @@ Use</p>
 <h2>Model solution<a class="headerlink" href="#model-solution" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">slashsolu</span><span class="p">()</span>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">allsel</span><span class="p">()</span>  <span class="c1"># making sure all nodes and elements are selected.</span>
-<span class="n">mapdl</span><span class="o">.</span><span class="n">antype</span><span class="p">(</span><span class="s2">&quot;STATIC&quot;</span><span class="p">)</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  MAPDL SOLVE    COMMAND  *****
+<span class="n">mapdl</span><span class="o">.</span><span class="n">antype</span><span class="p">(</span><span class="s2">&quot;TRANS&quot;</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsubst</span><span class="p">(</span><span class="n">carry</span><span class="o">=</span><span class="s2">&quot;ON&quot;</span><span class="p">)</span>
 
- *** NOTE ***                            CP =      10.549   TIME= 14:47:18
- There is no title defined for this analysis.
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">accelerations</span></a> <span class="o">=</span> <span class="n">acceleration</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">)</span>
 
- *** WARNING ***                         CP =      10.673   TIME= 14:47:18
- Previous testing revealed that 349 of the 52941 selected elements
- violate shape warning limits.  To review warning messages, please see
- the output or error file, or issue the CHECK command.
-
- *** NOTE ***                            CP =      10.673   TIME= 14:47:18
- The model data was checked and warning messages were found.
-  Please review output or errors file ( /file.err ) for these warning
- messages.
-
- *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
-                ---GIVE SUGGESTIONS ONLY---
-
- ELEMENT TYPE         1 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
- HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE.
-
-
-
- *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
- Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     14:47:18  SEP 27, 2022 CP=     10.696
-
-
-
-
-
-                       S O L U T I O N   O P T I O N S
-
-   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D
-   DEGREES OF FREEDOM. . . . . . UX   UY   UZ
-   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
-   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
-
- *** NOTE ***                            CP =      10.762   TIME= 14:47:18
- Present time 0 is less than or equal to the previous time.  Time will
- default to 1.
-
- *** NOTE ***                            CP =      10.763   TIME= 14:47:18
- The conditions for direct assembly have been met.  No .emat or .erot
- files will be produced.
-
-                      L O A D   S T E P   O P T I O N S
-
-   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
-   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000
-   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
-   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
-   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
-   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
-                                                  FOR THE LAST SUBSTEP
-
-
- SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr
-
-
-
-                         ***********  PRECISE MASS SUMMARY  ***********
-
-   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
-               Translational mass               |   Coupled translational/rotational mass
-         2563.9        0.0000        0.0000     |     0.0000        5127.7       -39.887
-         0.0000        2563.9        0.0000     |    -5127.7        0.0000        1079.5
-         0.0000        0.0000        2563.9     |     39.887       -1079.5        0.0000
-     ------------------------------------------ | ------------------------------------------
-                                                |         Rotational mass (inertia)
-                                                |     13677.       -17.014       -2159.0
-                                                |    -17.014        14270.       -79.774
-                                                |    -2159.0       -79.774        598.57
-
-   TOTAL MASS =  2563.9
-     The mass principal axes coincide with the global Cartesian axes
-
-   CENTER OF MASS (X,Y,Z)=   0.42105       0.15557E-01    2.0000
-
-   TOTAL INERTIA ABOUT CENTER OF MASS
-         3420.7      -0.21945       0.12432E-10
-       -0.21945        3559.7       0.75421E-12
-        0.12432E-10   0.75421E-12    143.42
-     The inertia principal axes coincide with the global Cartesian axes
-
-
-  *** MASS SUMMARY BY ELEMENT TYPE ***
-
-  TYPE      MASS
-     1   2563.86
-
- Range of element maximum matrix coefficients in global coordinates
- Maximum = 8.031780944E+10 at element 35281.
- Minimum = 1.625616571E+09 at element 29909.
-
-   *** ELEMENT MATRIX FORMULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1     52941  SOLID187      6.417   0.000121
- Time at end of element matrix formulation CP = 15.1354027.
-
- SPARSE MATRIX DIRECT SOLVER.
-  Number of equations =      257727,    Maximum wavefront =    252
-
- *** NOTE ***                            CP =      18.093   TIME= 14:47:24
- The initial memory allocation (-m) has been exceeded.
-  Supplemental memory allocations are being used.
-  Memory allocated for solver              =  1573.899 MB
-  Memory required for in-core solution     =  1507.390 MB
-  Memory required for out-of-core solution =   427.344 MB
-
- *** NOTE ***                            CP =      18.093   TIME= 14:47:24
- The Sparse Matrix Solver is currently running in the in-core memory
- mode.  This memory mode uses the most amount of memory in order to
- avoid using the hard drive as much as possible, which most often
- results in the fastest solution time.  This mode is recommended if
- enough physical memory is present to accommodate all of the solver
- data.
- Sparse solver maximum pivot= 1.229541413E+11 at node 16621 UY.
- Sparse solver minimum pivot= 6388116.47 at node 40650 UY.
- Sparse solver minimum pivot in absolute value= 6388116.47 at node 40650
- UY.
-
-   *** ELEMENT RESULT CALCULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1     52941  SOLID187      7.006   0.000132
-
-   *** NODAL LOAD CALCULATION TIMES
-     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-        1     52941  SOLID187      2.253   0.000043
- *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
- *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
-
-
- *** MAPDL BINARY FILE STATISTICS
-  BUFFER SIZE USED= 16384
-      129.625 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
-       41.750 MB WRITTEN ON RESULTS FILE: file.rst
+<span class="k">for</span> <a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">each_time</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">each_acceleration</span></a> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">t</span></a><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">accelerations</span></a><span class="p">):</span>
+    <span class="n">mapdl</span><span class="o">.</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">each_time</span></a><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">acel</span><span class="p">(</span><span class="n">acel_y</span><span class="o">=</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">each_acceleration</span></a><span class="p">)</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="post-processing">
 <h2>Post-processing<a class="headerlink" href="#post-processing" title="Permalink to this heading">#</a></h2>
-<p>Let’s see what we got. Let’s print the displacements:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<p>Let’s see what we got. Let’s print the displacements for the step one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post1</span><span class="p">()</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">nodal_displacement</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        ...,
-       [ 9.67456831e-03, -9.08711022e-04, -1.56431904e-03],
-       [ 2.57723832e-04, -6.31377622e-06, -4.24160934e-04],
-       [ 5.58219299e-03, -5.00726091e-04, -1.77010093e-03]])
+       [ 1.71997204e-05, -4.27683192e-02, -4.57847047e-04],
+       [ 7.68342153e-05, -3.25246381e-04, -1.61284993e-04],
+       [ 2.01727854e-05,  1.50986763e-06, -3.63005817e-05]])
 </pre></div>
 </div>
 <p>and let’s plot them</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">plot_nodal_displacement</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_02-example_006.png" srcset="../_images/sphx_glr_02-example_006.png" alt="02 example" class = "sphx-glr-single-img"/></section>
+<img src="../_images/sphx_glr_02-example_009.png" srcset="../_images/sphx_glr_02-example_009.png" alt="02 example" class = "sphx-glr-single-img"/><p>We can follow this approach to get the results at each step</p>
+<p>For example let’s get the maximum principal stresses and where it happens:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a> <span class="o">=</span> <span class="mi">0</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a> <span class="o">=</span> <span class="p">[]</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">step</span></a> <span class="ow">in</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time_values</span><span class="p">:</span>
+    <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">mapdl</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">i</span></a><span class="p">)</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stresses</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">element_stress</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>  <span class="c1"># First principal stresses</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span><span class="o">.</span><span class="n">append</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stresses</span></a><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+    <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span><span class="o">.</span><span class="n">append</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">stresses</span></a><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
+
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">enum</span><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">argmax</span><span class="p">()]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum principal stress is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> Pascals.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum principal stress happens at the element </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum principal stress is 5028945031.84 Pascals.
+The maximum principal stress happens at the element 13543.
+</pre></div>
+</div>
+<section id="post-processing-time-dependent-results">
+<h3>Post-processing time dependent results<a class="headerlink" href="#post-processing-time-dependent-results" title="Permalink to this heading">#</a></h3>
+<p>Let’s now check the displacement across time for a node in the tip</p>
+<p>We can get the nodes max and min coordenates as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">post26</span><span class="p">()</span>
+
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_max</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_min</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coord_node</span></a> <span class="o">=</span> <span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_max</span></a><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_min</span></a><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_max</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_min</span></a><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nod_max</span></a><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">queries</span><span class="o">.</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node</span></a><span class="p">(</span><span class="o">*</span><a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">coord_node</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<p>Getting the displacement at the tip</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">item</span></a> <span class="o">=</span> <span class="s2">&quot;U&quot;</span>
+<a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">comp</span></a> <span class="o">=</span> <span class="s2">&quot;Y&quot;</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node_uy</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">get_nsol</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">item</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">comp</span></a><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time_values</span>
+
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node_uy</span></a><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;Displacement across time at the tip&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<img src="../_images/sphx_glr_02-example_010.png" srcset="../_images/sphx_glr_02-example_010.png" alt="Displacement across time at the tip" class = "sphx-glr-single-img"/></section>
+</section>
 <section id="closing-session">
 <h2>Closing session<a class="headerlink" href="#closing-session" title="Permalink to this heading">#</a></h2>
 <p>Thank you all for your time and attention!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  26.044 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  55.509 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-02-example-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/b61fd0423e1434b2feb3ac2378caafef/02-example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-example.py</span></code></a></p>

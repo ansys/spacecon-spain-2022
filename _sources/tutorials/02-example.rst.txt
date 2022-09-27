@@ -80,7 +80,7 @@ and let's launch PyMAPDL.
 
     *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
      Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     14:47:06  SEP 27, 2022 CP=      3.195
+     00000000  VERSION=LINUX x64     18:09:42  SEP 27, 2022 CP=      3.277
 
                                                                                
 
@@ -296,121 +296,121 @@ Closing the section
 
     MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.10000    
 
-     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 1 and 2 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 3.146864964E-02) exceeds the           
       tolerance ( 3.146864964E-07).                                          
 
-     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 1 and 3 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 5.248710857E-02) exceeds the           
       tolerance ( 2.241384605E-07).                                          
 
-     *** WARNING ***                         CP =       3.353   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 1 and 4 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 7.289725402E-02) exceeds the           
       tolerance ( 2.155698642E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 1 and 5 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 9.313507449E-02) exceeds the           
       tolerance ( 2.121503862E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 1 and 6 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.113308848) exceeds the               
       tolerance ( 2.103681832E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 7 and 56 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.100044417) exceeds the               
       tolerance ( 2.05256279E-07).                                           
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 7 and 57 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.100249936) exceeds the               
       tolerance ( 2.046989231E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 7 and 58 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.104096554) exceeds the               
       tolerance ( 2.043941462E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 7 and 59 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.111282145) exceeds the               
       tolerance ( 2.042261826E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 7 and 60 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.12126607) exceeds the                
       tolerance ( 2.041371226E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 8 and 9 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.081774221E-02) exceeds the           
       tolerance ( 2.081774221E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 8 and 10 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.160104697E-02) exceeds the           
       tolerance ( 2.078632553E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 8 and 11 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 6.235743644E-02) exceeds the           
       tolerance ( 2.076424706E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 8 and 12 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 8.309221978E-02) exceeds the           
       tolerance ( 2.074861222E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.451   TIME= 18:09:42
      Keypoints 61 and 62 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.040819495E-02) exceeds the           
       tolerance ( 2.040858385E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.452   TIME= 18:09:42
      Keypoints 61 and 63 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.081643722E-02) exceeds the           
       tolerance ( 2.040996261E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.452   TIME= 18:09:42
      Keypoints 61 and 64 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 6.122558417E-02) exceeds the           
       tolerance ( 2.041185603E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.452   TIME= 18:09:42
      Keypoints 61 and 65 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 8.16361381E-02) exceeds the            
       tolerance ( 2.041394947E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.452   TIME= 18:09:42
      Keypoints 13 and 14 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.072979806E-02) exceeds the           
       tolerance ( 2.072979806E-07).                                          
 
-     *** WARNING ***                         CP =       3.354   TIME= 14:47:07
+     *** WARNING ***                         CP =       3.452   TIME= 18:09:42
      Keypoints 13 and 15 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.145299864E-02) exceeds the           
@@ -607,7 +607,7 @@ First, let's define the lince we are going to use to drag the area along.
 
 .. code-block:: default
 
-    lenght_wing = 4  # [m] MAPDL is unit agnostic.
+    lenght_wing = 1.5  # [m] MAPDL is unit agnostic.
 
     k0 = mapdl.k("", 0, 0, 0)
     kz = mapdl.k("", 0, 0, lenght_wing)
@@ -759,28 +759,28 @@ Let's finally split the domain:
     GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES  
 
      NUMBER OF VOLUMES MESHED   =         1
-     MAXIMUM NODE NUMBER        =     87489
-     MAXIMUM ELEMENT NUMBER     =     52941
+     MAXIMUM NODE NUMBER        =     36559
+     MAXIMUM ELEMENT NUMBER     =     22034
 
      ------------------------------------------------------------------------------
                 <<<<<<          SHAPE TESTING SUMMARY           >>>>>>
                 <<<<<<       FOR NEW OR MODIFIED ELEMENTS       >>>>>>
      ------------------------------------------------------------------------------
                         --------------------------------------
-                        |  Element count     52941 SOLID187  |
+                        |  Element count     22034 SOLID187  |
                         --------------------------------------
 
       Test                Number tested  Warning count  Error count    Warn+Err %
       ----                -------------  -------------  -----------    ----------
-      Aspect Ratio              52941            297             0         0.56 %
-      Maximum Angle             52941            116             0         0.22 %
-      Jacobian Ratio            52941              0             0         0.00 %
+      Aspect Ratio              22034            101             0         0.46 %
+      Maximum Angle             22034             91             0         0.41 %
+      Jacobian Ratio            22034              0             0         0.00 %
 
-      Any                       52941            349             0         0.66 %
+      Any                       22034            144             0         0.65 %
      ------------------------------------------------------------------------------
 
-     *** WARNING ***                         CP =       9.688   TIME= 14:47:15
-     Shape testing revealed that 349 of the 52941 new or modified elements   
+     *** WARNING ***                         CP =       5.796   TIME= 18:09:46
+     Shape testing revealed that 144 of the 22034 new or modified elements   
      violate shape warning limits.  To review test results, please see the   
      output file or issue the CHECK command.
 
@@ -833,26 +833,37 @@ Let's fix the nodes at the origin to not move.
  .. code-block:: none
 
 
-    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
+    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       36559 BY           1
      REAL=  0.00000000       IMAG=  0.00000000    
      ADDITIONAL DOFS=  UY    UZ
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 237-247
+.. GENERATED FROM PYTHON SOURCE LINES 237-258
 
 Wind Excitation
 ---------------
 
-Let's apply a wind excitation.
+Let's apply a excitation to our wing. However, we don't really know what win
+speed to apply, so let's pull some online data first.
 
-However, we don't really know what wind apply, so let's pull some online data first.
-Use
+We are going to retrieve some data from NASA regarding the wind speed at
+Ansys Madrid office in Paseo de la castellana.
+
+.. figure:: ../images/office1.jpg
+    :width: 600px
+    :align: center
+    :alt: Madrid office
+    :figclass: align-center
+
+    Paseo de la castella Ansys office (Madrid). Yes, we love coffee.
+
+
 
 From: https://power.larc.nasa.gov/data-access-viewer/
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-269
+.. GENERATED FROM PYTHON SOURCE LINES 258-282
 
 .. code-block:: default
 
@@ -875,6 +886,7 @@ From: https://power.larc.nasa.gov/data-access-viewer/
     content = json.loads(response.content.decode("utf-8"))
     df = pd.DataFrame(content["properties"]["parameter"])
 
+    df.columns = ["MAX", "MIN"]  # renaming columns
     df = df.set_index(
         pd.to_datetime(df.index, format="%Y%m%d")
     )  # Formatting dataframe index as date.
@@ -885,11 +897,12 @@ From: https://power.larc.nasa.gov/data-access-viewer/
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 270-271
+
+.. GENERATED FROM PYTHON SOURCE LINES 283-284
 
 Let's see the data
 
-.. GENERATED FROM PYTHON SOURCE LINES 271-273
+.. GENERATED FROM PYTHON SOURCE LINES 284-286
 
 .. code-block:: default
 
@@ -921,8 +934,8 @@ Let's see the data
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>T2M_MAX</th>
-          <th>T2M_MIN</th>
+          <th>MAX</th>
+          <th>MIN</th>
         </tr>
       </thead>
       <tbody>
@@ -958,16 +971,15 @@ Let's see the data
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 274-275
+.. GENERATED FROM PYTHON SOURCE LINES 287-288
 
 and describe it...
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-277
+.. GENERATED FROM PYTHON SOURCE LINES 288-289
 
 .. code-block:: default
 
     df.describe()
-
 
 
 
@@ -994,8 +1006,8 @@ and describe it...
       <thead>
         <tr style="text-align: right;">
           <th></th>
-          <th>T2M_MAX</th>
-          <th>T2M_MIN</th>
+          <th>MAX</th>
+          <th>MIN</th>
         </tr>
       </thead>
       <tbody>
@@ -1046,40 +1058,35 @@ and describe it...
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 278-279
+.. GENERATED FROM PYTHON SOURCE LINES 290-294
 
-Let's plot it...
+We see there are negative wind speed, probably because of the direction,
+since we are not interested in direction, only magnitude,
+let's use the absolute value then.
 
-.. GENERATED FROM PYTHON SOURCE LINES 279-306
+
+.. GENERATED FROM PYTHON SOURCE LINES 294-296
 
 .. code-block:: default
 
-    df.plot(title="Wind speed per day")
-
-    Total_time_sample = 60  # [s]
-    Amplitude = [10]  # 30, 80, 200]
-    frequencies = [10, 16, 27, 34]
-    phase = np.random.random(size=len(frequencies)) * 2 * np.pi
+    df = df.abs()
 
 
-    def wind_speed(t):
-        # https://www.jstage.jst.go.jp/article/jsmeb/47/2/47_2_378/_pdf
-        sum_ = 0
-        for each_amp, each_w, each_phase in zip(Amplitude, frequencies, phase):
-            sum_ = sum_ + np.sqrt((2 * each_amp) / Total_time_sample) * np.cos(
-                each_w * t + each_phase
-            )
-        return sum_
 
 
-    t = np.arange(0, 60, 0.1)
 
-    plt.plot(t, wind_speed(t))
-    plt.show()
 
-    mapdl.nsel("s", "loc", "z", 4)
-    mapdl.d("all", "ux", 0.01)
 
+
+.. GENERATED FROM PYTHON SOURCE LINES 297-298
+
+Let's plot it...
+
+.. GENERATED FROM PYTHON SOURCE LINES 298-300
+
+.. code-block:: default
+
+    _ = df.plot(title="Wind speed per day")
 
 
 
@@ -1090,195 +1097,250 @@ Let's plot it...
    :class: sphx-glr-single-img
 
 
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 301-302
+
+As we can see, the most frequent maximum speeds are:
+
+.. GENERATED FROM PYTHON SOURCE LINES 302-304
+
+.. code-block:: default
+
+    _ = df["MAX"].hist(bins=20)
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_006.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_006.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 305-311
+
+As we can see, we could stablish there are two main peaks,
+one at 15 m/s and another at 33 m/s.
+
+Let's generate some random wind signal with those speeds.
+We are going to do a superposition of harmonics:
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 311-332
+
+.. code-block:: default
+
+
+    amplitude = [15, 33]
+    frequencies = (
+        np.array([10, 16]) * 2 * np.pi
+    )  # Typical wind frequencies range between 2 and 20 Hz
+    phase = np.random.random(size=len(frequencies)) * 2 * np.pi
+
+
+    def wind_speed(t):
+        sum_ = 0
+        for each_amp, each_w, each_phase in zip(amplitude, frequencies, phase):
+            sum_ = sum_ + each_amp * np.cos(each_w * t + each_phase)
+        return sum_
+
+
+    t = np.arange(0, 1, 0.01)
+
+    plt.plot(t, wind_speed(t))
+    plt.show()
+
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_007.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_007.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 333-344
+
+To apply these velocities, we are going instead to convert it to acceleration
+using the following equation:
+
+.. math::
+
+   a = \omega * v
+
+where:
+* ``a`` is acceleration
+* ``w`` is frequency
+* ``v`` is velocity
+
+.. GENERATED FROM PYTHON SOURCE LINES 344-356
+
+.. code-block:: default
+
+
+
+    def acceleration(t):
+        sum_ = 0
+        for each_amp, each_w, each_phase in zip(amplitude, frequencies, phase):
+            sum_ = sum_ + each_amp * each_w * np.cos(each_w * t + each_phase)
+        return sum_
+
+
+    plt.plot(t, acceleration(t))
+    plt.show()
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_008.png
+   :alt: 02 example
+   :srcset: /tutorials/images/sphx_glr_02-example_008.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 357-359
+
+Now let's use that in our analysis
+We are going to apply a global acceleration using ``mapdl.acce``.
+
+.. GENERATED FROM PYTHON SOURCE LINES 359-362
+
+.. code-block:: default
+
+
+    help(mapdl.acel)
+
+
+
+
+
 .. rst-class:: sphx-glr-script-out
 
  .. code-block:: none
 
+    Help on method acel in module ansys.mapdl.core._commands.solution.inertia:
 
-    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       87489 BY           1
-     REAL= 1.000000000E-02   IMAG=  0.00000000
+    acel(acel_x='', acel_y='', acel_z='', **kwargs) method of ansys.mapdl.core.mapdl_grpc.MapdlGrpc instance
+        Specifies the linear acceleration of the global Cartesian reference
+    
+        APDL Command: ACEL
+        frame for the analysis.
+    
+        Parameters
+        ----------
+        acel_x, acel_y, acel_z
+            Linear acceleration of the reference frame along global Cartesian
+            X, Y, and Z axes, respectively.
+    
+        Notes
+        -----
+        In the absence of any other loads or supports, the acceleration of the
+        structure in each of the global Cartesian (X, Y, and Z) axes would be
+        equal in magnitude but opposite in sign to that applied in the ACEL
+        command. Thus, to simulate gravity (by using inertial effects),
+        accelerate the reference frame with an ACEL command in the direction
+        opposite to gravity.
+    
+        You can define the acceleration for the following analyses types:
+    
+        Static (ANTYPE,STATIC)
+    
+        Harmonic (ANTYPE,HARMIC), full or mode-superposition method
+    
+        Transient (ANTYPE,TRANS)
+    
+        Substructure (ANTYPE,SUBSTR).
+    
+        For all transient dynamic (ANTYPE,TRANS) analyses, accelerations are
+        combined with the element mass matrices to form a body force load
+        vector term. The element mass matrix may be formed from a mass input
+        constant or from a nonzero density (DENS) property, depending upon the
+        element type.
+    
+        For analysis type ANTYPE,HARMIC, the acceleration is assumed to be the
+        real component with a zero imaginary component.
+    
+        Units of acceleration and mass must be consistent to give a product of
+        force units.
+    
+        The ACEL command supports tabular boundary conditions (%TABNAME_X%,
+        %TABNAME_Y%, and %TABNAME_Z%) for ACEL_X, ACEL_Y, and ACEL_Z input
+        values (``*DIM``) as a function of both time and frequency for full
+        transient and harmonic analyses.
+    
+        Related commands for rotational effects are CMACEL, CGLOC, CGOMGA,
+        DCGOMG, DOMEGA, OMEGA, CMOMEGA, and CMDOMEGA.
+    
+        See Analysis Tools in the Mechanical APDL Theory Reference for more
+        information.
+    
+        This command is also valid in /PREP7.
+    
+        Examples
+        --------
+        Set global y-acceleration to 9.81
+    
+        >>> mapdl.acel(acel_y=9.81)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 307-309
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 363-365
 
 Model solution
 ==============
 
-.. GENERATED FROM PYTHON SOURCE LINES 309-316
+.. GENERATED FROM PYTHON SOURCE LINES 365-379
 
 .. code-block:: default
 
 
     mapdl.slashsolu()
     mapdl.allsel()  # making sure all nodes and elements are selected.
-    mapdl.antype("STATIC")
-    output = mapdl.solve()
-    print(output)
+    mapdl.antype("TRANS")
+    mapdl.nsubst(carry="ON")
+
+    accelerations = acceleration(t)
+
+    for each_time, each_acceleration in zip(t[1:], accelerations):
+        mapdl.time(each_time)
+        mapdl.acel(acel_y=each_acceleration)
+        mapdl.solve()
 
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    *****  MAPDL SOLVE    COMMAND  *****
-
-     *** NOTE ***                            CP =      10.549   TIME= 14:47:18
-     There is no title defined for this analysis.                            
-
-     *** WARNING ***                         CP =      10.673   TIME= 14:47:18
-     Previous testing revealed that 349 of the 52941 selected elements       
-     violate shape warning limits.  To review warning messages, please see   
-     the output or error file, or issue the CHECK command.                   
-
-     *** NOTE ***                            CP =      10.673   TIME= 14:47:18
-     The model data was checked and warning messages were found.             
-      Please review output or errors file ( /file.err ) for these warning    
-     messages.                                                               
-
-     *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
-                    ---GIVE SUGGESTIONS ONLY---
-
-     ELEMENT TYPE         1 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
-     HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE.
-
-
-
-     *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
-     Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     14:47:18  SEP 27, 2022 CP=     10.696
-
-                                                                               
-
-
-
-                           S O L U T I O N   O P T I O N S
-
-       PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
-       DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
-       ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
-       GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
-
-     *** NOTE ***                            CP =      10.762   TIME= 14:47:18
-     Present time 0 is less than or equal to the previous time.  Time will   
-     default to 1.                                                           
-
-     *** NOTE ***                            CP =      10.763   TIME= 14:47:18
-     The conditions for direct assembly have been met.  No .emat or .erot    
-     files will be produced.                                                 
-
-                          L O A D   S T E P   O P T I O N S
-
-       LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
-       TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
-       NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
-       STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
-       PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
-       DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
-                                                      FOR THE LAST SUBSTEP
-
-
-     SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
-
-
-
-                             ***********  PRECISE MASS SUMMARY  ***********
-
-       TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
-                   Translational mass               |   Coupled translational/rotational mass
-             2563.9        0.0000        0.0000     |     0.0000        5127.7       -39.887    
-             0.0000        2563.9        0.0000     |    -5127.7        0.0000        1079.5    
-             0.0000        0.0000        2563.9     |     39.887       -1079.5        0.0000    
-         ------------------------------------------ | ------------------------------------------
-                                                    |         Rotational mass (inertia)
-                                                    |     13677.       -17.014       -2159.0    
-                                                    |    -17.014        14270.       -79.774    
-                                                    |    -2159.0       -79.774        598.57    
-
-       TOTAL MASS =  2563.9    
-         The mass principal axes coincide with the global Cartesian axes
-
-       CENTER OF MASS (X,Y,Z)=   0.42105       0.15557E-01    2.0000    
-
-       TOTAL INERTIA ABOUT CENTER OF MASS
-             3420.7      -0.21945       0.12432E-10
-           -0.21945        3559.7       0.75421E-12
-            0.12432E-10   0.75421E-12    143.42    
-         The inertia principal axes coincide with the global Cartesian axes
-
-
-      *** MASS SUMMARY BY ELEMENT TYPE ***
-
-      TYPE      MASS
-         1   2563.86    
-
-     Range of element maximum matrix coefficients in global coordinates
-     Maximum = 8.031780944E+10 at element 35281.                             
-     Minimum = 1.625616571E+09 at element 29909.                             
-
-       *** ELEMENT MATRIX FORMULATION TIMES
-         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-            1     52941  SOLID187      6.417   0.000121
-     Time at end of element matrix formulation CP = 15.1354027.              
-
-     SPARSE MATRIX DIRECT SOLVER.
-      Number of equations =      257727,    Maximum wavefront =    252
-
-     *** NOTE ***                            CP =      18.093   TIME= 14:47:24
-     The initial memory allocation (-m) has been exceeded.                   
-      Supplemental memory allocations are being used.                        
-      Memory allocated for solver              =  1573.899 MB
-      Memory required for in-core solution     =  1507.390 MB
-      Memory required for out-of-core solution =   427.344 MB
-
-     *** NOTE ***                            CP =      18.093   TIME= 14:47:24
-     The Sparse Matrix Solver is currently running in the in-core memory     
-     mode.  This memory mode uses the most amount of memory in order to      
-     avoid using the hard drive as much as possible, which most often        
-     results in the fastest solution time.  This mode is recommended if      
-     enough physical memory is present to accommodate all of the solver      
-     data.                                                                   
-     Sparse solver maximum pivot= 1.229541413E+11 at node 16621 UY.          
-     Sparse solver minimum pivot= 6388116.47 at node 40650 UY.               
-     Sparse solver minimum pivot in absolute value= 6388116.47 at node 40650 
-     UY.                                                                     
-
-       *** ELEMENT RESULT CALCULATION TIMES
-         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-            1     52941  SOLID187      7.006   0.000132
-
-       *** NODAL LOAD CALCULATION TIMES
-         TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
-
-            1     52941  SOLID187      2.253   0.000043
-     *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
-     *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
-
-
-     *** MAPDL BINARY FILE STATISTICS
-      BUFFER SIZE USED= 16384
-          129.625 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
-           41.750 MB WRITTEN ON RESULTS FILE: file.rst
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 317-321
+.. GENERATED FROM PYTHON SOURCE LINES 380-384
 
 Post-processing
 ===============
 
-Let's see what we got. Let's print the displacements:
+Let's see what we got. Let's print the displacements for the step one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 321-323
+.. GENERATED FROM PYTHON SOURCE LINES 384-388
 
 .. code-block:: default
 
+    mapdl.post1()
+    mapdl.set(1, 1)
     mapdl.post_processing.nodal_displacement("all")
 
 
@@ -1294,36 +1356,138 @@ Let's see what we got. Let's print the displacements:
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            ...,
-           [ 9.67456831e-03, -9.08711022e-04, -1.56431904e-03],
-           [ 2.57723832e-04, -6.31377622e-06, -4.24160934e-04],
-           [ 5.58219299e-03, -5.00726091e-04, -1.77010093e-03]])
+           [ 1.71997204e-05, -4.27683192e-02, -4.57847047e-04],
+           [ 7.68342153e-05, -3.25246381e-04, -1.61284993e-04],
+           [ 2.01727854e-05,  1.50986763e-06, -3.63005817e-05]])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 324-326
+.. GENERATED FROM PYTHON SOURCE LINES 389-391
 
 and let's plot them
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 326-328
+.. GENERATED FROM PYTHON SOURCE LINES 391-393
 
 .. code-block:: default
 
-    mapdl.post_processing.plot_nodal_displacement("x")
+    mapdl.post_processing.plot_nodal_displacement("y")
 
 
 
 
-.. image-sg:: /tutorials/images/sphx_glr_02-example_006.png
+.. image-sg:: /tutorials/images/sphx_glr_02-example_009.png
    :alt: 02 example
-   :srcset: /tutorials/images/sphx_glr_02-example_006.png
+   :srcset: /tutorials/images/sphx_glr_02-example_009.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 332-337
+.. GENERATED FROM PYTHON SOURCE LINES 394-397
+
+We can follow this approach to get the results at each step
+
+For example let's get the maximum principal stresses and where it happens:
+
+.. GENERATED FROM PYTHON SOURCE LINES 397-417
+
+.. code-block:: default
+
+
+    i = 0
+    max_stress_per_step = []
+    elem_max_stress_per_step = []
+
+    for step in mapdl.post_processing.time_values:
+        i += 1
+        mapdl.set(i)
+        stresses = mapdl.post_processing.element_stress("1")  # First principal stresses
+        max_stress_per_step.append(stresses.max())
+        elem_max_stress_per_step.append(stresses.argmax())
+
+    max_stress_per_step = np.array(max_stress_per_step)
+    elem_max_stress_per_step = np.array(elem_max_stress_per_step)
+    elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
+
+    print(f"The maximum principal stress is {max_stress_per_step.max():0.2f} Pascals.")
+    print(f"The maximum principal stress happens at the element {elem_}.")
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    The maximum principal stress is 5028945031.84 Pascals.
+    The maximum principal stress happens at the element 13543.
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 418-423
+
+Post-processing time dependent results
+--------------------------------------
+Let's now check the displacement across time for a node in the tip
+
+We can get the nodes max and min coordenates as:
+
+.. GENERATED FROM PYTHON SOURCE LINES 423-432
+
+.. code-block:: default
+
+    mapdl.post26()
+
+    nod_max = mapdl.mesh.nodes.max(axis=0)
+    nod_min = mapdl.mesh.nodes.min(axis=0)
+
+    coord_node = (nod_max[0] + nod_min[0]) / 2, (nod_max[1] + nod_min[1]) / 2, nod_max[2]
+
+    node = mapdl.queries.node(*coord_node)
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 433-434
+
+Getting the displacement at the tip
+
+.. GENERATED FROM PYTHON SOURCE LINES 434-444
+
+.. code-block:: default
+
+
+    item = "U"
+    comp = "Y"
+    node_uy = mapdl.get_nsol(node, item, comp)
+    time = mapdl.post_processing.time_values
+
+    plt.plot(time, node_uy)
+    plt.title("Displacement across time at the tip")
+    plt.show()
+
+
+
+
+.. image-sg:: /tutorials/images/sphx_glr_02-example_010.png
+   :alt: Displacement across time at the tip
+   :srcset: /tutorials/images/sphx_glr_02-example_010.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 448-453
 
 Closing session
 ===============
@@ -1331,7 +1495,7 @@ Closing session
 Thank you all for your time and attention!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 337-338
+.. GENERATED FROM PYTHON SOURCE LINES 453-454
 
 .. code-block:: default
 
@@ -1346,7 +1510,7 @@ Thank you all for your time and attention!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.044 seconds)
+   **Total running time of the script:** ( 3 minutes  55.509 seconds)
 
 
 .. _sphx_glr_download_tutorials_02-example.py:
