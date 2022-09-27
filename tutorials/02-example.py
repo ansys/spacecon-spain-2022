@@ -234,6 +234,9 @@ mapdl.nsel("s", "loc", "z", 0)
 mapdl.d("all", "all", 0)
 
 ##################################################################################
+# Wind Excitation
+# ---------------
+#
 # Let's apply a wind excitation.
 #
 # However, we don't really know what wind apply, so let's pull some online data first.
@@ -248,10 +251,11 @@ import pandas as pd
 import requests
 
 latitude, longitude = (40.447488, -3.691763)
+parameters = ["T2M_MAX", "T2M_MIN"]
 
-base_url = r"https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX,T2M_MIN&community=RE&longitude={longitude}&latitude={latitude}&start=20200101&end=20210305&format=JSON"
+base_url = r"https://power.larc.nasa.gov/api/temporal/daily/point?parameters={parameters}&community=RE&longitude={longitude}&latitude={latitude}&start=20200101&end=20210305&format=JSON"
 api_request_url = base_url.format(
-    longitude=longitude, latitude=latitude
+    longitude=longitude, latitude=latitude, parameters=",".join(parameters)
 )  # Another way to format f-strings!
 
 response = requests.get(url=api_request_url, verify=True, timeout=30.00)
@@ -259,14 +263,20 @@ response = requests.get(url=api_request_url, verify=True, timeout=30.00)
 content = json.loads(response.content.decode("utf-8"))
 df = pd.DataFrame(content["properties"]["parameter"])
 
+df = df.set_index(
+    pd.to_datetime(df.index, format="%Y%m%d")
+)  # Formatting dataframe index as date.
 #######################################################
 # Let's see the data
 df.head()
 
 ######################################################
-# Let's plot it a bit...
-df.plot()
+# and describe it...
+df.describe()
 
+######################################################
+# Let's plot it...
+df.plot(title="Wind speed per day")
 
 Total_time_sample = 60  # [s]
 Amplitude = [10]  # 30, 80, 200]
@@ -289,9 +299,8 @@ t = np.arange(0, 60, 0.1)
 plt.plot(t, wind_speed(t))
 plt.show()
 
-
-# mapdl.nsel("s", "loc","z", 4)
-# mapdl.d("all","ux", 0.01)
+mapdl.nsel("s", "loc", "z", 4)
+mapdl.d("all", "ux", 0.01)
 
 
 #################################################################################
