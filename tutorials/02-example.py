@@ -249,7 +249,8 @@ mapdl.d("all", "all", 0)
 #     :alt: Madrid office
 #     :figclass: align-center
 #
-#     Paseo de la castella Ansys office (Madrid). Yes, we love coffee.
+#     Paseo de la castella Ansys office (Madrid).
+#     Yes, we love coffee.
 #
 #
 #
@@ -338,9 +339,11 @@ plt.show()
 #    a = \omega * v
 #
 # where:
+#
 # * ``a`` is acceleration
 # * ``w`` is frequency
 # * ``v`` is velocity
+#
 
 
 def acceleration(t):
