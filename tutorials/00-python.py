@@ -36,7 +36,10 @@ and how to use it.
 # What is Python?
 # ~~~~~~~~~~~~~~~
 #
-# Python is #TODO: TO FILL
+# Python is a high-level programming language widely used and general-purpose. 
+# Python improves code readability compared to other languages and it is very suitable for people starting to code.
+# Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
+# garbage-collected (memory is managed automatically when a variable is no longer used).
 
 #################################
 # Introduction to Python

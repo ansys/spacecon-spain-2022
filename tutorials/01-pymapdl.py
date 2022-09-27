@@ -98,8 +98,7 @@ help(mapdl.mp)
 # Element definition
 # ------------------
 #
-# Since MAPDL is a finite element solver,
-# the FE element needs to be defined.
+# Since MAPDL is a finite element solver, the type of element needs to be defined. 
 # Ansys has an *Element Guide* which contain all the necessary
 # information
 
