@@ -15,18 +15,18 @@ PyMAPDL applied to Aerospace students and advocates.
 # Python + Ansys = PyAnsys
 # ~~~~~~~~~~~~~~~~~~~~~~~~
 #
-# Pyansys is Ansys effort on making their products accessible
+# PyAnsys is Ansys effort on making their products accessible
 # using Python programming language.
 #
 # Today we will focus on PyMAPDL with is the Python library
-# which exposes MAPDL (Ansys Structural)
+# which exposes MAPDL (Ansys Structural).
 #
 
 ##########################################################
 # PyMAPDL
 # ~~~~~~~
 # MAPDL provides many tools and features which would require
-# A LOT of time to explain, so let's have a quick overview
+# A LOT of time to explain, so let's have a quick overview.
 
 ##########################################################
 # Launching PyMAPDL
@@ -98,8 +98,7 @@ help(mapdl.mp)
 # Element definition
 # ------------------
 #
-# Since MAPDL is a finite element solver,
-# the FE element needs to be defined.
+# Since MAPDL is a finite element solver, the type of element needs to be defined.
 # Ansys has an *Element Guide* which contain all the necessary
 # information
 
@@ -237,7 +236,7 @@ nodal_disp = mapdl.post_processing.nodal_displacement("all")
 print(f"The maximum displacement is {nodal_disp.max():0.3f}")
 
 ############################################
-#  Oh! By the way, you can format strings as this way, they are very powerful.
+#  Oh! By the way, you can format strings in this way, they are very powerful.
 # This type of string is called f-string. The 0.3f after the colon (:) is the format for the number.
 
 # First column is X displacement

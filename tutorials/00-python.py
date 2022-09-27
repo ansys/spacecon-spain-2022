@@ -33,10 +33,13 @@ and how to use it.
 #
 
 ################################
-# What is python?
+# What is Python?
 # ~~~~~~~~~~~~~~~
 #
-# Python is #TODO: TO FILL
+# Python is a high-level programming language widely used and general-purpose.
+# Python improves code readability compared to other languages and it is very suitable for people starting to code.
+# Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
+# garbage-collected (memory is managed automatically when a variable is no longer used).
 
 #################################
 # Introduction to Python
@@ -49,9 +52,7 @@ mystring = "text"
 myotherstring = "text"
 myfloat = 2.2
 myint = 2
-mybool = (
-    True  # True and False are reserved keywords. As well as for, in, as and some more.
-)
+mybool = True  # ``True`` and ``False`` are reserved keywords. As well as ``for``, ``in``, ``as`` and some more.
 
 #####################################
 # There are functions such as ``print`` or ``help`` which can be called as:
@@ -67,7 +68,7 @@ mylist = [1, 2.2, "asdf"]
 print(mylist[0])  # Python is zero based indexing!
 
 mytuple = (1, 2.5, "qwer")
-print(mytuple[2])  # Indexing in python is done using square brackets `[]`
+print(mytuple[2])  # Indexing in python is done using square brackets ``[]``
 
 #########################################
 # This is a dict which does a mapping between its
@@ -143,7 +144,7 @@ while i < 10:
 
 import os  # for Operative system operations related
 
-print(os.name)  # OS name: nt or linux
+print(os.name)  # OS name
 
 #######################################
 # You can also import modules/functions from libraries
@@ -171,7 +172,7 @@ my_array = np.array(
     [1, 2, 3]
 )  # Arrays are a very convenient and powefull data structure.
 
-print(my_array * 2)  # element wise operations
+print(my_array * 2)  # Element wise operations
 
 print(my_array.T)  # Transpose
 
@@ -186,7 +187,7 @@ my_matrix[0, :]  # [1, 3, 4]
 my_matrix[:, 0]  # [1, 4]
 
 ###################################################################
-# for plotting you can use matplotlib
+# For plotting you can use matplotlib
 from matplotlib import pyplot as plt
 
 plt.plot(my_array, my_matrix[1, :], "r")
@@ -284,7 +285,7 @@ _ = plt.xlim((-0.05, 1.05))  # Store dummy values as '_'.
 # .... #TODO: TO BE FILLED.
 #
 #
-# In Python everything is objects, and hence they have some methods.
+# In Python everything you declare is considered an object, and hence they have some methods.
 # For example strings have:
 mystring.startswith("t")  # True
 mystring.split("e")  # Break the string in a list ["T", "xt"]
@@ -294,7 +295,7 @@ mystring.split("e")  # Break the string in a list ["T", "xt"]
 print(dir(mystring))  # yes, '__add__' is a string method!
 
 ###################################################
-# You can create your own class and inheritate from them.
+# You can create your own class and inherit from it.
 #
 # PyMAPDL provides you a class which gives you access to all MAPDL
 # commands and more.
