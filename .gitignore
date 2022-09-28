@@ -129,4 +129,8 @@ dmypy.json
 .pyre/
 
 # gallery
-doc/source/tutorials/
+doc/source/tutorials/*.pickle
+doc/source/tutorials/*.py
+doc/source/tutorials/*.md5
+doc/source/tutorials/*.rst
+doc/source/tutorials/images/
