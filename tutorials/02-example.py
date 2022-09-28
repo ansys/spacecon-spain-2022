@@ -119,7 +119,7 @@ mapdl.kplot()
 ############################################################################
 # Generate lines from the points
 # ------------------------------
-# Because of the helper functions give us two points per x-coordenate,
+# Because the helper functions give us two points per x-coordinate,
 # we need to join those points in two times:
 
 half = len(mapdl.geometry.knum) // 2
@@ -160,7 +160,7 @@ mapdl.al("all")
 help(mapdl.vdrag)
 
 #################################################################################
-# First, let's define the lince we are going to use to drag the area along.
+# First, let's define the length we are going to use to drag the area along.
 lenght_wing = 1.5  # [m] MAPDL is unit agnostic.
 
 k0 = mapdl.k("", 0, 0, 0)
@@ -183,7 +183,7 @@ mapdl.vplot()
 #
 # As you all know, finite element approaches split the domains into "finite elements"
 # where you solve your equations in their quadrature points.
-# Therefore, we need to define how that domain split is going to be perform, aka
+# Therefore, we need to define how that domain split is going to be performed, aka
 # "choosing element type".
 #
 
@@ -237,11 +237,11 @@ mapdl.d("all", "all", 0)
 # Wind Excitation
 # ---------------
 #
-# Let's apply a excitation to our wing. However, we don't really know what win
+# Let's apply an excitation to our wing. However, we don't really know what wind
 # speed to apply, so let's pull some online data first.
 #
 # We are going to retrieve some data from NASA regarding the wind speed at
-# Ansys Madrid office in Paseo de la castellana.
+# Ansys Madrid office in Paseo de la Castellana.
 #
 # .. figure:: ../images/office1.jpg
 #     :width: 600px
@@ -249,7 +249,7 @@ mapdl.d("all", "all", 0)
 #     :alt: Madrid office
 #     :figclass: align-center
 #
-#     Paseo de la castella Ansys office (Madrid).
+#     Paseo de la Castellana Ansys office (Madrid).
 #     Yes, we love coffee.
 #
 #
@@ -287,6 +287,7 @@ df.head()
 ######################################################
 # and describe it...
 df.describe()
+
 ######################################################
 # We see there are negative wind speed, probably because of the direction,
 # since we are not interested in direction, only magnitude,
@@ -383,7 +384,7 @@ for each_time, each_acceleration in zip(t[1:], accelerations):
 # Post-processing
 # ===============
 #
-# Let's see what we got. Let's print the displacements for the step one.
+# Let's see what we got. Let's print the displacements for the first step.
 mapdl.post1()
 mapdl.set(1, 1)
 mapdl.post_processing.nodal_displacement("all")
