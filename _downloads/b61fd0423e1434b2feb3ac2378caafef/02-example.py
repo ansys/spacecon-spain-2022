@@ -137,7 +137,7 @@ for kp in mapdl.geometry.knum[half + 1 : -1]:
 mapdl.l(1, half + 2)
 mapdl.l(half, mapdl.geometry.knum[-1])
 
-mapdl.nummrg("kp", 0.1)  # Remove duplicate keypoints if any
+mapdl.nummrg("all", 0.05)  # Remove duplicated entities if any
 
 ###############################################################################
 # Let's check the results
@@ -214,7 +214,7 @@ mapdl.mp("NUXY", 1, 0.3)  # Poisson's Ratio
 # ===============
 #
 # Let's finally split the domain:
-maximum_element_size = 1 / 20
+maximum_element_size = 1 / 10
 mapdl.esize(maximum_element_size)
 
 mapdl.vmesh("all")  # Mesh
@@ -244,7 +244,6 @@ mapdl.d("all", "all", 0)
 # Ansys Madrid office in Paseo de la Castellana.
 #
 # .. figure:: ../images/office1.jpg
-#     :width: 600px
 #     :align: center
 #     :alt: Madrid office
 #     :figclass: align-center

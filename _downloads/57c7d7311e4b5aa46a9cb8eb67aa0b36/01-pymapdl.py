@@ -9,24 +9,38 @@ PyMAPDL Tutorial
 In this tutorial, we will introduce some of the capabilities of
 PyMAPDL applied to Aerospace students and advocates.
 
+
+Python + Ansys = PyAnsys
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+PyAnsys is Ansys effort on making their products accessible
+using Python programming language.
+
+Today we will focus on PyMAPDL with is the Python library
+which exposes MAPDL (Ansys Structural).
+
+
+.. figure:: ../images/pyansys.png
+    :width: 600px
+    :align: center
+    :alt: PyAnsys Logo
+    :figclass: align-center
+
+
+What is PyMAPDL?
+~~~~~~~~~~~~~~~~
+
+PyMAPDL is the pythonic interface for Ansys MAPDL product.
+
+
+**What does this mean?**
+
+It means that you can call Ansys MAPDL functionalities (Solvers, Post processing tools, etc)
+using Python programming language.
+
+MAPDL provides many tools and features which would require
+*A LOT* of time to explain, so let's have a quick overview.
 """
-
-#########################################################
-# Python + Ansys = PyAnsys
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-#
-# PyAnsys is Ansys effort on making their products accessible
-# using Python programming language.
-#
-# Today we will focus on PyMAPDL with is the Python library
-# which exposes MAPDL (Ansys Structural).
-#
-
-##########################################################
-# PyMAPDL
-# ~~~~~~~
-# MAPDL provides many tools and features which would require
-# A LOT of time to explain, so let's have a quick overview.
 
 ##########################################################
 # Launching PyMAPDL
@@ -105,7 +119,7 @@ help(mapdl.mp)
 mapdl.et(1, "SOLID186")
 
 ##################################################
-# SOLID186 is a 3D hexahedron element, suitable for
+# ``SOLID186`` is a 3D hexahedron element, suitable for
 # any structural 3D analysis.
 #
 # There are also ``KEYOPTS`` which allow us to

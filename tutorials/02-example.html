@@ -101,9 +101,21 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="index.html">
-  SpaceCon 2022 PyAnsys Tutorials
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="00-python.html">
+  Short Python Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="01-pymapdl.html">
+  PyMAPDL Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  A full PyMAPDL example
  </a>
 </li>
 
@@ -153,7 +165,6 @@
         <li class="nav-item nav-item-0"><a href="../index.html">PyMAPDL Tutorials</a> » </li>
     
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">SpaceCon 2022 PyAnsys Tutorials</a> » </li>
         <li class="nav-item nav-item-this"><a href="">A full PyMAPDL example</a></li> 
       </ul>
     </div>
@@ -175,24 +186,7 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     
-    <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00-python.html">
-   Short Python Tutorial
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01-pymapdl.html">
-   PyMAPDL Tutorial
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   A full PyMAPDL example
-  </a>
- </li>
-</ul>
-
+    
     
   </div>
 </nav>
@@ -345,7 +339,7 @@ Python libraries for your own purposes (TFG? TFM? PhD?)</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
  Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     09:39:41  SEP 28, 2022 CP=      3.740
+ 00000000  VERSION=LINUX x64     09:55:43  SEP 28, 2022 CP=      3.674
 
 
 
@@ -448,130 +442,146 @@ we need to join those points in two times:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">half</span></a> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">l</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">half</span></a><span class="p">,</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">knum</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="n">mapdl</span><span class="o">.</span><span class="n">nummrg</span><span class="p">(</span><span class="s2">&quot;kp&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Remove duplicate keypoints if any</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nummrg</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">)</span>  <span class="c1"># Remove duplicated entities if any</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.10000
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>MERGE COINCIDENT NODES WITHIN TOLERANCE OF  0.50000E-01
 
- *** WARNING ***                         CP =       3.981   TIME= 09:39:42
+ MERGE IDENTICAL MATERIALS WITHIN TOLERANCE OF  0.50000E-01
+
+ MERGE IDENTICAL ELEMENT TYPES
+
+ MERGE IDENTICAL REAL CONSTANT SETS WITHIN TOLERANCE OF  0.50000E-01
+
+ MERGE IDENTICAL SECTION ID SET WITHIN TOLERANCE OF  0.50000E-01
+
+ MERGE IDENTICAL ELEMENTS
+
+ MERGE IDENTICAL COUPLED DOF SETS
+
+ MERGE IDENTICAL CONSTRAINT EQUATIONS WITHIN TOLERANCE OF 0.50000E-01
+
+ MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.50000E-01
+
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
  Keypoints 1 and 2 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 3.146864964E-02) exceeds the
   tolerance ( 3.146864964E-07).
 
- *** WARNING ***                         CP =       3.981   TIME= 09:39:42
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
  Keypoints 1 and 3 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 5.248710857E-02) exceeds the
   tolerance ( 2.241384605E-07).
 
- *** WARNING ***                         CP =       3.981   TIME= 09:39:42
- Keypoints 1 and 4 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 4 and 5 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 7.289725402E-02) exceeds the
-  tolerance ( 2.155698642E-07).
-
- *** WARNING ***                         CP =       3.981   TIME= 09:39:42
- Keypoints 1 and 5 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 9.313507449E-02) exceeds the
+  (2) The distance between them ( 2.121503862E-02) exceeds the
   tolerance ( 2.121503862E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 1 and 6 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 4 and 6 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.113308848) exceeds the
+  (2) The distance between them ( 4.223893985E-02) exceeds the
   tolerance ( 2.103681832E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 7 and 56 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 54 and 55 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.100044417) exceeds the
+  (2) The distance between them ( 2.063299177E-02) exceeds the
+  tolerance ( 2.063299177E-07).
+
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 54 and 56 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 4.115008769E-02) exceeds the
   tolerance ( 2.05256279E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 7 and 57 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 7 and 8 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.100249936) exceeds the
-  tolerance ( 2.046989231E-07).
+  (2) The distance between them ( 2.086321658E-02) exceeds the
+  tolerance ( 2.086321658E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 7 and 58 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 7 and 9 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.104096554) exceeds the
-  tolerance ( 2.043941462E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 7 and 59 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.111282145) exceeds the
-  tolerance ( 2.042261826E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 7 and 60 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 0.12126607) exceeds the
-  tolerance ( 2.041371226E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 8 and 9 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 2.081774221E-02) exceeds the
+  (2) The distance between them ( 4.167705446E-02) exceeds the
   tolerance ( 2.081774221E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 8 and 10 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 57 and 58 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 4.160104697E-02) exceeds the
-  tolerance ( 2.078632553E-07).
+  (2) The distance between them ( 2.043941462E-02) exceeds the
+  tolerance ( 2.043941462E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 8 and 11 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 57 and 59 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 6.235743644E-02) exceeds the
+  (2) The distance between them ( 4.086043642E-02) exceeds the
+  tolerance ( 2.042261826E-07).
+
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 10 and 11 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 2.076424706E-02) exceeds the
   tolerance ( 2.076424706E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 8 and 12 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 10 and 12 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 8.309221978E-02) exceeds the
+  (2) The distance between them ( 4.151084944E-02) exceeds the
   tolerance ( 2.074861222E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 61 and 62 cannot be merged because:
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 60 and 61 cannot be merged because:
   (1) One or both of them belong to lines.
-  (2) The distance between them ( 2.040819495E-02) exceeds the
+  (2) The distance between them ( 2.04095237E-02) exceeds the
+  tolerance ( 2.04095237E-07).
+
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 60 and 62 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 4.081723023E-02) exceeds the
   tolerance ( 2.040858385E-07).
 
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 61 and 63 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 4.081643722E-02) exceeds the
-  tolerance ( 2.040996261E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 61 and 64 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 6.122558417E-02) exceeds the
-  tolerance ( 2.041185603E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
- Keypoints 61 and 65 cannot be merged because:
-  (1) One or both of them belong to lines.
-  (2) The distance between them ( 8.16361381E-02) exceeds the
-  tolerance ( 2.041394947E-07).
-
- *** WARNING ***                         CP =       3.982   TIME= 09:39:42
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
  Keypoints 13 and 14 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.072979806E-02) exceeds the
   tolerance ( 2.072979806E-07).
 
- *** WARNING ***                         CP =       3.983   TIME= 09:39:42
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
  Keypoints 13 and 15 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.145299864E-02) exceeds the
   tolerance ( 2.072447958E-07).
+
+ *** WARNING ***                         CP =       3.843   TIME= 09:55:44
+ Keypoints 63 and 64 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 2.040996261E-02) exceeds the
+  tolerance ( 2.041185603E-07).
+
+ *** WARNING ***                         CP =       3.844   TIME= 09:55:44
+ Keypoints 63 and 65 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 4.082165033E-02) exceeds the
+  tolerance ( 2.041394947E-07).
+
+ *** WARNING ***                         CP =       3.844   TIME= 09:55:44
+ Keypoints 16 and 17 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 2.071880202E-02) exceeds the
+  tolerance ( 2.071880202E-07).
+
+ *** WARNING ***                         CP =       3.844   TIME= 09:55:44
+ Keypoints 16 and 18 cannot be merged because:
+  (1) One or both of them belong to lines.
+  (2) The distance between them ( 4.14355417E-02) exceeds the
+  tolerance ( 2.071764713E-07).
 
  ************************************************************************
  The number of ERROR and WARNING messages exceeds 20.
@@ -757,37 +767,76 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
 <section id="mesh-generation">
 <h2>Mesh Generation<a class="headerlink" href="#mesh-generation" title="Permalink to this heading">#</a></h2>
 <p>Let’s finally split the domain:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">maximum_element_size</span></a> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">20</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">maximum_element_size</span></a> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">10</span>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">esize</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">maximum_element_size</span></a><span class="p">)</span>
 
 <span class="n">mapdl</span><span class="o">.</span><span class="n">vmesh</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>  <span class="c1"># Mesh</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES
+  Sharp angle warning:
+    triangle facet defined at line  199 forms an angle of 1.4 degrees
+    with facet at line  197
+  Sharp angle warning:
+    triangle facet defined at line  199 forms an angle of 1.4 degrees
+    with facet at line  197
+  Sharp angle warning:
+    triangle facet defined at line  199 forms an angle of 1.4 degrees
+    with facet at line  197
+  Sharp angle warning:
+    triangle facet defined at line  201 forms an angle of 1.4 degrees
+    with facet at line  197
+  Sharp angle warning:
+    triangle facet defined at line  201 forms an angle of 1.4 degrees
+    with facet at line  199
+  Sharp angle warning:
+    triangle facet defined at area   51 forms an angle of 1.4 degrees
+    with facet at area   50
+  Sharp angle warning:
+    triangle facet defined at area   51 forms an angle of 1.4 degrees
+    with facet at area   50
+  Sharp angle warning:
+    triangle facet defined at area   51 forms an angle of 1.4 degrees
+    with facet at area   50
+  Sharp angle warning:
+    triangle facet defined at area   51 forms an angle of 1.4 degrees
+    with facet at area   50
+  Sharp angle warning:
+    triangle facet defined at line  201 forms an angle of 1.4 degrees
+    with facet at line  199
+  Sharp angle warning:
+    triangle facets defined at line  199 form an angle of 1.4 degrees
+   etc... (see error file)
+
+ *** WARNING ***                         CP =       5.634   TIME= 09:55:47
+ 68 angles less than 2.5 degrees found in triangle facets of volume 1,
+ with smallest angle = 1.4 degrees.  Poor element quality or mesh
+ failure may result.  A smaller element size specification may give
+ better results.
 
  NUMBER OF VOLUMES MESHED   =         1
- MAXIMUM NODE NUMBER        =     36559
- MAXIMUM ELEMENT NUMBER     =     22034
+ MAXIMUM NODE NUMBER        =     16044
+ MAXIMUM ELEMENT NUMBER     =      8879
 
  ------------------------------------------------------------------------------
             &lt;&lt;&lt;&lt;&lt;&lt;          SHAPE TESTING SUMMARY           &gt;&gt;&gt;&gt;&gt;&gt;
             &lt;&lt;&lt;&lt;&lt;&lt;       FOR NEW OR MODIFIED ELEMENTS       &gt;&gt;&gt;&gt;&gt;&gt;
  ------------------------------------------------------------------------------
                     --------------------------------------
-                    |  Element count     22034 SOLID187  |
+                    |  Element count      8879 SOLID187  |
                     --------------------------------------
 
   Test                Number tested  Warning count  Error count    Warn+Err %
   ----                -------------  -------------  -----------    ----------
-  Aspect Ratio              22034            101             0         0.46 %
-  Maximum Angle             22034             91             0         0.41 %
-  Jacobian Ratio            22034              0             0         0.00 %
+  Aspect Ratio               8879             77             0         0.87 %
+  Maximum Angle              8879             59             0         0.66 %
+  Jacobian Ratio             8879              0             0         0.00 %
 
-  Any                       22034            144             0         0.65 %
+  Any                        8879            107             0         1.21 %
  ------------------------------------------------------------------------------
 
- *** WARNING ***                         CP =       6.395   TIME= 09:39:45
- Shape testing revealed that 144 of the 22034 new or modified elements
+ *** WARNING ***                         CP =       5.866   TIME= 09:55:48
+ Shape testing revealed that 107 of the 8879 new or modified elements
  violate shape warning limits.  To review test results, please see the
  output file or issue the CHECK command.
 </pre></div>
@@ -804,7 +853,7 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       36559 BY           1
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       16044 BY           1
  REAL=  0.00000000       IMAG=  0.00000000
  ADDITIONAL DOFS=  UY    UZ
 </pre></div>
@@ -816,7 +865,7 @@ speed to apply, so let’s pull some online data first.</p>
 <p>We are going to retrieve some data from NASA regarding the wind speed at
 Ansys Madrid office in Paseo de la Castellana.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/office1.jpg"><img alt="Madrid office" src="../_images/office1.jpg" style="width: 600px;" /></a>
+<img alt="Madrid office" src="../_images/office1.jpg" />
 <figcaption>
 <p><span class="caption-text">Paseo de la Castellana Ansys office (Madrid).
 Yes, we love coffee.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
@@ -1137,9 +1186,9 @@ acel(acel_x=&#39;&#39;, acel_y=&#39;&#39;, acel_z=&#39;&#39;, **kwargs) method o
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        ...,
-       [ 1.22947502e-05, -3.05717645e-02, -3.27279453e-04],
-       [ 5.49228396e-05, -2.32493489e-04, -1.15290171e-04],
-       [ 1.44199645e-05,  1.07928763e-06, -2.59484790e-05]])
+       [ 1.92155463e-05, -3.42120399e-02, -3.44327357e-04],
+       [ 2.83673480e-05, -1.07093361e-02, -2.83357372e-04],
+       [ 3.64267579e-05, -9.09858347e-03, -3.25471145e-04]])
 </pre></div>
 </div>
 <p>and let’s plot them</p>
@@ -1167,8 +1216,8 @@ acel(acel_x=&#39;&#39;, acel_y=&#39;&#39;, acel_z=&#39;&#39;, **kwargs) method o
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum principal stress happens at the element </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum principal stress is 4455599988.33 Pascals.
-The maximum principal stress happens at the element 13543.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum principal stress is 3953788001.30 Pascals.
+The maximum principal stress happens at the element 8027.
 </pre></div>
 </div>
 <section id="post-processing-time-dependent-results">
@@ -1204,7 +1253,7 @@ The maximum principal stress happens at the element 13543.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  57.978 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  41.985 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-02-example-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/b61fd0423e1434b2feb3ac2378caafef/02-example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-example.py</span></code></a></p>

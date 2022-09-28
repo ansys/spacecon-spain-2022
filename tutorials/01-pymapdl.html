@@ -101,9 +101,21 @@
       
       <div class="navbar-center-item">
         <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="index.html">
-  SpaceCon 2022 PyAnsys Tutorials
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="00-python.html">
+  Short Python Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  PyMAPDL Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="02-example.html">
+  A full PyMAPDL example
  </a>
 </li>
 
@@ -153,7 +165,6 @@
         <li class="nav-item nav-item-0"><a href="../index.html">PyMAPDL Tutorials</a> » </li>
     
 
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">SpaceCon 2022 PyAnsys Tutorials</a> » </li>
         <li class="nav-item nav-item-this"><a href="">PyMAPDL Tutorial</a></li> 
       </ul>
     </div>
@@ -175,24 +186,7 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     
-    <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="00-python.html">
-   Short Python Tutorial
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   PyMAPDL Tutorial
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02-example.html">
-   A full PyMAPDL example
-  </a>
- </li>
-</ul>
-
+    
     
   </div>
 </nav>
@@ -222,8 +216,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pymapdl">
-   PyMAPDL
+  <a class="reference internal nav-link" href="#what-is-pymapdl">
+   What is PyMAPDL?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -307,11 +301,18 @@ PyMAPDL applied to Aerospace students and advocates.</p>
 using Python programming language.</p>
 <p>Today we will focus on PyMAPDL with is the Python library
 which exposes MAPDL (Ansys Structural).</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/pyansys.png"><img alt="PyAnsys Logo" src="../_images/pyansys.png" style="width: 600px;" /></a>
+</figure>
 </section>
-<section id="pymapdl">
-<h2>PyMAPDL<a class="headerlink" href="#pymapdl" title="Permalink to this heading">#</a></h2>
+<section id="what-is-pymapdl">
+<h2>What is PyMAPDL?<a class="headerlink" href="#what-is-pymapdl" title="Permalink to this heading">#</a></h2>
+<p>PyMAPDL is the pythonic interface for Ansys MAPDL product.</p>
+<p><strong>What does this mean?</strong></p>
+<p>It means that you can call Ansys MAPDL functionalities (Solvers, Post processing tools, etc)
+using Python programming language.</p>
 <p>MAPDL provides many tools and features which would require
-A LOT of time to explain, so let’s have a quick overview.</p>
+<em>A LOT</em> of time to explain, so let’s have a quick overview.</p>
 <section id="launching-pymapdl">
 <h3>Launching PyMAPDL<a class="headerlink" href="#launching-pymapdl" title="Permalink to this heading">#</a></h3>
 <p>But first, let’s launch PyMAPDL.</p>
@@ -576,7 +577,7 @@ information</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
-<p>SOLID186 is a 3D hexahedron element, suitable for
+<p><code class="docutils literal notranslate"><span class="pre">SOLID186</span></code> is a 3D hexahedron element, suitable for
 any structural 3D analysis.</p>
 <p>There are also <code class="docutils literal notranslate"><span class="pre">KEYOPTS</span></code> which allow us to
 configure the elements.
@@ -850,7 +851,7 @@ We could apply a force instead if we wish.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*****  MAPDL SOLVE    COMMAND  *****
 
- *** NOTE ***                            CP =       1.797   TIME= 09:39:36
+ *** NOTE ***                            CP =       1.486   TIME= 09:55:38
  There is no title defined for this analysis.
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -862,7 +863,7 @@ We could apply a force instead if we wish.</p>
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
  Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     09:39:36  SEP 28, 2022 CP=      1.811
+ 00000000  VERSION=LINUX x64     09:55:38  SEP 28, 2022 CP=      1.497
 
 
 
@@ -875,11 +876,11 @@ We could apply a force instead if we wish.</p>
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC
 
- *** NOTE ***                            CP =       1.814   TIME= 09:39:36
+ *** NOTE ***                            CP =       1.502   TIME= 09:55:38
  Present time 0 is less than or equal to the previous time.  Time will
  default to 1.
 
- *** NOTE ***                            CP =       1.815   TIME= 09:39:36
+ *** NOTE ***                            CP =       1.505   TIME= 09:55:38
  The conditions for direct assembly have been met.  No .emat or .erot
  files will be produced.
 
@@ -917,8 +918,8 @@ We could apply a force instead if we wish.</p>
    CENTER OF MASS (X,Y,Z)=   0.50000       0.50000       0.50000
 
    TOTAL INERTIA ABOUT CENTER OF MASS
-         1300.0      -0.38796E-11  -0.16058E-11
-       -0.38796E-11    1300.0      -0.72902E-11
+         1300.0      -0.41069E-11  -0.16058E-11
+       -0.41069E-11    1300.0      -0.72902E-11
        -0.16058E-11  -0.72902E-11    1300.0
      The inertia principal axes coincide with the global Cartesian axes
 
@@ -935,8 +936,8 @@ We could apply a force instead if we wish.</p>
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.271   0.000271
- Time at end of element matrix formulation CP = 2.06143689.
+        1      1000  SOLID186      0.244   0.000244
+ Time at end of element matrix formulation CP = 1.7168231.
 
  SPARSE MATRIX DIRECT SOLVER.
   Number of equations =       14159,    Maximum wavefront =    225
@@ -944,7 +945,7 @@ We could apply a force instead if we wish.</p>
   Memory required for in-core solution     =   108.776 MB
   Memory required for out-of-core solution =    44.000 MB
 
- *** NOTE ***                            CP =       2.408   TIME= 09:39:37
+ *** NOTE ***                            CP =       2.022   TIME= 09:55:39
  The Sparse Matrix Solver is currently running in the in-core memory
  mode.  This memory mode uses the most amount of memory in order to
  avoid using the hard drive as much as possible, which most often
@@ -959,12 +960,12 @@ We could apply a force instead if we wish.</p>
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.193   0.000193
+        1      1000  SOLID186      0.189   0.000189
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1000  SOLID186      0.038   0.000038
+        1      1000  SOLID186      0.039   0.000039
  *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
  *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -1025,7 +1026,7 @@ The average Z displacement is 0.005
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.873 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.813 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-01-pymapdl-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/57c7d7311e4b5aa46a9cb8eb67aa0b36/01-pymapdl.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-pymapdl.py</span></code></a></p>

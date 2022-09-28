@@ -28,7 +28,6 @@ PyMAPDL Tutorial
 In this tutorial, we will introduce some of the capabilities of
 PyMAPDL applied to Aerospace students and advocates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-24
 
 Python + Ansys = PyAnsys
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,20 +39,34 @@ Today we will focus on PyMAPDL with is the Python library
 which exposes MAPDL (Ansys Structural).
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. figure:: ../images/pyansys.png
+    :width: 600px
+    :align: center
+    :alt: PyAnsys Logo
+    :figclass: align-center
 
-PyMAPDL
-~~~~~~~
+
+What is PyMAPDL?
+~~~~~~~~~~~~~~~~
+
+PyMAPDL is the pythonic interface for Ansys MAPDL product.
+
+
+**What does this mean?**
+
+It means that you can call Ansys MAPDL functionalities (Solvers, Post processing tools, etc)
+using Python programming language.
+
 MAPDL provides many tools and features which would require
-A LOT of time to explain, so let's have a quick overview.
+*A LOT* of time to explain, so let's have a quick overview.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-35
+.. GENERATED FROM PYTHON SOURCE LINES 46-49
 
 Launching PyMAPDL
 -----------------
 But first, let's launch PyMAPDL.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-41
+.. GENERATED FROM PYTHON SOURCE LINES 49-55
 
 .. code-block:: default
 
@@ -79,7 +92,7 @@ But first, let's launch PyMAPDL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-49
+.. GENERATED FROM PYTHON SOURCE LINES 56-63
 
 Geometry
 --------
@@ -89,7 +102,7 @@ for geometry definition.
 
 You can plot an area using keypoints:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-57
+.. GENERATED FROM PYTHON SOURCE LINES 63-71
 
 .. code-block:: default
 
@@ -113,12 +126,12 @@ You can plot an area using keypoints:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-60
+.. GENERATED FROM PYTHON SOURCE LINES 72-74
 
 Create a simple cube volume.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-77
+.. GENERATED FROM PYTHON SOURCE LINES 74-91
 
 .. code-block:: default
 
@@ -151,14 +164,14 @@ Create a simple cube volume.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-82
+.. GENERATED FROM PYTHON SOURCE LINES 92-96
 
 Material definition
 -------------------
 
 You can define materials using the following commands:
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-88
+.. GENERATED FROM PYTHON SOURCE LINES 96-102
 
 .. code-block:: default
 
@@ -181,12 +194,12 @@ You can define materials using the following commands:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-91
+.. GENERATED FROM PYTHON SOURCE LINES 103-105
 
 At any point you can use help to get information about each
 function
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-93
+.. GENERATED FROM PYTHON SOURCE LINES 105-107
 
 .. code-block:: default
 
@@ -386,12 +399,12 @@ function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-96
+.. GENERATED FROM PYTHON SOURCE LINES 108-110
 
 Or you can check the online help at
 `mapdl.docs.pyansys.com <https://mapdl.docs.pyansys.com/mapdl_commands/prep7/_autosummary/ansys.mapdl.core.Mapdl.mp.html?highlight=mp#ansys.mapdl.core.Mapdl.mp>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-104
+.. GENERATED FROM PYTHON SOURCE LINES 112-118
 
 Element definition
 ------------------
@@ -400,7 +413,7 @@ Since MAPDL is a finite element solver, the type of element needs to be defined.
 Ansys has an *Element Guide* which contain all the necessary
 information
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-107
+.. GENERATED FROM PYTHON SOURCE LINES 118-121
 
 .. code-block:: default
 
@@ -420,9 +433,9 @@ information
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-115
+.. GENERATED FROM PYTHON SOURCE LINES 122-129
 
-SOLID186 is a 3D hexahedron element, suitable for
+``SOLID186`` is a 3D hexahedron element, suitable for
 any structural 3D analysis.
 
 There are also ``KEYOPTS`` which allow us to
@@ -430,7 +443,7 @@ configure the elements.
 Also there is the constant sets ``R`` which helps
 us to set the analysis and element configurations.
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-122
+.. GENERATED FROM PYTHON SOURCE LINES 131-136
 
 Meshing
 -------
@@ -438,7 +451,7 @@ Meshing
 Meshing is quite easy, once the element and material
 are defined.
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-125
+.. GENERATED FROM PYTHON SOURCE LINES 136-139
 
 .. code-block:: default
 
@@ -463,11 +476,11 @@ are defined.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-127
+.. GENERATED FROM PYTHON SOURCE LINES 140-141
 
 Let's see the result
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-130
+.. GENERATED FROM PYTHON SOURCE LINES 141-144
 
 .. code-block:: default
 
@@ -486,7 +499,7 @@ Let's see the result
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-145
+.. GENERATED FROM PYTHON SOURCE LINES 145-159
 
 Boundary conditions
 -------------------
@@ -503,7 +516,7 @@ But first, we need to select the corresponding nodes using
 the ``mapdl.nsel`` command:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-148
+.. GENERATED FROM PYTHON SOURCE LINES 159-162
 
 .. code-block:: default
 
@@ -674,7 +687,7 @@ the ``mapdl.nsel`` command:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-154
+.. GENERATED FROM PYTHON SOURCE LINES 164-168
 
 .. code-block:: default
 
@@ -694,11 +707,11 @@ the ``mapdl.nsel`` command:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-156
+.. GENERATED FROM PYTHON SOURCE LINES 169-170
 
 Applying to all selected nodes, displacement in Z direction equals to zero.
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-161
+.. GENERATED FROM PYTHON SOURCE LINES 170-175
 
 .. code-block:: default
 
@@ -719,12 +732,12 @@ Applying to all selected nodes, displacement in Z direction equals to zero.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-164
+.. GENERATED FROM PYTHON SOURCE LINES 176-178
 
 Let's apply the rest of the boundary conditions.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-180
+.. GENERATED FROM PYTHON SOURCE LINES 178-194
 
 .. code-block:: default
 
@@ -758,12 +771,12 @@ Let's apply the rest of the boundary conditions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-183
+.. GENERATED FROM PYTHON SOURCE LINES 195-197
 
 Finally let's fix one node in the directions:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-194
+.. GENERATED FROM PYTHON SOURCE LINES 197-208
 
 .. code-block:: default
 
@@ -793,11 +806,11 @@ Finally let's fix one node in the directions:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-196
+.. GENERATED FROM PYTHON SOURCE LINES 209-210
 
 Let's check the final result
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-200
+.. GENERATED FROM PYTHON SOURCE LINES 210-214
 
 .. code-block:: default
 
@@ -817,12 +830,12 @@ Let's check the final result
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 201-203
+.. GENERATED FROM PYTHON SOURCE LINES 215-217
 
 Now let's apply a displacement at the box top at each node.
 We could apply a force instead if we wish.
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-207
+.. GENERATED FROM PYTHON SOURCE LINES 217-221
 
 .. code-block:: default
 
@@ -844,7 +857,7 @@ We could apply a force instead if we wish.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-213
+.. GENERATED FROM PYTHON SOURCE LINES 222-227
 
 Analysis setup
 --------------
@@ -852,7 +865,7 @@ Analysis setup
 Let's do a simple static analysis
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-219
+.. GENERATED FROM PYTHON SOURCE LINES 227-233
 
 .. code-block:: default
 
@@ -872,7 +885,7 @@ Let's do a simple static analysis
 
     *****  MAPDL SOLVE    COMMAND  *****
 
-     *** NOTE ***                            CP =       1.797   TIME= 09:39:36
+     *** NOTE ***                            CP =       1.486   TIME= 09:55:38
      There is no title defined for this analysis.                            
 
      *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -884,7 +897,7 @@ Let's do a simple static analysis
 
      *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
      Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     09:39:36  SEP 28, 2022 CP=      1.811
+     00000000  VERSION=LINUX x64     09:55:38  SEP 28, 2022 CP=      1.497
 
                                                                                
 
@@ -897,11 +910,11 @@ Let's do a simple static analysis
        ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
        GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
-     *** NOTE ***                            CP =       1.814   TIME= 09:39:36
+     *** NOTE ***                            CP =       1.502   TIME= 09:55:38
      Present time 0 is less than or equal to the previous time.  Time will   
      default to 1.                                                           
 
-     *** NOTE ***                            CP =       1.815   TIME= 09:39:36
+     *** NOTE ***                            CP =       1.505   TIME= 09:55:38
      The conditions for direct assembly have been met.  No .emat or .erot    
      files will be produced.                                                 
 
@@ -939,8 +952,8 @@ Let's do a simple static analysis
        CENTER OF MASS (X,Y,Z)=   0.50000       0.50000       0.50000    
 
        TOTAL INERTIA ABOUT CENTER OF MASS
-             1300.0      -0.38796E-11  -0.16058E-11
-           -0.38796E-11    1300.0      -0.72902E-11
+             1300.0      -0.41069E-11  -0.16058E-11
+           -0.41069E-11    1300.0      -0.72902E-11
            -0.16058E-11  -0.72902E-11    1300.0    
          The inertia principal axes coincide with the global Cartesian axes
 
@@ -957,8 +970,8 @@ Let's do a simple static analysis
        *** ELEMENT MATRIX FORMULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.271   0.000271
-     Time at end of element matrix formulation CP = 2.06143689.              
+            1      1000  SOLID186      0.244   0.000244
+     Time at end of element matrix formulation CP = 1.7168231.               
 
      SPARSE MATRIX DIRECT SOLVER.
       Number of equations =       14159,    Maximum wavefront =    225
@@ -966,7 +979,7 @@ Let's do a simple static analysis
       Memory required for in-core solution     =   108.776 MB
       Memory required for out-of-core solution =    44.000 MB
 
-     *** NOTE ***                            CP =       2.408   TIME= 09:39:37
+     *** NOTE ***                            CP =       2.022   TIME= 09:55:39
      The Sparse Matrix Solver is currently running in the in-core memory     
      mode.  This memory mode uses the most amount of memory in order to      
      avoid using the hard drive as much as possible, which most often        
@@ -981,12 +994,12 @@ Let's do a simple static analysis
        *** ELEMENT RESULT CALCULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.193   0.000193
+            1      1000  SOLID186      0.189   0.000189
 
        *** NODAL LOAD CALCULATION TIMES
          TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-            1      1000  SOLID186      0.038   0.000038
+            1      1000  SOLID186      0.039   0.000039
      *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
      *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
 
@@ -999,14 +1012,14 @@ Let's do a simple static analysis
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 220-224
+.. GENERATED FROM PYTHON SOURCE LINES 234-238
 
 Post-Processing
 ---------------
 
 Let's what we got. Let's see the displacements:
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-226
+.. GENERATED FROM PYTHON SOURCE LINES 238-240
 
 .. code-block:: default
 
@@ -1031,11 +1044,11 @@ Let's what we got. Let's see the displacements:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-228
+.. GENERATED FROM PYTHON SOURCE LINES 241-242
 
 Let's plot them
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-230
+.. GENERATED FROM PYTHON SOURCE LINES 242-244
 
 .. code-block:: default
 
@@ -1053,12 +1066,12 @@ Let's plot them
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 231-233
+.. GENERATED FROM PYTHON SOURCE LINES 245-247
 
 We can store the displacements as an array and
 use them for our calculations. For example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 233-238
+.. GENERATED FROM PYTHON SOURCE LINES 247-252
 
 .. code-block:: default
 
@@ -1080,12 +1093,12 @@ use them for our calculations. For example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 239-241
+.. GENERATED FROM PYTHON SOURCE LINES 253-255
 
 Oh! By the way, you can format strings in this way, they are very powerful.
 This type of string is called f-string. The 0.3f after the colon (:) is the format for the number.
 
-.. GENERATED FROM PYTHON SOURCE LINES 241-247
+.. GENERATED FROM PYTHON SOURCE LINES 255-261
 
 .. code-block:: default
 
@@ -1109,7 +1122,7 @@ This type of string is called f-string. The 0.3f after the colon (:) is the form
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 248-254
+.. GENERATED FROM PYTHON SOURCE LINES 262-268
 
 Closing session
 ---------------
@@ -1118,7 +1131,7 @@ This is all for today. We hope you enjoyed this talk, as much as we enjoyed prep
 
 Closing PyMAPDL session
 
-.. GENERATED FROM PYTHON SOURCE LINES 254-255
+.. GENERATED FROM PYTHON SOURCE LINES 268-269
 
 .. code-block:: default
 
@@ -1133,7 +1146,7 @@ Closing PyMAPDL session
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.873 seconds)
+   **Total running time of the script:** ( 0 minutes  5.813 seconds)
 
 
 .. _sphx_glr_download_tutorials_01-pymapdl.py:
