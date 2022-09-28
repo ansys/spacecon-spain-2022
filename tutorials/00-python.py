@@ -9,45 +9,32 @@ Short Python Tutorial
 In this tutorial, we will introduce very briefly what is Python
 and how to use it.
 
+
+But first...
+
+
+What is Python?
+~~~~~~~~~~~~~~~
+
+.. figure:: ../images/python.png
+    :width: 600px
+    :align: center
+    :alt: Python logo
+    :figclass: align-center
+
+Python is a high-level programming language widely used and general-purpose.
+Python improves code readability compared to other languages and it is very suitable for people starting to code.
+Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
+garbage-collected (memory is managed automatically when a variable is no longer used).
+
+
+Introduction to Python
+~~~~~~~~~~~~~~~~~~~~~~
+
+Storing variables.
+
+
 """
-
-################################
-#
-# But first...
-#
-
-#################################
-#
-# What is PyMAPDL?
-# ~~~~~~~~~~~~~~~~
-#
-# PyMAPDL is the pythonic interface for Ansys MAPDL product.
-#
-
-
-#################################
-# **What does this mean?**
-#
-# It means that you can call Ansys products (Solvers, Post processing tools, etc)
-# using Python programming language.
-#
-
-################################
-# What is Python?
-# ~~~~~~~~~~~~~~~
-#
-# Python is a high-level programming language widely used and general-purpose.
-# Python improves code readability compared to other languages and it is very suitable for people starting to code.
-# Also, it is dynamically-typed (as opposed to static, which runs many actions during compilation) and
-# garbage-collected (memory is managed automatically when a variable is no longer used).
-
-#################################
-# Introduction to Python
-# ~~~~~~~~~~~~~~~~~~~~~~
-#
-# Storing variables.
-#
-
 mystring = "text"
 myotherstring = "text"
 myfloat = 2.2

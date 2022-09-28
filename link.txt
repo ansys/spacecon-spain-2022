@@ -1,0 +1,3 @@
+The online examples are in:
+
+https://tutorials.mapdl.docs.pyansys.com
