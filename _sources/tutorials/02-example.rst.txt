@@ -80,7 +80,7 @@ and let's launch PyMAPDL.
 
     *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
      Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     18:34:02  SEP 27, 2022 CP=      3.917
+     00000000  VERSION=LINUX x64     08:41:38  SEP 28, 2022 CP=      5.567
 
                                                                                
 
@@ -247,7 +247,7 @@ Checking results
 
 Generate lines from the points
 ------------------------------
-Because of the helper functions give us two points per x-coordenate,
+Because the helper functions give us two points per x-coordinate,
 we need to join those points in two times:
 
 .. GENERATED FROM PYTHON SOURCE LINES 124-135
@@ -296,121 +296,121 @@ Closing the section
 
     MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.10000    
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.202   TIME= 08:41:39
      Keypoints 1 and 2 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 3.146864964E-02) exceeds the           
       tolerance ( 3.146864964E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 1 and 3 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 5.248710857E-02) exceeds the           
       tolerance ( 2.241384605E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 1 and 4 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 7.289725402E-02) exceeds the           
       tolerance ( 2.155698642E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 1 and 5 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 9.313507449E-02) exceeds the           
       tolerance ( 2.121503862E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 1 and 6 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.113308848) exceeds the               
       tolerance ( 2.103681832E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 7 and 56 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.100044417) exceeds the               
       tolerance ( 2.05256279E-07).                                           
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 7 and 57 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.100249936) exceeds the               
       tolerance ( 2.046989231E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 7 and 58 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.104096554) exceeds the               
       tolerance ( 2.043941462E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.203   TIME= 08:41:39
      Keypoints 7 and 59 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.111282145) exceeds the               
       tolerance ( 2.042261826E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 7 and 60 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 0.12126607) exceeds the                
       tolerance ( 2.041371226E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 8 and 9 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.081774221E-02) exceeds the           
       tolerance ( 2.081774221E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 8 and 10 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.160104697E-02) exceeds the           
       tolerance ( 2.078632553E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 8 and 11 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 6.235743644E-02) exceeds the           
       tolerance ( 2.076424706E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 8 and 12 cannot be merged because:                            
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 8.309221978E-02) exceeds the           
       tolerance ( 2.074861222E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 61 and 62 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.040819495E-02) exceeds the           
       tolerance ( 2.040858385E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 61 and 63 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.081643722E-02) exceeds the           
       tolerance ( 2.040996261E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.204   TIME= 08:41:39
      Keypoints 61 and 64 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 6.122558417E-02) exceeds the           
       tolerance ( 2.041185603E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.205   TIME= 08:41:39
      Keypoints 61 and 65 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 8.16361381E-02) exceeds the            
       tolerance ( 2.041394947E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.205   TIME= 08:41:39
      Keypoints 13 and 14 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.072979806E-02) exceeds the           
       tolerance ( 2.072979806E-07).                                          
 
-     *** WARNING ***                         CP =       4.088   TIME= 18:34:03
+     *** WARNING ***                         CP =       6.205   TIME= 08:41:39
      Keypoints 13 and 15 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.145299864E-02) exceeds the           
@@ -601,7 +601,7 @@ an area along a line.
 
 .. GENERATED FROM PYTHON SOURCE LINES 163-164
 
-First, let's define the lince we are going to use to drag the area along.
+First, let's define the length we are going to use to drag the area along.
 
 .. GENERATED FROM PYTHON SOURCE LINES 164-171
 
@@ -668,7 +668,7 @@ Finite element definition
 
 As you all know, finite element approaches split the domains into "finite elements"
 where you solve your equations in their quadrature points.
-Therefore, we need to define how that domain split is going to be perform, aka
+Therefore, we need to define how that domain split is going to be performed, aka
 "choosing element type".
 
 
@@ -759,28 +759,28 @@ Let's finally split the domain:
     GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES  
 
      NUMBER OF VOLUMES MESHED   =         1
-     MAXIMUM NODE NUMBER        =     36559
-     MAXIMUM ELEMENT NUMBER     =     22034
+     MAXIMUM NODE NUMBER        =     36134
+     MAXIMUM ELEMENT NUMBER     =     21701
 
      ------------------------------------------------------------------------------
                 <<<<<<          SHAPE TESTING SUMMARY           >>>>>>
                 <<<<<<       FOR NEW OR MODIFIED ELEMENTS       >>>>>>
      ------------------------------------------------------------------------------
                         --------------------------------------
-                        |  Element count     22034 SOLID187  |
+                        |  Element count     21701 SOLID187  |
                         --------------------------------------
 
       Test                Number tested  Warning count  Error count    Warn+Err %
       ----                -------------  -------------  -----------    ----------
-      Aspect Ratio              22034            101             0         0.46 %
-      Maximum Angle             22034             91             0         0.41 %
-      Jacobian Ratio            22034              0             0         0.00 %
+      Aspect Ratio              21701             97             0         0.45 %
+      Maximum Angle             21701             92             0         0.42 %
+      Jacobian Ratio            21701              0             0         0.00 %
 
-      Any                       22034            144             0         0.65 %
+      Any                       21701            145             0         0.67 %
      ------------------------------------------------------------------------------
 
-     *** WARNING ***                         CP =       6.452   TIME= 18:34:07
-     Shape testing revealed that 144 of the 22034 new or modified elements   
+     *** WARNING ***                         CP =       9.572   TIME= 08:41:44
+     Shape testing revealed that 145 of the 21701 new or modified elements   
      violate shape warning limits.  To review test results, please see the   
      output file or issue the CHECK command.
 
@@ -833,7 +833,7 @@ Let's fix the nodes at the origin to not move.
  .. code-block:: none
 
 
-    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       36559 BY           1
+    SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       36134 BY           1
      REAL=  0.00000000       IMAG=  0.00000000    
      ADDITIONAL DOFS=  UY    UZ
 
@@ -844,11 +844,11 @@ Let's fix the nodes at the origin to not move.
 Wind Excitation
 ---------------
 
-Let's apply a excitation to our wing. However, we don't really know what win
+Let's apply an excitation to our wing. However, we don't really know what wind
 speed to apply, so let's pull some online data first.
 
 We are going to retrieve some data from NASA regarding the wind speed at
-Ansys Madrid office in Paseo de la castellana.
+Ansys Madrid office in Paseo de la Castellana.
 
 .. figure:: ../images/office1.jpg
     :width: 600px
@@ -856,7 +856,7 @@ Ansys Madrid office in Paseo de la castellana.
     :alt: Madrid office
     :figclass: align-center
 
-    Paseo de la castella Ansys office (Madrid).
+    Paseo de la Castellana Ansys office (Madrid).
     Yes, we love coffee.
 
 
@@ -976,11 +976,12 @@ Let's see the data
 
 and describe it...
 
-.. GENERATED FROM PYTHON SOURCE LINES 289-290
+.. GENERATED FROM PYTHON SOURCE LINES 289-291
 
 .. code-block:: default
 
     df.describe()
+
 
 
 
@@ -1059,14 +1060,14 @@ and describe it...
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 291-295
+.. GENERATED FROM PYTHON SOURCE LINES 292-296
 
 We see there are negative wind speed, probably because of the direction,
 since we are not interested in direction, only magnitude,
 let's use the absolute value then.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-297
+.. GENERATED FROM PYTHON SOURCE LINES 296-298
 
 .. code-block:: default
 
@@ -1079,11 +1080,11 @@ let's use the absolute value then.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 298-299
+.. GENERATED FROM PYTHON SOURCE LINES 299-300
 
 Let's plot it...
 
-.. GENERATED FROM PYTHON SOURCE LINES 299-301
+.. GENERATED FROM PYTHON SOURCE LINES 300-302
 
 .. code-block:: default
 
@@ -1101,11 +1102,11 @@ Let's plot it...
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 302-303
+.. GENERATED FROM PYTHON SOURCE LINES 303-304
 
 As we can see, the most frequent maximum speeds are:
 
-.. GENERATED FROM PYTHON SOURCE LINES 303-305
+.. GENERATED FROM PYTHON SOURCE LINES 304-306
 
 .. code-block:: default
 
@@ -1123,7 +1124,7 @@ As we can see, the most frequent maximum speeds are:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 306-312
+.. GENERATED FROM PYTHON SOURCE LINES 307-313
 
 As we can see, we could stablish there are two main peaks,
 one at 15 m/s and another at 33 m/s.
@@ -1132,7 +1133,7 @@ Let's generate some random wind signal with those speeds.
 We are going to do a superposition of harmonics:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 312-333
+.. GENERATED FROM PYTHON SOURCE LINES 313-334
 
 .. code-block:: default
 
@@ -1169,7 +1170,7 @@ We are going to do a superposition of harmonics:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 334-347
+.. GENERATED FROM PYTHON SOURCE LINES 335-348
 
 To apply these velocities, we are going instead to convert it to acceleration
 using the following equation:
@@ -1185,7 +1186,7 @@ where:
 * ``v`` is velocity
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 347-359
+.. GENERATED FROM PYTHON SOURCE LINES 348-360
 
 .. code-block:: default
 
@@ -1213,12 +1214,12 @@ where:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 360-362
+.. GENERATED FROM PYTHON SOURCE LINES 361-363
 
 Now let's use that in our analysis
 We are going to apply a global acceleration using ``mapdl.acce``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 362-365
+.. GENERATED FROM PYTHON SOURCE LINES 363-366
 
 .. code-block:: default
 
@@ -1301,12 +1302,12 @@ We are going to apply a global acceleration using ``mapdl.acce``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 366-368
+.. GENERATED FROM PYTHON SOURCE LINES 367-369
 
 Model solution
 ==============
 
-.. GENERATED FROM PYTHON SOURCE LINES 368-382
+.. GENERATED FROM PYTHON SOURCE LINES 369-383
 
 .. code-block:: default
 
@@ -1331,14 +1332,14 @@ Model solution
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 383-387
+.. GENERATED FROM PYTHON SOURCE LINES 384-388
 
 Post-processing
 ===============
 
-Let's see what we got. Let's print the displacements for the step one.
+Let's see what we got. Let's print the displacements for the first step.
 
-.. GENERATED FROM PYTHON SOURCE LINES 387-391
+.. GENERATED FROM PYTHON SOURCE LINES 388-392
 
 .. code-block:: default
 
@@ -1359,18 +1360,18 @@ Let's see what we got. Let's print the displacements for the step one.
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            ...,
-           [-5.98296745e-06,  1.48770710e-02,  1.59263285e-04],
-           [-2.67269815e-05,  1.13137799e-04,  5.61034040e-05],
-           [-7.01715583e-06, -5.25211380e-07,  1.26272517e-05]])
+           [-1.06097709e-04,  3.55855885e-04,  2.15481456e-04],
+           [-2.46669877e-05,  6.15474283e-02,  6.58831665e-04],
+           [-2.89624273e-05, -2.64676299e-06,  5.19713624e-05]])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 392-394
+.. GENERATED FROM PYTHON SOURCE LINES 393-395
 
 and let's plot them
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 394-396
+.. GENERATED FROM PYTHON SOURCE LINES 395-397
 
 .. code-block:: default
 
@@ -1388,13 +1389,13 @@ and let's plot them
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 397-400
+.. GENERATED FROM PYTHON SOURCE LINES 398-401
 
 We can follow this approach to get the results at each step
 
 For example let's get the maximum principal stresses and where it happens:
 
-.. GENERATED FROM PYTHON SOURCE LINES 400-420
+.. GENERATED FROM PYTHON SOURCE LINES 401-421
 
 .. code-block:: default
 
@@ -1426,13 +1427,13 @@ For example let's get the maximum principal stresses and where it happens:
 
  .. code-block:: none
 
-    The maximum principal stress is 4401237649.33 Pascals.
-    The maximum principal stress happens at the element 13543.
+    The maximum principal stress is 4317706303.23 Pascals.
+    The maximum principal stress happens at the element 5269.
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 421-426
+.. GENERATED FROM PYTHON SOURCE LINES 422-427
 
 Post-processing time dependent results
 --------------------------------------
@@ -1440,7 +1441,7 @@ Let's now check the displacement across time for a node in the tip
 
 We can get the nodes max and min coordenates as:
 
-.. GENERATED FROM PYTHON SOURCE LINES 426-435
+.. GENERATED FROM PYTHON SOURCE LINES 427-436
 
 .. code-block:: default
 
@@ -1460,11 +1461,11 @@ We can get the nodes max and min coordenates as:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 436-437
+.. GENERATED FROM PYTHON SOURCE LINES 437-438
 
 Getting the displacement at the tip
 
-.. GENERATED FROM PYTHON SOURCE LINES 437-447
+.. GENERATED FROM PYTHON SOURCE LINES 438-448
 
 .. code-block:: default
 
@@ -1490,7 +1491,7 @@ Getting the displacement at the tip
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 451-456
+.. GENERATED FROM PYTHON SOURCE LINES 452-457
 
 Closing session
 ===============
@@ -1498,7 +1499,7 @@ Closing session
 Thank you all for your time and attention!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 456-457
+.. GENERATED FROM PYTHON SOURCE LINES 457-458
 
 .. code-block:: default
 
@@ -1513,7 +1514,7 @@ Thank you all for your time and attention!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  51.284 seconds)
+   **Total running time of the script:** ( 7 minutes  2.932 seconds)
 
 
 .. _sphx_glr_download_tutorials_02-example.py:
