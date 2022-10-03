@@ -80,7 +80,7 @@ and let's launch PyMAPDL.
 
     *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
      Ansys Mechanical Enterprise                       
-     00000000  VERSION=LINUX x64     10:20:34  OCT 03, 2022 CP=      3.199
+     00000000  VERSION=LINUX x64     10:32:54  OCT 03, 2022 CP=      3.703
 
                                                                                
 
@@ -315,121 +315,121 @@ Closing the section
 
      MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.50000E-01
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 1 and 2 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 3.146864964E-02) exceeds the           
       tolerance ( 3.146864964E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 1 and 3 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 5.248710857E-02) exceeds the           
       tolerance ( 2.241384605E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 4 and 5 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.121503862E-02) exceeds the           
       tolerance ( 2.121503862E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 4 and 6 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.223893985E-02) exceeds the           
       tolerance ( 2.103681832E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 54 and 55 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.063299177E-02) exceeds the           
       tolerance ( 2.063299177E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 54 and 56 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.115008769E-02) exceeds the           
       tolerance ( 2.05256279E-07).                                           
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 7 and 8 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.086321658E-02) exceeds the           
       tolerance ( 2.086321658E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.001   TIME= 10:32:55
      Keypoints 7 and 9 cannot be merged because:                             
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.167705446E-02) exceeds the           
       tolerance ( 2.081774221E-07).                                          
 
-     *** WARNING ***                         CP =       3.425   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 57 and 58 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.043941462E-02) exceeds the           
       tolerance ( 2.043941462E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 57 and 59 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.086043642E-02) exceeds the           
       tolerance ( 2.042261826E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 10 and 11 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.076424706E-02) exceeds the           
       tolerance ( 2.076424706E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 10 and 12 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.151084944E-02) exceeds the           
       tolerance ( 2.074861222E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 60 and 61 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.04095237E-02) exceeds the            
       tolerance ( 2.04095237E-07).                                           
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 60 and 62 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.081723023E-02) exceeds the           
       tolerance ( 2.040858385E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 13 and 14 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.072979806E-02) exceeds the           
       tolerance ( 2.072979806E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 13 and 15 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.145299864E-02) exceeds the           
       tolerance ( 2.072447958E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 63 and 64 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.040996261E-02) exceeds the           
       tolerance ( 2.041185603E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 63 and 65 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.082165033E-02) exceeds the           
       tolerance ( 2.041394947E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 16 and 17 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 2.071880202E-02) exceeds the           
       tolerance ( 2.071880202E-07).                                          
 
-     *** WARNING ***                         CP =       3.426   TIME= 10:20:35
+     *** WARNING ***                         CP =       4.002   TIME= 10:32:55
      Keypoints 16 and 18 cannot be merged because:                           
       (1) One or both of them belong to lines.                               
       (2) The distance between them ( 4.14355417E-02) exceeds the            
@@ -811,7 +811,7 @@ Let's finally split the domain:
         triangle facets defined at line  199 form an angle of 1.4 degrees
        etc... (see error file)
 
-     *** WARNING ***                         CP =       5.452   TIME= 10:20:38
+     *** WARNING ***                         CP =       6.070   TIME= 10:32:58
      68 angles less than 2.5 degrees found in triangle facets of volume 1,   
      with smallest angle = 1.4 degrees.  Poor element quality or mesh        
      failure may result.  A smaller element size specification may give      
@@ -838,7 +838,7 @@ Let's finally split the domain:
       Any                        8879            107             0         1.21 %
      ------------------------------------------------------------------------------
 
-     *** WARNING ***                         CP =       5.684   TIME= 10:20:38
+     *** WARNING ***                         CP =       6.301   TIME= 10:32:59
      Shape testing revealed that 107 of the 8879 new or modified elements    
      violate shape warning limits.  To review test results, please see the   
      output file or issue the CHECK command.
@@ -1418,9 +1418,9 @@ Let's see what we got. Let's print the displacements for the first step.
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
            ...,
-           [ 1.82624837e-05, -3.25151735e-02, -3.27249231e-04],
-           [ 2.69603697e-05, -1.01781690e-02, -2.69303267e-04],
-           [ 3.46200448e-05, -8.64730724e-03, -3.09328259e-04]])
+           [ 2.03509246e-05, -3.62335078e-02, -3.64672436e-04],
+           [ 3.00434738e-05, -1.13421127e-02, -3.00099952e-04],
+           [ 3.85790856e-05, -9.63618642e-03, -3.44702077e-04]])
 
 
 
@@ -1491,9 +1491,9 @@ For example let's get the maximum principal stresses and where it happens:
  .. code-block:: none
 
     The maximum principal stress
-            Value: 4005727541.36 Pascals.
+            Value: 4005324457.49 Pascals.
             At the element 5399.
-            At the time 0.21.
+            At the time 0.14.
 
 
 
@@ -1585,7 +1585,7 @@ Thank you all for your time and attention!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  43.932 seconds)
+   **Total running time of the script:** ( 1 minutes  41.986 seconds)
 
 
 .. _sphx_glr_download_tutorials_02-example.py:
