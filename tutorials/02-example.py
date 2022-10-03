@@ -114,7 +114,10 @@ for each_x, each_y in zip(x, y):
 # Checking results
 #
 
-mapdl.kplot()
+pl = mapdl.kplot(return_plotter=True)
+pl.view_xy()
+pl.show()
+
 
 ############################################################################
 # Generate lines from the points
@@ -141,8 +144,9 @@ mapdl.nummrg("all", 0.05)  # Remove duplicated entities if any
 
 ###############################################################################
 # Let's check the results
-mapdl.lplot()
-
+pl = mapdl.lplot(return_plotter=True)
+pl.view_xy()
+pl.show()
 ###############################################################################
 # Create section area
 # -------------------
@@ -442,7 +446,13 @@ node = mapdl.queries.node(*coord_node)
 
 item = "U"
 comp = "Y"
-node_uy = mapdl.get_nsol(node, item, comp)
+nvar = 9
+
+# node_uy = mapdl.get_nsol(node, item, comp)  # Available in 0.62.3
+mapdl.nsol(nvar, node, item, comp)
+mapdl.vget("temp_", nvar)
+
+node_uy = mapdl.parameters["temp_"]
 time = mapdl.post_processing.time_values
 
 plt.plot(time, node_uy)
