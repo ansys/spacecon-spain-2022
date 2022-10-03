@@ -411,10 +411,15 @@ for step in mapdl.post_processing.time_values:
 
 max_stress_per_step = np.array(max_stress_per_step)
 elem_max_stress_per_step = np.array(elem_max_stress_per_step)
-elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
 
-print(f"The maximum principal stress is {max_stress_per_step.max():0.2f} Pascals.")
-print(f"The maximum principal stress happens at the element {elem_}.")
+elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
+time_ = mapdl.post_processing.time_values[max_stress_per_step.argmax()]
+
+print(
+    f"The maximum principal stress\n\tValue: {max_stress_per_step.max():0.2f} Pascals."
+)
+print(f"\tAt the element {elem_}.")
+print(f"\tAt the time {time_}.")
 
 
 #################################################################################
