@@ -268,9 +268,15 @@ _ = plt.xlim((-0.05, 1.05))  # Store dummy values as '_'.
 #
 # **What is a class?**
 #
-# A class is an object in a programming language which
-# .... #TODO: TO BE FILLED.
+# A class is the main element in object-oriented programming (OOP).
+# A class is a user-defined blueprint or prototype from which objects
+# are created. It is a very powerful way to organize and use your code.
 #
+# As an example, a dog will always have some attributes such as name,
+# breed, age and color. Thus, if you want to collect this information
+# for 100 dogs, you could create a class Dog that includes this information.
+# This class Dog would then be reused to generate each of the 100 dogs' objects,
+# all of them having the exact same attributes; name, breed, age and color.
 #
 # In Python everything you declare is considered an object, and hence they have some methods.
 # For example strings have:
