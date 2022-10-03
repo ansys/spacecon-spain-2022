@@ -114,7 +114,10 @@ for each_x, each_y in zip(x, y):
 # Checking results
 #
 
-mapdl.kplot()
+pl = mapdl.kplot(return_plotter=True)
+pl.view_xy()
+pl.show()
+
 
 ############################################################################
 # Generate lines from the points
@@ -141,8 +144,9 @@ mapdl.nummrg("all", 0.05)  # Remove duplicated entities if any
 
 ###############################################################################
 # Let's check the results
-mapdl.lplot()
-
+pl = mapdl.lplot(return_plotter=True)
+pl.view_xy()
+pl.show()
 ###############################################################################
 # Create section area
 # -------------------
@@ -411,10 +415,15 @@ for step in mapdl.post_processing.time_values:
 
 max_stress_per_step = np.array(max_stress_per_step)
 elem_max_stress_per_step = np.array(elem_max_stress_per_step)
-elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
 
-print(f"The maximum principal stress is {max_stress_per_step.max():0.2f} Pascals.")
-print(f"The maximum principal stress happens at the element {elem_}.")
+elem_ = mapdl.mesh.enum[elem_max_stress_per_step[max_stress_per_step.argmax()]]
+time_ = mapdl.post_processing.time_values[max_stress_per_step.argmax()]
+
+print(
+    f"The maximum principal stress\n\tValue: {max_stress_per_step.max():0.2f} Pascals."
+)
+print(f"\tAt the element {elem_}.")
+print(f"\tAt the time {time_}.")
 
 
 #################################################################################
@@ -437,7 +446,13 @@ node = mapdl.queries.node(*coord_node)
 
 item = "U"
 comp = "Y"
-node_uy = mapdl.get_nsol(node, item, comp)
+nvar = 9
+
+# node_uy = mapdl.get_nsol(node, item, comp)  # Available in 0.62.3
+mapdl.nsol(nvar, node, item, comp)
+mapdl.vget("temp_", nvar)
+
+node_uy = mapdl.parameters["temp_"]
 time = mapdl.post_processing.time_values
 
 plt.plot(time, node_uy)
