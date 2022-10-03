@@ -339,7 +339,7 @@ Python libraries for your own purposes (TFG? TFM? PhD?)</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>*** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE                  22.2     ***
  Ansys Mechanical Enterprise
- 00000000  VERSION=LINUX x64     07:17:53  OCT 03, 2022 CP=      4.419
+ 00000000  VERSION=LINUX x64     09:09:23  OCT 03, 2022 CP=      5.069
 
 
 
@@ -419,7 +419,9 @@ section inside PyMAPDL.</p>
 </pre></div>
 </div>
 <p>Checking results</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">kplot</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">kplot</span><span class="p">(</span><span class="n">return_plotter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.view_xy.html#pyvista.Plotter.view_xy" title="pyvista.Plotter.view_xy" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">view_xy</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_02-example_001.png" srcset="../_images/sphx_glr_02-example_001.png" alt="02 example" class = "sphx-glr-single-img"/></section>
@@ -463,121 +465,121 @@ we need to join those points in two times:</p>
 
  MERGE COINCIDENT KEYPOINTS WITHIN TOLERANCE OF  0.50000E-01
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.783   TIME= 09:09:24
  Keypoints 1 and 2 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 3.146864964E-02) exceeds the
   tolerance ( 3.146864964E-07).
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.783   TIME= 09:09:24
  Keypoints 1 and 3 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 5.248710857E-02) exceeds the
   tolerance ( 2.241384605E-07).
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.783   TIME= 09:09:24
  Keypoints 4 and 5 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.121503862E-02) exceeds the
   tolerance ( 2.121503862E-07).
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.783   TIME= 09:09:24
  Keypoints 4 and 6 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.223893985E-02) exceeds the
   tolerance ( 2.103681832E-07).
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 54 and 55 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.063299177E-02) exceeds the
   tolerance ( 2.063299177E-07).
 
- *** WARNING ***                         CP =       4.618   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 54 and 56 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.115008769E-02) exceeds the
   tolerance ( 2.05256279E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 7 and 8 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.086321658E-02) exceeds the
   tolerance ( 2.086321658E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 7 and 9 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.167705446E-02) exceeds the
   tolerance ( 2.081774221E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 57 and 58 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.043941462E-02) exceeds the
   tolerance ( 2.043941462E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 57 and 59 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.086043642E-02) exceeds the
   tolerance ( 2.042261826E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 10 and 11 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.076424706E-02) exceeds the
   tolerance ( 2.076424706E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.784   TIME= 09:09:24
  Keypoints 10 and 12 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.151084944E-02) exceeds the
   tolerance ( 2.074861222E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 60 and 61 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.04095237E-02) exceeds the
   tolerance ( 2.04095237E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 60 and 62 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.081723023E-02) exceeds the
   tolerance ( 2.040858385E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 13 and 14 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.072979806E-02) exceeds the
   tolerance ( 2.072979806E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 13 and 15 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.145299864E-02) exceeds the
   tolerance ( 2.072447958E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 63 and 64 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.040996261E-02) exceeds the
   tolerance ( 2.041185603E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 63 and 65 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.082165033E-02) exceeds the
   tolerance ( 2.041394947E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 16 and 17 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 2.071880202E-02) exceeds the
   tolerance ( 2.071880202E-07).
 
- *** WARNING ***                         CP =       4.619   TIME= 07:17:54
+ *** WARNING ***                         CP =       5.785   TIME= 09:09:24
  Keypoints 16 and 18 cannot be merged because:
   (1) One or both of them belong to lines.
   (2) The distance between them ( 4.14355417E-02) exceeds the
@@ -592,7 +594,9 @@ we need to join those points in two times:</p>
 </pre></div>
 </div>
 <p>Let’s check the results</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">lplot</span><span class="p">(</span><span class="n">return_plotter</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.view_xy.html#pyvista.Plotter.view_xy" title="pyvista.Plotter.view_xy" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">view_xy</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <img src="../_images/sphx_glr_02-example_002.png" srcset="../_images/sphx_glr_02-example_002.png" alt="02 example" class = "sphx-glr-single-img"/></section>
@@ -808,35 +812,35 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
     triangle facets defined at line  199 form an angle of 1.4 degrees
    etc... (see error file)
 
- *** WARNING ***                         CP =       6.726   TIME= 07:17:59
+ *** WARNING ***                         CP =       8.533   TIME= 09:09:29
  68 angles less than 2.5 degrees found in triangle facets of volume 1,
  with smallest angle = 1.4 degrees.  Poor element quality or mesh
  failure may result.  A smaller element size specification may give
  better results.
 
  NUMBER OF VOLUMES MESHED   =         1
- MAXIMUM NODE NUMBER        =     16044
- MAXIMUM ELEMENT NUMBER     =      8879
+ MAXIMUM NODE NUMBER        =     15913
+ MAXIMUM ELEMENT NUMBER     =      8776
 
  ------------------------------------------------------------------------------
             &lt;&lt;&lt;&lt;&lt;&lt;          SHAPE TESTING SUMMARY           &gt;&gt;&gt;&gt;&gt;&gt;
             &lt;&lt;&lt;&lt;&lt;&lt;       FOR NEW OR MODIFIED ELEMENTS       &gt;&gt;&gt;&gt;&gt;&gt;
  ------------------------------------------------------------------------------
                     --------------------------------------
-                    |  Element count      8879 SOLID187  |
+                    |  Element count      8776 SOLID187  |
                     --------------------------------------
 
   Test                Number tested  Warning count  Error count    Warn+Err %
   ----                -------------  -------------  -----------    ----------
-  Aspect Ratio               8879             77             0         0.87 %
-  Maximum Angle              8879             59             0         0.66 %
-  Jacobian Ratio             8879              0             0         0.00 %
+  Aspect Ratio               8776             75             0         0.85 %
+  Maximum Angle              8776             59             0         0.67 %
+  Jacobian Ratio             8776              0             0         0.00 %
 
-  Any                        8879            107             0         1.21 %
+  Any                        8776            105             0         1.20 %
  ------------------------------------------------------------------------------
 
- *** WARNING ***                         CP =       6.990   TIME= 07:17:59
- Shape testing revealed that 107 of the 8879 new or modified elements
+ *** WARNING ***                         CP =       8.786   TIME= 09:09:30
+ Shape testing revealed that 105 of the 8776 new or modified elements
  violate shape warning limits.  To review test results, please see the
  output file or issue the CHECK command.
 </pre></div>
@@ -853,7 +857,7 @@ other parameters (plasticity, fatige, viscoelasticity, etc).</p>
 <span class="n">mapdl</span><span class="o">.</span><span class="n">d</span><span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       16044 BY           1
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>SPECIFIED CONSTRAINT UX   FOR SELECTED NODES            1 TO       15913 BY           1
  REAL=  0.00000000       IMAG=  0.00000000
  ADDITIONAL DOFS=  UY    UZ
 </pre></div>
@@ -1186,9 +1190,9 @@ acel(acel_x=&#39;&#39;, acel_y=&#39;&#39;, acel_z=&#39;&#39;, **kwargs) method o
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        [ 0.00000000e+00,  0.00000000e+00,  0.00000000e+00],
        ...,
-       [ 1.68105767e-05, -2.99301468e-02, -3.01232208e-04],
-       [ 2.48169618e-05, -9.36898247e-03, -2.47893074e-04],
-       [ 3.18676762e-05, -7.95982757e-03, -2.84735992e-04]])
+       [-3.87284704e-05,  9.67924691e-03,  3.46274522e-04],
+       [-7.60134017e-05,  2.55350156e-03,  2.65455287e-04],
+       [-1.62622192e-05,  1.86472492e-02,  1.27076931e-04]])
 </pre></div>
 </div>
 <p>and let’s plot them</p>
@@ -1210,14 +1214,21 @@ acel(acel_x=&#39;&#39;, acel_y=&#39;&#39;, acel_z=&#39;&#39;, **kwargs) method o
 
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="p">)</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a><span class="p">)</span>
-<a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">enum</span><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">argmax</span><span class="p">()]]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum principal stress is </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> Pascals.&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The maximum principal stress happens at the element </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">enum</span><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">elem_max_stress_per_step</span></a><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">argmax</span><span class="p">()]]</span>
+<a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">time_</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time_values</span><span class="p">[</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;The maximum principal stress</span><span class="se">\n\t</span><span class="s2">Value: </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">max_stress_per_step</span></a><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2"> Pascals.&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">At the element </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.int32" title="numpy.int32" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">elem_</span></a><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">At the time </span><span class="si">{</span><a href="https://numpy.org/devdocs/reference/arrays.scalars.html#numpy.float64" title="numpy.float64" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-attribute"><span class="n">time_</span></a><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum principal stress is 3697295335.44 Pascals.
-The maximum principal stress happens at the element 5399.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>The maximum principal stress
+        Value: 4231427670.40 Pascals.
+        At the element 4232.
+        At the time 0.04.
 </pre></div>
 </div>
 <section id="post-processing-time-dependent-results">
@@ -1237,7 +1248,13 @@ The maximum principal stress happens at the element 5399.
 <p>Getting the displacement at the tip</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">item</span></a> <span class="o">=</span> <span class="s2">&quot;U&quot;</span>
 <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">comp</span></a> <span class="o">=</span> <span class="s2">&quot;Y&quot;</span>
-<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node_uy</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">get_nsol</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">item</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">comp</span></a><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nvar</span></a> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="c1"># node_uy = mapdl.get_nsol(node, item, comp)  # Available in 0.62.3</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">nsol</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nvar</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">item</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">comp</span></a><span class="p">)</span>
+<span class="n">mapdl</span><span class="o">.</span><span class="n">vget</span><span class="p">(</span><span class="s2">&quot;temp_&quot;</span><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">nvar</span></a><span class="p">)</span>
+
+<a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node_uy</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">parameters</span></a><span class="p">[</span><span class="s2">&quot;temp_&quot;</span><span class="p">]</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time</span></a> <span class="o">=</span> <span class="n">mapdl</span><span class="o">.</span><span class="n">post_processing</span><span class="o">.</span><span class="n">time_values</span>
 
 <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">node_uy</span></a><span class="p">)</span>
@@ -1253,7 +1270,7 @@ The maximum principal stress happens at the element 5399.
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapdl</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  11.575 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  3.729 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-02-example-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/b61fd0423e1434b2feb3ac2378caafef/02-example.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">02-example.py</span></code></a></p>
