@@ -618,21 +618,27 @@ Reference: https://en.wikipedia.org/wiki/NACA_airfoil#Equation_for_a_cambered_4-
 
 **Cool stuff uh?**
 
-.. GENERATED FROM PYTHON SOURCE LINES 266-277
+.. GENERATED FROM PYTHON SOURCE LINES 266-283
 
 Brief Python classes concept
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **What is a class?**
 
-A class is an object in a programming language which
-.... #TODO: TO BE FILLED.
+A class is the main element in object-oriented programming (OOP).
+A class is a user-defined blueprint or prototype from which objects
+are created. It is a very powerful way to organize and use your code.
 
+As an example, a dog will always have some attributes such as name, 
+breed, age and color. Thus, if you want to collect this information
+for 100 dogs, you could create a class Dog that includes this information.
+This class Dog would then be reused to generate each of the 100 dogs' objects,
+all of them having the exact same attributes; name, breed, age and color.
 
 In Python everything you declare is considered an object, and hence they have some methods.
 For example strings have:
 
-.. GENERATED FROM PYTHON SOURCE LINES 277-280
+.. GENERATED FROM PYTHON SOURCE LINES 283-286
 
 .. code-block:: default
 
@@ -652,11 +658,11 @@ For example strings have:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 281-282
+.. GENERATED FROM PYTHON SOURCE LINES 287-288
 
 You can list the methods of an object using ``dir``:
 
-.. GENERATED FROM PYTHON SOURCE LINES 282-284
+.. GENERATED FROM PYTHON SOURCE LINES 288-290
 
 .. code-block:: default
 
@@ -675,7 +681,7 @@ You can list the methods of an object using ``dir``:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 285-289
+.. GENERATED FROM PYTHON SOURCE LINES 291-295
 
 You can create your own class and inherit from it.
 
@@ -685,7 +691,7 @@ commands and more.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.388 seconds)
+   **Total running time of the script:** ( 0 minutes  0.420 seconds)
 
 
 .. _sphx_glr_download_tutorials_00-python.py:
